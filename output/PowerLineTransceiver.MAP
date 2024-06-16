@@ -1,0 +1,67 @@
+
+Linker Version 8.7.7.220718
+Input Object File: c:\users\tech\desktop\powerlinetransceiver\output\MAIN.OBJ
+Input Object File: c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ
+Input Object File: c:\users\tech\desktop\powerlinetransceiver\output\STARTUP1_L.OBJ
+
+Input Library File: C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB
+Input Library File: C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\v3_lmrsc.lib
+
+
+     Bank    Start     End      Length     Class    AvgIns    Name
+     00h     0000h     0000h    0001h      CODE               @code (c:\users\tech\desktop\powerlinetransceiver\output\MAIN.OBJ)
+     00h     0001h     0021h    0021h      CODE               @start (c:\users\tech\desktop\powerlinetransceiver\output\MAIN.OBJ)
+     00h     0022h     0022h    0001h      CODE               _main (c:\users\tech\desktop\powerlinetransceiver\output\MAIN.OBJ)
+     00h     0023h     002ch    000ah      CODE               @ROMDATA_BASE (c:\users\tech\desktop\powerlinetransceiver\output\STARTUP1_L.OBJ)
+     00h     0080h     0081h    0002h      DATA     3         @HCCINIT___value_1925 (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
+     00h     0082h     0083h    0002h      DATA     3         @HCCINIT___value_1914 (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
+     00h     0084h     0085h    0002h      DATA     3         @HCCINIT___value_1903 (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
+     00h     0086h     0087h    0002h      DATA     3         @HCCINIT_VC0OS1 (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
+     00h     0088h     0089h    0002h      DATA     2         @HCCINIT_VC0OS2 (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
+     00h     008ah     008bh    0002h      DATA     1         @HCCINIT_VC1OS2 (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
+     00h     008ch     008dh    0002h      DATA     1         @HCCINIT_VC1OS1 (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
+
+     Local Sections
+
+     Bank    Start     End      Length     Class    AvgIns    Name
+     00h     0080h     0080h    0000h      LOCAL    0         @dummy (c:\users\tech\desktop\powerlinetransceiver\output\MAIN.OBJ)
+     00h     0080h     0080h    0000h      LOCAL    0         _main (c:\users\tech\desktop\powerlinetransceiver\output\MAIN.OBJ)
+
+     Public Symbols Information
+     Address            Public by Name
+     0086h              _VC0OS1
+     0088h              _VC0OS2
+     008ch              _VC1OS1
+     008ah              _VC1OS2
+     0022h              _main
+     0022h              startup_value_1
+
+     Address            Public by Value
+     0022h              _main
+     0022h              startup_value_1
+     0086h              _VC0OS1
+     0088h              _VC0OS2
+     008ah              _VC1OS2
+     008ch              _VC1OS1
+
+
+ROM Usage Statistics
+     Size      Used     Percentage
+     1000h     002dh    1%
+
+RAM Usage Statistics
+    Bank      Size      Used     Percentage
+     00h       0080h     000eh    10%
+     01h       0080h     0000h    0%
+     Total     0100h     000eh    5%
+
+Use Stack Count
+_main: 0
+
+Call Tree
+    @dummy
+        _main (0)
+
+HLINK: Program entry point at section '@code' (address 0) of file 'c:\users\tech\desktop\powerlinetransceiver\output\MAIN.OBJ'
+
+Total 0 error(s), Total 0 Warning(s)
