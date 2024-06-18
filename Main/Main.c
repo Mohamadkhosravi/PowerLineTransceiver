@@ -3,8 +3,9 @@
 
 void main()
 {
-S_GPIO_Init();
-S_ADC_Init();
+	S_GPIO_Init();
+	S_ADC_Init();
+	S_RCC_Init();
+	S_Timebase_Init();
 
- 
 }

@@ -5,6 +5,7 @@ Input Object File: c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ
 Input Object File: c:\users\tech\desktop\powerlinetransceiver\output\STARTUP1_L.OBJ
 Input Object File: c:\users\tech\desktop\powerlinetransceiver\output\GPIO.OBJ
 Input Object File: c:\users\tech\desktop\powerlinetransceiver\output\ADC.OBJ
+Input Object File: c:\users\tech\desktop\powerlinetransceiver\output\RCC.OBJ
 
 Input Library File: C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB
 Input Library File: C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\v3_lmrsc.lib
@@ -13,10 +14,12 @@ Input Library File: C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x
      Bank    Start     End      Length     Class    AvgIns    Name
      00h     0000h     0000h    0001h      CODE               @code (c:\users\tech\desktop\powerlinetransceiver\output\MAIN.OBJ)
      00h     0001h     0021h    0021h      CODE               @start (c:\users\tech\desktop\powerlinetransceiver\output\MAIN.OBJ)
-     00h     0022h     0024h    0003h      CODE               _main (c:\users\tech\desktop\powerlinetransceiver\output\MAIN.OBJ)
-     00h     0025h     002eh    000ah      CODE               @ROMDATA_BASE (c:\users\tech\desktop\powerlinetransceiver\output\STARTUP1_L.OBJ)
-     00h     002fh     0042h    0014h      CODE               _S_GPIO_Init (c:\users\tech\desktop\powerlinetransceiver\output\GPIO.OBJ)
-     00h     0043h     0048h    0006h      CODE               _S_ADC_Init (c:\users\tech\desktop\powerlinetransceiver\output\ADC.OBJ)
+     00h     0022h     0026h    0005h      CODE               _main (c:\users\tech\desktop\powerlinetransceiver\output\MAIN.OBJ)
+     00h     0027h     0030h    000ah      CODE               @ROMDATA_BASE (c:\users\tech\desktop\powerlinetransceiver\output\STARTUP1_L.OBJ)
+     00h     0031h     0044h    0014h      CODE               _S_GPIO_Init (c:\users\tech\desktop\powerlinetransceiver\output\GPIO.OBJ)
+     00h     0045h     004ah    0006h      CODE               _S_ADC_Init (c:\users\tech\desktop\powerlinetransceiver\output\ADC.OBJ)
+     00h     004bh     0050h    0006h      CODE               _S_RCC_Init (c:\users\tech\desktop\powerlinetransceiver\output\RCC.OBJ)
+     00h     0051h     005ch    000ch      CODE               _S_Timebase_Init (c:\users\tech\desktop\powerlinetransceiver\output\RCC.OBJ)
      00h     0080h     0081h    0002h      DATA     3         @HCCINIT___value_1925 (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
      00h     0082h     0083h    0002h      DATA     3         @HCCINIT___value_1914 (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
      00h     0084h     0085h    0002h      DATA     3         @HCCINIT___value_1903 (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
@@ -32,23 +35,29 @@ Input Library File: C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x
      00h     0080h     0080h    0000h      LOCAL    0         _main (c:\users\tech\desktop\powerlinetransceiver\output\MAIN.OBJ)
      00h     0080h     0080h    0000h      LOCAL    0         _S_GPIO_Init (c:\users\tech\desktop\powerlinetransceiver\output\GPIO.OBJ)
      00h     0080h     0080h    0000h      LOCAL    0         _S_ADC_Init (c:\users\tech\desktop\powerlinetransceiver\output\ADC.OBJ)
+     00h     0080h     0080h    0000h      LOCAL    0         _S_RCC_Init (c:\users\tech\desktop\powerlinetransceiver\output\RCC.OBJ)
+     00h     0080h     0080h    0000h      LOCAL    0         _S_Timebase_Init (c:\users\tech\desktop\powerlinetransceiver\output\RCC.OBJ)
 
      Public Symbols Information
      Address            Public by Name
-     0043h              _S_ADC_Init
-     002fh              _S_GPIO_Init
+     0045h              _S_ADC_Init
+     0031h              _S_GPIO_Init
+     004bh              _S_RCC_Init
+     0051h              _S_Timebase_Init
      0086h              _VC0OS1
      0088h              _VC0OS2
      008ch              _VC1OS1
      008ah              _VC1OS2
      0022h              _main
-     0024h              startup_value_1
+     0026h              startup_value_1
 
      Address            Public by Value
      0022h              _main
-     0024h              startup_value_1
-     002fh              _S_GPIO_Init
-     0043h              _S_ADC_Init
+     0026h              startup_value_1
+     0031h              _S_GPIO_Init
+     0045h              _S_ADC_Init
+     004bh              _S_RCC_Init
+     0051h              _S_Timebase_Init
      0086h              _VC0OS1
      0088h              _VC0OS2
      008ah              _VC1OS2
@@ -57,7 +66,7 @@ Input Library File: C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x
 
 ROM Usage Statistics
      Size      Used     Percentage
-     1000h     0049h    1%
+     1000h     005dh    2%
 
 RAM Usage Statistics
     Bank      Size      Used     Percentage
@@ -74,6 +83,8 @@ Call Tree
         _main (0)
             _S_GPIO_Init (1)
             _S_ADC_Init (1)
+            _S_RCC_Init (1)
+            _S_Timebase_Init (1)
     _S_READ_ADC
         __DELAYX (0)
 
