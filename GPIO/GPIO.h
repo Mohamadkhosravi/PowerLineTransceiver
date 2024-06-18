@@ -5,7 +5,7 @@
 
 
 
-void GPIOInit();
+void S_GPIO_Init();
 
 
 

@@ -3,6 +3,8 @@
 
 void main()
 {
-GPIOInit();
+S_GPIO_Init();
+S_ADC_Init();
+
  
 }

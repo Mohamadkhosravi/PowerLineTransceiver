@@ -7,7 +7,7 @@
 //*@param[in]	: None
 //*@retval		: None
 //===========================================================
-void GPIOInit()
+void S_GPIO_Init()
 {
 	_pa = 0b00000000;
 	_pac= 0b00010001;
