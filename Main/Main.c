@@ -3,6 +3,6 @@
 
 void main()
 {
-
-  
+GPIOInit();
+ 
 }

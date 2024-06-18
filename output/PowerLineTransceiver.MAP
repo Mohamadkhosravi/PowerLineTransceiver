@@ -3,6 +3,7 @@ Linker Version 8.7.7.220718
 Input Object File: c:\users\tech\desktop\powerlinetransceiver\output\MAIN.OBJ
 Input Object File: c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ
 Input Object File: c:\users\tech\desktop\powerlinetransceiver\output\STARTUP1_L.OBJ
+Input Object File: c:\users\tech\desktop\powerlinetransceiver\output\GPIO.OBJ
 
 Input Library File: C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB
 Input Library File: C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\v3_lmrsc.lib
@@ -11,8 +12,9 @@ Input Library File: C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x
      Bank    Start     End      Length     Class    AvgIns    Name
      00h     0000h     0000h    0001h      CODE               @code (c:\users\tech\desktop\powerlinetransceiver\output\MAIN.OBJ)
      00h     0001h     0021h    0021h      CODE               @start (c:\users\tech\desktop\powerlinetransceiver\output\MAIN.OBJ)
-     00h     0022h     0022h    0001h      CODE               _main (c:\users\tech\desktop\powerlinetransceiver\output\MAIN.OBJ)
-     00h     0023h     002ch    000ah      CODE               @ROMDATA_BASE (c:\users\tech\desktop\powerlinetransceiver\output\STARTUP1_L.OBJ)
+     00h     0022h     0023h    0002h      CODE               _main (c:\users\tech\desktop\powerlinetransceiver\output\MAIN.OBJ)
+     00h     0024h     002dh    000ah      CODE               @ROMDATA_BASE (c:\users\tech\desktop\powerlinetransceiver\output\STARTUP1_L.OBJ)
+     00h     002eh     0041h    0014h      CODE               _GPIOInit (c:\users\tech\desktop\powerlinetransceiver\output\GPIO.OBJ)
      00h     0080h     0081h    0002h      DATA     3         @HCCINIT___value_1925 (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
      00h     0082h     0083h    0002h      DATA     3         @HCCINIT___value_1914 (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
      00h     0084h     0085h    0002h      DATA     3         @HCCINIT___value_1903 (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
@@ -26,19 +28,22 @@ Input Library File: C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x
      Bank    Start     End      Length     Class    AvgIns    Name
      00h     0080h     0080h    0000h      LOCAL    0         @dummy (c:\users\tech\desktop\powerlinetransceiver\output\MAIN.OBJ)
      00h     0080h     0080h    0000h      LOCAL    0         _main (c:\users\tech\desktop\powerlinetransceiver\output\MAIN.OBJ)
+     00h     0080h     0080h    0000h      LOCAL    0         _GPIOInit (c:\users\tech\desktop\powerlinetransceiver\output\GPIO.OBJ)
 
      Public Symbols Information
      Address            Public by Name
+     002eh              _GPIOInit
      0086h              _VC0OS1
      0088h              _VC0OS2
      008ch              _VC1OS1
      008ah              _VC1OS2
      0022h              _main
-     0022h              startup_value_1
+     0023h              startup_value_1
 
      Address            Public by Value
      0022h              _main
-     0022h              startup_value_1
+     0023h              startup_value_1
+     002eh              _GPIOInit
      0086h              _VC0OS1
      0088h              _VC0OS2
      008ah              _VC1OS2
@@ -47,7 +52,7 @@ Input Library File: C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x
 
 ROM Usage Statistics
      Size      Used     Percentage
-     1000h     002dh    1%
+     1000h     0042h    1%
 
 RAM Usage Statistics
     Bank      Size      Used     Percentage
@@ -56,11 +61,12 @@ RAM Usage Statistics
      Total     0100h     000eh    5%
 
 Use Stack Count
-_main: 0
+_main: 1
 
 Call Tree
     @dummy
         _main (0)
+            _GPIOInit (1)
 
 HLINK: Program entry point at section '@code' (address 0) of file 'c:\users\tech\desktop\powerlinetransceiver\output\MAIN.OBJ'
 
