@@ -2,13 +2,7 @@
 #include "PLT.h"
 
 #include "BA45F5240.h"
-//#include "A_USE_MACRO.h"
-//#include "ADC.h"
-//#include "RCC.h"
-//#include "AFE.h"
-//#include "GPIO.h"
-//#include "TM.h"
-	
+
 
 unsigned int VC0OS1=0;
 unsigned int VC0OS2=0;
@@ -154,7 +148,7 @@ int PLT0AmplifierInputOffsetCalibration(void)
 char PLT0Recive(void){
 	PLT0_Voltage_Calibration_Mode_Selection	= Normal_Operation;	
 	PLT_DAC0_Control=Enable;
-	PLT_DAC0_VALUE=22;
+	PLT_DAC0_VALUE=10;
 	S0_S1_ON_S2_OFF;
 	PLT_Comparator_0_Hysteresis_voltage(0); 
 	PLT_Comparator_0_Current_Control_Value(0);

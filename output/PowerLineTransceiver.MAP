@@ -6,6 +6,7 @@ Input Object File: c:\users\tech\desktop\powerlinetransceiver\output\STARTUP1_L.
 Input Object File: c:\users\tech\desktop\powerlinetransceiver\output\GPIO.OBJ
 Input Object File: c:\users\tech\desktop\powerlinetransceiver\output\ADC.OBJ
 Input Object File: c:\users\tech\desktop\powerlinetransceiver\output\RCC.OBJ
+Input Object File: c:\users\tech\desktop\powerlinetransceiver\output\UART.OBJ
 
 Input Library File: C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB
 Input Library File: C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\v3_lmrsc.lib
@@ -14,68 +15,118 @@ Input Library File: C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x
      Bank    Start     End      Length     Class    AvgIns    Name
      00h     0000h     0000h    0001h      CODE               @code (c:\users\tech\desktop\powerlinetransceiver\output\MAIN.OBJ)
      00h     0001h     0021h    0021h      CODE               @start (c:\users\tech\desktop\powerlinetransceiver\output\MAIN.OBJ)
-     00h     0022h     0026h    0005h      CODE               _main (c:\users\tech\desktop\powerlinetransceiver\output\MAIN.OBJ)
-     00h     0027h     0030h    000ah      CODE               @ROMDATA_BASE (c:\users\tech\desktop\powerlinetransceiver\output\STARTUP1_L.OBJ)
-     00h     0031h     0044h    0014h      CODE               _S_GPIO_Init (c:\users\tech\desktop\powerlinetransceiver\output\GPIO.OBJ)
-     00h     0045h     004ah    0006h      CODE               _S_ADC_Init (c:\users\tech\desktop\powerlinetransceiver\output\ADC.OBJ)
-     00h     004bh     0050h    0006h      CODE               _S_RCC_Init (c:\users\tech\desktop\powerlinetransceiver\output\RCC.OBJ)
-     00h     0051h     005ch    000ch      CODE               _S_Timebase_Init (c:\users\tech\desktop\powerlinetransceiver\output\RCC.OBJ)
-     00h     0080h     0081h    0002h      DATA     3         @HCCINIT___value_1925 (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
-     00h     0082h     0083h    0002h      DATA     3         @HCCINIT___value_1914 (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
-     00h     0084h     0085h    0002h      DATA     3         @HCCINIT___value_1903 (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
-     00h     0086h     0087h    0002h      DATA     3         @HCCINIT_VC0OS1 (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
-     00h     0088h     0089h    0002h      DATA     2         @HCCINIT_VC0OS2 (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
-     00h     008ah     008bh    0002h      DATA     1         @HCCINIT_VC1OS2 (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
-     00h     008ch     008dh    0002h      DATA     1         @HCCINIT_VC1OS1 (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
+     00h     0022h     0031h    0010h      CODE               _main (c:\users\tech\desktop\powerlinetransceiver\output\MAIN.OBJ)
+     00h     0032h     0092h    0061h      CODE               _PLT0InputOffsetCalibration (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
+     00h     0093h     00f2h    0060h      CODE               _PLT1InputOffsetCalibration (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
+     00h     00f3h     00fch    000ah      CODE               @ROMDATA_BASE (c:\users\tech\desktop\powerlinetransceiver\output\STARTUP1_L.OBJ)
+     00h     00fdh     0111h    0015h      CODE               _S_GPIO_Init (c:\users\tech\desktop\powerlinetransceiver\output\GPIO.OBJ)
+     00h     0112h     0117h    0006h      CODE               _S_ADC_Init (c:\users\tech\desktop\powerlinetransceiver\output\ADC.OBJ)
+     00h     0118h     011dh    0006h      CODE               _S_RCC_Init (c:\users\tech\desktop\powerlinetransceiver\output\RCC.OBJ)
+     00h     011eh     0129h    000ch      CODE               _S_Timebase_Init (c:\users\tech\desktop\powerlinetransceiver\output\RCC.OBJ)
+     00h     012ah     0178h    004fh      CODE               _UART_Init (c:\users\tech\desktop\powerlinetransceiver\output\UART.OBJ)
+     00h     0179h     017eh    0006h      CODE               _UART_Transmit (c:\users\tech\desktop\powerlinetransceiver\output\UART.OBJ)
+     00h     017fh     01dfh    0061h      CODE               _builtin_holtek_divmodsi4_isr00 (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
+     00h     0080h     0080h    0001h      DATA     20        @data_ra (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
+     00h     0081h     0081h    0001h      DATA     45        @data_rb (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
+     00h     0082h     0082h    0001h      DATA     37        @data_rc (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
+     00h     0083h     0083h    0001h      DATA     38        @data_rd (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
+     00h     0084h     0084h    0001h      DATA     38        @data_re (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
+     00h     0085h     0085h    0001h      DATA     25        @data_rf (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
+     00h     0086h     0086h    0001h      DATA     24        @data_rg (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
+     00h     0087h     0087h    0001h      DATA     3         @data_rh (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
+     00h     0098h     0099h    0002h      DATA     3         @HCCINIT___value_1925 (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
+     00h     009ah     009bh    0002h      DATA     3         @HCCINIT___value_1914 (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
+     00h     009ch     009dh    0002h      DATA     3         @HCCINIT___value_1903 (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
+     00h     009eh     009fh    0002h      DATA     3         @HCCINIT_VC0OS1 (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
+     00h     00a0h     00a1h    0002h      DATA     2         @HCCINIT_VC0OS2 (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
+     00h     00a2h     00a3h    0002h      DATA     1         @HCCINIT_VC1OS2 (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
+     00h     00a4h     00a5h    0002h      DATA     1         @HCCINIT_VC1OS1 (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
 
      Local Sections
 
      Bank    Start     End      Length     Class    AvgIns    Name
-     00h     0080h     0080h    0000h      LOCAL    0         @dummy (c:\users\tech\desktop\powerlinetransceiver\output\MAIN.OBJ)
-     00h     0080h     0080h    0000h      LOCAL    0         _main (c:\users\tech\desktop\powerlinetransceiver\output\MAIN.OBJ)
-     00h     0080h     0080h    0000h      LOCAL    0         _S_GPIO_Init (c:\users\tech\desktop\powerlinetransceiver\output\GPIO.OBJ)
-     00h     0080h     0080h    0000h      LOCAL    0         _S_ADC_Init (c:\users\tech\desktop\powerlinetransceiver\output\ADC.OBJ)
-     00h     0080h     0080h    0000h      LOCAL    0         _S_RCC_Init (c:\users\tech\desktop\powerlinetransceiver\output\RCC.OBJ)
-     00h     0080h     0080h    0000h      LOCAL    0         _S_Timebase_Init (c:\users\tech\desktop\powerlinetransceiver\output\RCC.OBJ)
+     00h     0098h     0098h    0000h      LOCAL    0         @dummy (c:\users\tech\desktop\powerlinetransceiver\output\MAIN.OBJ)
+     00h     0098h     0098h    0000h      LOCAL    0         _main (c:\users\tech\desktop\powerlinetransceiver\output\MAIN.OBJ)
+     00h     0088h     0088h    0000h      LOCAL    0         _S_GPIO_Init (c:\users\tech\desktop\powerlinetransceiver\output\GPIO.OBJ)
+     00h     0088h     0088h    0000h      LOCAL    0         _S_ADC_Init (c:\users\tech\desktop\powerlinetransceiver\output\ADC.OBJ)
+     00h     0088h     0088h    0000h      LOCAL    0         _S_RCC_Init (c:\users\tech\desktop\powerlinetransceiver\output\RCC.OBJ)
+     00h     0088h     0088h    0000h      LOCAL    0         _S_Timebase_Init (c:\users\tech\desktop\powerlinetransceiver\output\RCC.OBJ)
+     00h     0096h     0097h    0002h      LOCAL    2         _UART_Init (c:\users\tech\desktop\powerlinetransceiver\output\UART.OBJ)
+     00h     0088h     0095h    000eh      LOCAL    6.2143    _builtin_holtek_divmodsi4_isr00 (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
+     00h     0088h     0088h    0000h      LOCAL    0         _PLT0InputOffsetCalibration (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
+     00h     0088h     0088h    0000h      LOCAL    0         _PLT1InputOffsetCalibration (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
+     00h     0088h     0088h    0001h      LOCAL    2         _UART_Transmit (c:\users\tech\desktop\powerlinetransceiver\output\UART.OBJ)
 
      Public Symbols Information
      Address            Public by Name
-     0045h              _S_ADC_Init
-     0031h              _S_GPIO_Init
-     004bh              _S_RCC_Init
-     0051h              _S_Timebase_Init
-     0086h              _VC0OS1
-     0088h              _VC0OS2
-     008ch              _VC1OS1
-     008ah              _VC1OS2
+     0032h              _PLT0InputOffsetCalibration
+     0093h              _PLT1InputOffsetCalibration
+     0112h              _S_ADC_Init
+     00fdh              _S_GPIO_Init
+     0118h              _S_RCC_Init
+     011eh              _S_Timebase_Init
+     012ah              _UART_Init
+     0096h              _UART_Init_2
+     0179h              _UART_Transmit
+     009eh              _VC0OS1
+     00a0h              _VC0OS2
+     00a4h              _VC1OS1
+     00a2h              _VC1OS2
+     017fh              _builtin_holtek_divmodsi4_isr00
+     019dh              _builtin_holtek_udivmodsi4_isr00
+     0089h              _builtin_holtek_udivmodsi4_isr00_2
      0022h              _main
-     0026h              startup_value_1
+     0080h              ra
+     0081h              rb
+     0082h              rc
+     0083h              rd
+     0084h              re
+     0085h              rf
+     0086h              rg
+     0087h              rh
+     00f2h              startup_value_1
 
      Address            Public by Value
      0022h              _main
-     0026h              startup_value_1
-     0031h              _S_GPIO_Init
-     0045h              _S_ADC_Init
-     004bh              _S_RCC_Init
-     0051h              _S_Timebase_Init
-     0086h              _VC0OS1
-     0088h              _VC0OS2
-     008ah              _VC1OS2
-     008ch              _VC1OS1
+     0032h              _PLT0InputOffsetCalibration
+     0080h              ra
+     0081h              rb
+     0082h              rc
+     0083h              rd
+     0084h              re
+     0085h              rf
+     0086h              rg
+     0087h              rh
+     0089h              _builtin_holtek_udivmodsi4_isr00_2
+     0093h              _PLT1InputOffsetCalibration
+     0096h              _UART_Init_2
+     009eh              _VC0OS1
+     00a0h              _VC0OS2
+     00a2h              _VC1OS2
+     00a4h              _VC1OS1
+     00f2h              startup_value_1
+     00fdh              _S_GPIO_Init
+     0112h              _S_ADC_Init
+     0118h              _S_RCC_Init
+     011eh              _S_Timebase_Init
+     012ah              _UART_Init
+     0179h              _UART_Transmit
+     017fh              _builtin_holtek_divmodsi4_isr00
+     019dh              _builtin_holtek_udivmodsi4_isr00
 
 
 ROM Usage Statistics
      Size      Used     Percentage
-     1000h     005dh    2%
+     1000h     01e0h    11%
 
 RAM Usage Statistics
     Bank      Size      Used     Percentage
-     00h       0080h     000eh    10%
+     00h       0080h     0026h    29%
      01h       0080h     0000h    0%
-     Total     0100h     000eh    5%
+     Total     0100h     0026h    14%
 
 Use Stack Count
-_main: 1
+_main: 2
 _S_READ_ADC: 1
 
 Call Tree
@@ -85,6 +136,11 @@ Call Tree
             _S_ADC_Init (1)
             _S_RCC_Init (1)
             _S_Timebase_Init (1)
+            _UART_Init (1)
+                _builtin_holtek_divmodsi4_isr00 (2)
+            _PLT0InputOffsetCalibration (1)
+            _PLT1InputOffsetCalibration (1)
+            _UART_Transmit (1)
     _S_READ_ADC
         __DELAYX (0)
 
