@@ -13,7 +13,7 @@ int PLT0InputOffsetCalibration(void){
 	
 	int repeat=0;	
 	static unsigned int value =0;
-	
+
 	PLT0_Voltage_Calibration_Mode_Selection = Offset_Calibration_Mode;
 	S0_S2_ON_S1_OFF;
 	PLT0_Input_Offset_Voltage_Calibration_Value(0);
@@ -55,7 +55,6 @@ int PLT0InputOffsetCalibration(void){
      return (value);
 };
 
-
 int PLT1InputOffsetCalibration(void){
 	
 	int repeat=0;	
@@ -63,7 +62,6 @@ int PLT1InputOffsetCalibration(void){
 	
 	PLT1_Voltage_Calibration_Mode_Selection = Offset_Calibration_Mode;
 	S3_S5_ON_S4_OFF;
-
 	PLT1_Input_Offset_Voltage_Calibration_Value(0);
 	value=1;
 	 
@@ -100,7 +98,6 @@ int PLT1InputOffsetCalibration(void){
 	
      return (value);
 };
-
 
 int PLT0AmplifierInputOffsetCalibration(void)
 {
@@ -148,7 +145,7 @@ int PLT0AmplifierInputOffsetCalibration(void)
 char PLT0Recive(void){
 	PLT0_Voltage_Calibration_Mode_Selection	= Normal_Operation;	
 	PLT_DAC0_Control=Enable;
-	PLT_DAC0_VALUE=10;
+	PLT_DAC0_VALUE=20;
 	S0_S1_ON_S2_OFF;
 	PLT_Comparator_0_Hysteresis_voltage(0); 
 	PLT_Comparator_0_Current_Control_Value(0);
@@ -160,7 +157,7 @@ return PLT_OP0_Output_Status;
 char PLT1Recive(void){
 	PLT1_Voltage_Calibration_Mode_Selection	= Normal_Operation;		
 	PLT_DAC1_Control=Enable;
-	PLT_DAC1_VALUE=30;
+	PLT_DAC1_VALUE=20;
 	S3_S4_ON_S5_OFF;
 	PLT_Comparator_1_Hysteresis_voltage(0); 
 	PLT_Comparator_1_Current_Control_Value(0);

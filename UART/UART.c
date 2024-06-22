@@ -31,77 +31,50 @@
 //    UBRG = brg_value;
 //}
 //
-//void UART_EnableInterrupts(void) {
-//    // Enable receiver interrupt
-//    UUCR2 |= URIE;
-//    // Enable transmitter interrupt
-//    UUCR2 |= (UTIIE | UTEIE);
-//}
-//
-//void UART_DisableInterrupts(void) {
-//    // Disable all UART interrupts
-//    UUCR2 &= ~(URIE | UTIIE | UTEIE);
-//}
+
 
 #include "UART.h"
 #include <BA45F5240.h>
 
-#define F_CPU 8000000 // Assuming a clock frequency of 4 MHz
 
 void UART_Init(unsigned int baudrate) {
 	
 	
-	//PAS07~PAS06:
-	_pas06=1;
-	_pas07=0;
+
+	//PAS15~PAS14: PA6 Pin-Shared function selection(PLT RX)
+//	_pas13=0;
+//	_pas14=1;
+//	
 	
-	//PAS15~PAS14: PA6 Pin-Shared function selection
-	_pas13=0;
-	_pas14=1;
-	
-	/*
-	_pbs06=0;
-	_pbs07=1;
-	
+
+
+	//PAS15~PAS14: PA6 Pin-Shared function selection(PLT TX)	
 	_pbs02=0;
-	_pbs03=1;*/
+	_pbs03=1;
+//
+//	//port A3 Share function PAS07~PAS06 TX(LED PIN):
+//	_pas06=1;
+//	_pas07=0;
 	
-    // Set the UART mode by setting UMD bit in SIMC0 register
-    //_simc0 |= (1 << 7); // Assuming UMD is the 7th bit
-    
-    _umd=1;
-    // Calculate and set the baud rate
-    unsigned int ubrr = (F_CPU / (64 * baudrate)) - 1;
-   // & 0xFF; // Set the UBRG register
-    _ubrg = ubrr ;
- 
-    if (ubrr & 0x100) {
-        _uucr2 |= (1 << 0); // Set UBRGH bit if needed
-    } else {
-        _uucr2 &= ~(1 << 0); // Clear UBRGH bit if not needed
-    }
+	
+	
+	
 
-    // Enable UART by setting UREN bit in UUCR1 register
-    _uren=1;
-    
-   // _uucr1 |= (1 << 7); // Enable UART (UREN)
-   _ubno=0;
-   
-   // _uucr1 |= (1 << 6); // 8-bit data transfer (UBNO = 0)
-    _upren=0;
-    
-    //_uucr1 &= ~(1 << 5); // Disable parity (UPREN = 0)
-    _uprt=1;
-    
-   // _uucr1 &= ~(1 << 4); // Even parity (UPRT = 0)
-   _ustops=1;
-   // _uucr1 &= ~(1 << 3); // One stop bit (USTOPS = 0)
-
-    // Enable transmitter and receiver
-    _utxen=1;
-   // _uucr1 |= (1 << 2); // Enable transmitter (UTXEN)
-   _urxen=1;
-   // _uucr1 |= (1 << 1); // Enable receiver (URXEN)
+//	UMD: UART mode selection bit
+//0: SPI or I2C mode
+//1: UART mode
+	_umd=1;
+	_ubrgh = SPEED_BAUDRATE;
+	unsigned int ubrr =(F_CPU / (CONSTANT_NUMBER * baudrate)) - 1.0;
+	_ubrg = ubrr & 0xFF ;
+	// Enable UART by setting UREN bit in UUCR1 register
+	_uren=1; // Enable UART (UREN)	
+	_ubno=DATA_TRANSFER;
+	_upren=PARITY;
+	_uprt=TYPE_OF_PARITY;
+	_ustops=STOP_BIT; 
+	_utxen=TRANSMITTER;
+	_urxen=RECEIVER;
 }
 
 void UART_Transmit(char data) {
@@ -114,4 +87,15 @@ char UART_Receive(void) {
     // Wait for data to be received
     while (!(_uusr & (1 << 0))); // Wait until URXIF is set
     return _utxr_rxr; // Get and return received data from buffer
+}
+
+void UART_EnableInterrupts(void) {
+	//    // Enable receiver interrupt
+	  _uucr2 |= _urie;
+	//    // Enable transmitter interrupt
+	_uucr2 |= (_utiie | _uteie);
+}
+void UART_DisableInterrupts(void) {
+//    // Disable all UART interrupts
+      _uucr2 &= ~(_urie | _utiie | _uteie);
 }
