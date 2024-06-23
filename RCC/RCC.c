@@ -38,11 +38,10 @@ void S_Timebase_Init()
 	_tb1f=0;
 	
 	_tb0e=1;
-	_tb0f=0;
+	_tb0f=1;
 	
 	_emi=1;
   
 }
-
 
 

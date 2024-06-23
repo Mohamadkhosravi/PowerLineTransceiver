@@ -1,20 +1,8 @@
 #ifndef UART_H
 #define UART_H
 
-
-	
-
-	
-	
-
-
-
-
-
-
 #define ENABLE           	  1
 #define DISABLE               0
-
 
 #define TRANSMITTER      ENABLE
 #define RECEIVER         ENABLE
@@ -22,7 +10,6 @@
 //============================================
 // Assuming a clock frequency 
 //============================================
-
 #define F_CPU            8000000 
 //============================================
 // Calculate and set the baud rate
