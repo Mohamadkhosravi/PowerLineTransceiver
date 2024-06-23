@@ -1,79 +1,160 @@
 #include "BA45F5240.h"
 #include <PLT.h>
-//#include <A_SOFTDEBUG_DRV.h>
-
 #include <UART.h>
+#include <Timer.h>
+unsigned int counter=0;
+unsigned int counterR=0;
 
- unsigned int counterR=0;
-#pragma vector TB0_ISR @ 0x30
+
+//INT1S1~INT1S0
+/*
+#pragma vector INT_ISR @ 0x04
+void INT_ISR(void)
+{
+ _pa3=~_pa3;
+
+}
+
+#pragma vector TB0_ISR @ 0x08
 void TB0_ISR(void)
 {
 
- 	_nop();
-	_pa3 = 1;	/* user define */
+
+	 _pa3=1;
+
 }
-#pragma vector TB1_ISR @ 0x34
+
+#pragma vector TB1_ISR @ 0x0c
 void TB1_ISR(void)
 {
- _nop();
+
+
+	 _pa3=1;
+
+}
+
+#pragma vector T_ISR @ 0x10
+void T_ISR(void)
+{
+
+		 _pa3=~_pa3;
+
+}
+
+#pragma vector ST_ISR @ 0x28
+void ST_ISR(void)
+{
+	
+
+	 _pa3=~_pa3;
+	
+}
+
+*/
+/*
+#pragma vector STB_ISR @ 0x2c
+void STB_ISR(void)
+{
+
+		 _pa3=~_pa3;
+
+}
+
+#pragma vector PTM_ISR @ 0x20
+void PTM_ISR(void)
+{
+
+		_pa3=1;
+	
+}
+*/
+#pragma vector PTMA_ISR @ 0x24
+void PTMA_ISR(void)
+{
+		//_pa3=0;
+
+		_pa3=1;
 	/* user define */
- _pa3 = 0;
 }
 
 
-	
-//		
-//void TB0_ISR(void);
-//void TB1_ISR(void);
+
+
 void main()
 {
+_tb0on=1;
 
-unsigned int counter=0;
+
+
 unsigned int offset0 =0;
 unsigned int offset1=0;
 
 	S_GPIO_Init();
 	S_ADC_Init();
 	S_RCC_Init();
-	S_Timebase_Init();
 	UART_Init(19200);
 
-offset0 =PLT0InputOffsetCalibration();
-offset1 =PLT1InputOffsetCalibration();
-offset0 =PLT0AmplifierInputOffsetCalibration();	
-//
-_pac3=0;
-_papu3=0;
-_pas06=0;
-_pas07=0;
-//	
-//  	_pbc1=0;
-//	_pbs02=0;
-//	_pbs03=0;
-//	_pbpu1=0;
+	offset0 =PLT0InputOffsetCalibration();
+	offset1 =PLT1InputOffsetCalibration();
+	offset0 =PLT0AmplifierInputOffsetCalibration();	
+
+    timerBaseInit();
+    STimerInit();
+    PTimerInit();
+	_pac3=0;
+	_papu3=0;
+	_pas06=0;
+	_pas07=0;
+	
+	_int1s1=1;
+	_int1s0=0;
+
+
+	
+	//	
+	//  	_pbc1=0;
+	//	_pbs02=0;
+	//	_pbs03=0;
+	//	_pbpu1=0;
 	unsigned char PLTState=0;
-
+	_pltc0en=1;
+	_pltc0e=1;
+	_emi=1;
+	_tb0e=1;
+	_tb1e=1;
+	_stmae=1;
+	_stmpe=1;
+	_ptmae=1;
+	_ptmpe=1;
 	
-	_nop();
-	
-
-	
-	
+//_tb0on=1;
+//_tb1on=1;
 	while(1)
    {
+	_emi=1;
+	_tb0e=1;
+	_tb1e=1;
+	_stmae=1;
+	_stmpe=1;
+	_ptmae=1;
+	_ptmpe=1;
+	BUZZER_ON;
+	_pa3=0;
+   	//	_pa3=1;
     //UART_Transmit(10);
-     
-  /* 	
-    if(counterR<6000)
+      //_pa3=0;
+ 	
+   /* if(counter<6000)
     {
-   
+   	
+
      _pa3=1;	
     }
     else
     {
      _pa3=0;		
     }
-    */
+ 	if(counter>12000)counter=0;*/
     
  /*
     
@@ -90,18 +171,18 @@ _pas07=0;
     }*/
     
     //UART_Transmit(PLTState);
-  /*  if(PLTState)
-    {
-    	_pa2=0;
-    	_pb1=0;	
-    }
-    else
-    {
-     _pa2=1;	
-     _pb1=1;
-    
-    }
-    */
+	/*	if(PLTState)
+		{
+			_pa2=0;
+			_pb1=0;	
+		}
+		else
+		{
+			_pa2=1;	
+			_pb1=1;
+		
+		}*/
+		
     
     
 	/*UART_Transmit(PLT1Recive()+0x30);

@@ -30,14 +30,14 @@
 		111: 215/fPSC
 		
 		*/  
-		_tb0c=0b00000000;
+		_tb0c=0b00000011;
 		_tb1c=0b10000111;
 		
 		_tb1e=1;
-		_tb1f=0;
+	//	_tb1f=0;
 		
 		_tb0e=1;
-		_tb0f=0;
+		//_tb0f=0;
 		
 		_emi=1;
 		  
@@ -241,8 +241,13 @@
 		10: PWM output
 		11: Single pulse output*/
 		
+		/*_ptio0=0;
+		_ptio1=1;*/
+		
+		
 		_ptio0=0;
-		_ptio1=1;
+		_ptio1=0;
+		
 		
 		/*PTOC: PTM PTP Output control bit
 		PWM Output Mode/Single Pulse Output Mode
@@ -280,7 +285,7 @@
 	 	{
 		 	//==================
 			//PTM CCRA Low Byte
-			 _ptmal=18;
+			 _ptmal=37;
 			//PTM CCRA High Byte Register 
 			_ptmah=0b00;
 			//==================
@@ -288,7 +293,7 @@
 			//==================
 			
 			//PTM CCRP Low Byte Register
-			_ptmrpl=37;
+			_ptmrpl=00;
 			//PTM CCRP High Byte Register
 			_ptmrph=0b00;
 			

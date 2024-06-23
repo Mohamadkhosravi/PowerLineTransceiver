@@ -8,7 +8,8 @@
 
 
 	#define  STIMER
-	
+	#define  PTIMER
+	#define  BASETIMER
 	
 	#ifdef BASETIMER 
 	
@@ -18,8 +19,8 @@
 	
 	#ifdef  STIMER
 	
-	  //#define _TIMER_COUNTER_MODE
-	   #define COMPARE_MATCH_OUTPUT_MODE
+	 // #define _TIMER_COUNTER_MODE
+	  #define COMPARE_MATCH_OUTPUT_MODE
 		void STimerInit(void);
 		int readSTimer(void);
 		
