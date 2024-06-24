@@ -11,6 +11,7 @@ Input Object File: c:\users\tech\desktop\powerlinetransceiver\output\PLTSERIALPR
 Input Object File: c:\users\tech\desktop\powerlinetransceiver\output\TIMER.OBJ
 Input Object File: c:\users\tech\desktop\powerlinetransceiver\output\INTERRUPT.OBJ
 Input Object File: c:\users\tech\desktop\powerlinetransceiver\output\PTM.OBJ
+Input Object File: c:\users\tech\desktop\powerlinetransceiver\output\STM.OBJ
 
 Input Library File: C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB
 Input Library File: C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\v3_lmrsc.lib
@@ -47,13 +48,13 @@ Input Library File: C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x
      00h     03e1h     03f0h    0010h      CODE               _UART_EnableInterrupts (c:\users\tech\desktop\powerlinetransceiver\output\UART.OBJ)
      00h     03f1h     0402h    0012h      CODE               _UART_DisableInterrupts (c:\users\tech\desktop\powerlinetransceiver\output\UART.OBJ)
      00h     0403h     0409h    0007h      CODE               _TimerBaseInit (c:\users\tech\desktop\powerlinetransceiver\output\TIMER.OBJ)
-     00h     040ah     041fh    0016h      CODE               _STimerInit (c:\users\tech\desktop\powerlinetransceiver\output\TIMER.OBJ)
-     00h     0420h     042ch    000dh      CODE               _readSTimer (c:\users\tech\desktop\powerlinetransceiver\output\TIMER.OBJ)
-     00h     042dh     0430h    0004h      CODE               _IntrruptInit (c:\users\tech\desktop\powerlinetransceiver\output\INTERRUPT.OBJ)
-     00h     0431h     043ah    000ah      CODE               _STMCompairPISR (c:\users\tech\desktop\powerlinetransceiver\output\INTERRUPT.OBJ)
-     00h     043bh     0444h    000ah      CODE               _STMCompairAISR (c:\users\tech\desktop\powerlinetransceiver\output\INTERRUPT.OBJ)
-     00h     0445h     0450h    000ch      CODE               _PTimerInit (c:\users\tech\desktop\powerlinetransceiver\output\PTM.OBJ)
-     00h     0451h     0463h    0013h      CODE               _PWMSeter (c:\users\tech\desktop\powerlinetransceiver\output\PTM.OBJ)
+     00h     040ah     040dh    0004h      CODE               _IntrruptInit (c:\users\tech\desktop\powerlinetransceiver\output\INTERRUPT.OBJ)
+     00h     040eh     0417h    000ah      CODE               _STMCompairPISR (c:\users\tech\desktop\powerlinetransceiver\output\INTERRUPT.OBJ)
+     00h     0418h     0421h    000ah      CODE               _STMCompairAISR (c:\users\tech\desktop\powerlinetransceiver\output\INTERRUPT.OBJ)
+     00h     0422h     042dh    000ch      CODE               _PTimerInit (c:\users\tech\desktop\powerlinetransceiver\output\PTM.OBJ)
+     00h     042eh     0440h    0013h      CODE               _PWMSeter (c:\users\tech\desktop\powerlinetransceiver\output\PTM.OBJ)
+     00h     0441h     0456h    0016h      CODE               _STimerInit (c:\users\tech\desktop\powerlinetransceiver\output\STM.OBJ)
+     00h     0457h     0463h    000dh      CODE               _readSTimer (c:\users\tech\desktop\powerlinetransceiver\output\STM.OBJ)
      00h     0464h     046dh    000ah      CODE               __DELAYX (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
      00h     0080h     0080h    0001h      DATA     37        @data_ra (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
      00h     0081h     0081h    0001h      DATA     52        @data_rb (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
@@ -94,7 +95,7 @@ Input Library File: C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x
      00h     009eh     009eh    0000h      LOCAL    0         _S_RCC_Init (c:\users\tech\desktop\powerlinetransceiver\output\RCC.OBJ)
      00h     009eh     009eh    0000h      LOCAL    0         _IntrruptInit (c:\users\tech\desktop\powerlinetransceiver\output\INTERRUPT.OBJ)
      00h     009eh     009eh    0000h      LOCAL    0         _TimerBaseInit (c:\users\tech\desktop\powerlinetransceiver\output\TIMER.OBJ)
-     00h     009eh     009eh    0000h      LOCAL    0         _STimerInit (c:\users\tech\desktop\powerlinetransceiver\output\TIMER.OBJ)
+     00h     009eh     009eh    0000h      LOCAL    0         _STimerInit (c:\users\tech\desktop\powerlinetransceiver\output\STM.OBJ)
      00h     009eh     009fh    0002h      LOCAL    2         _UART_Init (c:\users\tech\desktop\powerlinetransceiver\output\UART.OBJ)
      00h     009eh     009eh    0000h      LOCAL    0         _builtin_holtek_uitod (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
      00h     009eh     009eh    0000h      LOCAL    0         _builtin_holtek_dtmul (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
@@ -122,25 +123,25 @@ Input Library File: C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x
      00h     009eh     009eh    0000h      ILOCAL   0         _UART_Receive (c:\users\tech\desktop\powerlinetransceiver\output\UART.OBJ)
      00h     009eh     009eh    0000h      ILOCAL   0         _UART_EnableInterrupts (c:\users\tech\desktop\powerlinetransceiver\output\UART.OBJ)
      00h     009eh     009eh    0000h      ILOCAL   0         _UART_DisableInterrupts (c:\users\tech\desktop\powerlinetransceiver\output\UART.OBJ)
-     00h     009eh     009eh    0000h      ILOCAL   0         _readSTimer (c:\users\tech\desktop\powerlinetransceiver\output\TIMER.OBJ)
      00h     009eh     009eh    0000h      ILOCAL   0         _PTimerInit (c:\users\tech\desktop\powerlinetransceiver\output\PTM.OBJ)
      00h     009eh     009eh    0001h      ILOCAL   2         _PWMSeter (c:\users\tech\desktop\powerlinetransceiver\output\PTM.OBJ)
+     00h     009eh     009eh    0000h      ILOCAL   0         _readSTimer (c:\users\tech\desktop\powerlinetransceiver\output\STM.OBJ)
      00h     009eh     009eh    0000h      ILOCAL   0         _builtin_holtek_dtnorm (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
      00h     009eh     009eh    0000h      ILOCAL   0         _builtin_holtek_dtinf (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
 
      Public Symbols Information
      Address            Public by Name
-     042dh              _IntrruptInit
+     040ah              _IntrruptInit
      024ah              _PLT0AmplifierInputOffsetCalibration
      0189h              _PLT0InputOffsetCalibration
      02aah              _PLT0Recive
      01eah              _PLT1InputOffsetCalibration
      02b9h              _PLT1Recive
-     0445h              _PTimerInit
-     0451h              _PWMSeter
-     043bh              _STMCompairAISR
-     0431h              _STMCompairPISR
-     040ah              _STimerInit
+     0422h              _PTimerInit
+     042eh              _PWMSeter
+     0418h              _STMCompairAISR
+     040eh              _STMCompairPISR
+     0441h              _STimerInit
      02dch              _S_ADC_Init
      02c8h              _S_GPIO_Init
      0342h              _S_RCC_Init
@@ -188,7 +189,7 @@ Input Library File: C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x
      00aeh              _counterR
      00b2h              _frame
      0174h              _main
-     0420h              _readSTimer
+     0457h              _readSTimer
      00c3h              _timerCuonter
      0098h              r128
      009bh              r12c
@@ -268,13 +269,13 @@ Input Library File: C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x
      03e1h              _UART_EnableInterrupts
      03f1h              _UART_DisableInterrupts
      0403h              _TimerBaseInit
-     040ah              _STimerInit
-     0420h              _readSTimer
-     042dh              _IntrruptInit
-     0431h              _STMCompairPISR
-     043bh              _STMCompairAISR
-     0445h              _PTimerInit
-     0451h              _PWMSeter
+     040ah              _IntrruptInit
+     040eh              _STMCompairPISR
+     0418h              _STMCompairAISR
+     0422h              _PTimerInit
+     042eh              _PWMSeter
+     0441h              _STimerInit
+     0457h              _readSTimer
      0464h              __DELAYX6
      0465h              __DELAYX5
      0466h              __DELAYX4
