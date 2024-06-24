@@ -27,7 +27,7 @@ void UART_Init(unsigned int baudrate){
 	_pas14=0;
 	_pas15=1;
 	
-	
+
 
 //	UMD: UART mode selection bit
 //0: SPI or I2C mode

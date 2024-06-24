@@ -1,7 +1,6 @@
-#include "BA45F5240.h"
-#include <PLT.h>
-#include <UART.h>
-#include <Timer.h>
+#include<Main.h>
+
+
 unsigned int counter=0;
 unsigned int counterR=0;
 
@@ -19,17 +18,17 @@ void INT_ISR(void)
 void TB0_ISR(void)
 {
 
-
-	 _pa3=1;
+TIME_BASE0_INTRRUPT_FLAG=0;
+	  _pa3=~_pa3;
 
 }
 
 #pragma vector TB1_ISR @ 0x0c
 void TB1_ISR(void)
 {
+TIME_BASE1_INTRRUPT_FLAG=0;
 
-
-	 _pa3=1;
+	 	 _pa3=~_pa3;
 
 }
 
@@ -50,41 +49,51 @@ void ST_ISR(void)
 	
 }
 
-*/
-/*
+
+
 #pragma vector STB_ISR @ 0x2c
 void STB_ISR(void)
 {
-
-		 _pa3=~_pa3;
+if (_tb0f) {
+        // Your interrupt handling code here
+        
+        // Clear the Timer Base 0 interrupt flag
+        _tb0f = 0;
+        _pa3=~_pa3;
+    }
+		 
 
 }
+//
+//#pragma vector PTM_ISR @ 0x20
+//void PTM_ISR(void)
+//{
+//
+//	_pa3=~_pa3;
+//	
+//}
+//
+//#pragma vector PTMA_ISR @ 0x24
+//void PTMA_ISR(void)
+//{
+//		_pa3=~_pa3;
+//
+//	//	_pa3=1;
+//	/* user define */
+//}
 
-#pragma vector PTM_ISR @ 0x20
-void PTM_ISR(void)
-{
 
-		_pa3=1;
-	
-}
-*/
-#pragma vector PTMA_ISR @ 0x24
-void PTMA_ISR(void)
-{
-		//_pa3=0;
+//
 
-		_pa3=1;
-	/* user define */
-}
-
-
-
+//#define BASE_TIMER_ISR_ADDRESS 0x30
+//void __attribute__((interrupt(BASE_TIMER_ISR_ADDRESS))) BaseTimer0ISR(void)
+//{
+//   	_pa3=~_pa3;
+//}
 
 void main()
 {
 _tb0on=1;
-
-
 
 unsigned int offset0 =0;
 unsigned int offset1=0;
@@ -92,24 +101,23 @@ unsigned int offset1=0;
 	S_GPIO_Init();
 	S_ADC_Init();
 	S_RCC_Init();
+	IntrruptInit();
+	TimerBaseInit();
+	STimerInit();
 	UART_Init(19200);
+
 
 	offset0 =PLT0InputOffsetCalibration();
 	offset1 =PLT1InputOffsetCalibration();
 	offset0 =PLT0AmplifierInputOffsetCalibration();	
 
-    timerBaseInit();
-    STimerInit();
-    PTimerInit();
 	_pac3=0;
 	_papu3=0;
 	_pas06=0;
 	_pas07=0;
 	
-	_int1s1=1;
-	_int1s0=0;
-
-
+//	_int1s1=1;
+//	_int1s0=0;
 	
 	//	
 	//  	_pbc1=0;
@@ -117,29 +125,17 @@ unsigned int offset1=0;
 	//	_pbs03=0;
 	//	_pbpu1=0;
 	unsigned char PLTState=0;
-	_pltc0en=1;
-	_pltc0e=1;
-	_emi=1;
-	_tb0e=1;
-	_tb1e=1;
-	_stmae=1;
-	_stmpe=1;
-	_ptmae=1;
-	_ptmpe=1;
-	
-//_tb0on=1;
-//_tb1on=1;
+
+//_emi = 1;   
+//_tb0e = 1;  
+
+
+
+
 	while(1)
    {
-	_emi=1;
-	_tb0e=1;
-	_tb1e=1;
-	_stmae=1;
-	_stmpe=1;
-	_ptmae=1;
-	_ptmpe=1;
-	BUZZER_ON;
-	_pa3=0;
+
+
    	//	_pa3=1;
     //UART_Transmit(10);
       //_pa3=0;
@@ -190,7 +186,7 @@ unsigned int offset1=0;
 	GCC_CLRWDT();
 
 	
+   }
 
-	}
    
 }

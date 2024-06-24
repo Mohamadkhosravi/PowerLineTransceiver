@@ -1,50 +1,20 @@
 #include"Timer.h"
 
-#ifdef BASETIMER 
+#if BASE_TIMER 
 
-	void timerBaseInit(void)
+	void TimerBaseInit(void)
 	{
-		
-		/*
-		CLKSEL1~CLKSEL0: Prescaler clock source selection
-		00: fSYS
-		01: fSYS/4
-		1x: fSUB 
-		*/  
-		_pscr=0b00000001;
-		
-		/*  
-		Bit 7 TBnON: Time Base n Control
-		0: Disable
-		1: Enabl 
-		Bit 6~3 Unimplemented, read as “0
-		Bit 2~0 TBn2~TBn0: Select Time Base n Time-out Period
-		
-		000: 28/fPSC
-		001: 29/fPSC
-		010: 210/fPSC
-		011: 211/fPSC
-		100: 212/fPSC
-		101: 213/fPSC
-		110: 214/fPSC
-		111: 215/fPSC
-		
-		*/  
-		_tb0c=0b00000011;
-		_tb1c=0b10000111;
-		
-		_tb1e=1;
-	//	_tb1f=0;
-		
-		_tb0e=1;
-		//_tb0f=0;
-		
-		_emi=1;
+      _pscr = PRESCALER_CLOCK_SURSE_BASE_TIMER;
+	 _tb0on = TIME_BASE0;
+	 _tb1on = TIME_BASE1;
+	 _tb0c |= TIM_BASE0_PERIOD;
+     _tb1c |= TIM_BASE1_PERIOD;
+	 InterruptEnable;
 		  
 	}
 #endif
 
-#ifdef  STIMER
+#if  STIMER
 	void STimerInit(void){
 	
 			
@@ -205,7 +175,7 @@
 #endif	
 	
 	
-#ifdef PTIMER
+#if PTIMER
 
 	void PTimerInit(void)
 	{
@@ -221,6 +191,7 @@
 		111: PTCK falling edge clock	
 			
 		*/
+		
 		_ptck0=0;
 		_ptck1=1;
 		_ptck2=0;
@@ -299,7 +270,7 @@
 			
 			//==================		
 			/************************
-			/*
+			
 			
 			PTPAU: PTM Counter Pause Control
 			0: Run
