@@ -1,60 +1,52 @@
 	
 #include<STM.h>
 
-	void STimerInit(void){
-	
-			
-		/*********************
-		STPAU: STM Counter Pause Control
-		0: Run
-		1: Pause
-		*/
-		_stpau=0;
-		 // Select STM Counter Clock
-	    _stck0 = STIMER_CLOCK & 1;
-	    _stck1 = (STIMER_CLOCK >> 1) & 1;
-	    _stck2 = (STIMER_CLOCK >> 2) & 1;
-		//STON: STM Counter On/Off Control
-		_ston =1;	
-		// Set STM Comparator P Match Period
-		_strp0 = STM_PERIOD & 1;
-		_strp1 = (STM_PERIOD >> 1) & 1;
-		_strp2 = (STM_PERIOD >> 2) & 1;
-		// Set STM Operating Mode
-	
-	// STM Operating Modes
-		_stio0=STM_MODE&1;
-		_stio1=(STM_MODE >> 1) & 1;
-					
-		_stio0=STM_PIN_FUNCTION&1;
-		_stio1=(STM_PIN_FUNCTION>>1)&1;
+void STimerInit(void) {
+    // STPAU: STM Counter Pause Control
+    // 0: Run, 1: Pause
+    _stpau = 0; // Set STM counter to run mode
 
-		_stoc = STM_COUNTER ;
-		_stpol =OUTPUT_POLARITY;
-		_stdpx=	STM_PWM_DUTY;					
-		_stcclr = SELECT_COMPARE_MATCH;		
-			/*
-			D7~D0: STM CCRA Low Byte Register bit 7 ~ bit 0
-			STM 10-bit CCRA bit 7 ~ bit 0
-			*/
-			_stmal=0b11111111;
-			
-			/*
-			D9~D8: STM CCRA High Byte Register bit 1 ~ bit 0
-			STM 10-bit CCRA bit 9 ~ bit 8
-			*/
-			_stmah=0b11;
-	
-	        _stmae=1;
-	    	_stmaf=1;
-			
+    // Select STM Counter Clock
+    _stck0 = STIMER_CLOCK & 1;
+    _stck1 = (STIMER_CLOCK >> 1) & 1;
+    _stck2 = (STIMER_CLOCK >> 2) & 1;
 
-		
-		
-		
-	}
-	
-	int readSTimer(void){	
-		return((_stmdl)|(_stmdh<<8));
-			
-	}
+    // STON: STM Counter On/Off Control
+    _ston = 1; // Turn on STM counter
+
+    // Set STM Comparator P Match Period
+    _strp0 = STM_PERIOD & 1;
+    _strp1 = (STM_PERIOD >> 1) & 1;
+    _strp2 = (STM_PERIOD >> 2) & 1;
+
+    // Set STM Operating Mode
+    _stio0 = STM_MODE & 1;
+    _stio1 = (STM_MODE >> 1) & 1;
+
+    // Set STM Pin Function
+    _stio0 = STM_PIN_FUNCTION & 1;
+    _stio1 = (STM_PIN_FUNCTION >> 1) & 1;
+
+    // Set STM Counter
+    _stoc = STM_COUNTER;
+
+    // Set STM Output Polarity
+    _stpol = OUTPUT_POLARITY;
+
+    // Set STM PWM Duty/Period Control
+    _stdpx = STM_PWM_DUTY;
+
+    // Set STM Compare Clear Condition
+    _stcclr = SELECT_COMPARE_MATCH;
+
+    // Set STM Comparator CCRA Low Byte
+    _stmal = STM_CCRA_LOW_BYTE_MASK;
+
+    // Set STM Comparator CCRA High Byte
+    _stmah = STM_CCRA_HIGH_BYTE_MASK & 3;
+}
+
+int readSTimer(void) {
+    // Read STM Timer Value
+    return ((_stmdl) | (_stmdh << 8));
+}

@@ -53,9 +53,9 @@ Input Library File: C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x
      00h     0418h     0421h    000ah      CODE               _STMCompairAISR (c:\users\tech\desktop\powerlinetransceiver\output\INTERRUPT.OBJ)
      00h     0422h     042dh    000ch      CODE               _PTimerInit (c:\users\tech\desktop\powerlinetransceiver\output\PTM.OBJ)
      00h     042eh     0440h    0013h      CODE               _PWMSeter (c:\users\tech\desktop\powerlinetransceiver\output\PTM.OBJ)
-     00h     0441h     0456h    0016h      CODE               _STimerInit (c:\users\tech\desktop\powerlinetransceiver\output\STM.OBJ)
-     00h     0457h     0463h    000dh      CODE               _readSTimer (c:\users\tech\desktop\powerlinetransceiver\output\STM.OBJ)
-     00h     0464h     046dh    000ah      CODE               __DELAYX (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
+     00h     0441h     0454h    0014h      CODE               _STimerInit (c:\users\tech\desktop\powerlinetransceiver\output\STM.OBJ)
+     00h     0455h     0461h    000dh      CODE               _readSTimer (c:\users\tech\desktop\powerlinetransceiver\output\STM.OBJ)
+     00h     0462h     046bh    000ah      CODE               __DELAYX (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
      00h     0080h     0080h    0001h      DATA     37        @data_ra (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
      00h     0081h     0081h    0001h      DATA     52        @data_rb (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
      00h     0082h     0082h    0001h      DATA     42        @data_rc (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
@@ -158,13 +158,13 @@ Input Library File: C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x
      00a8h              _VC0OS2
      00ach              _VC1OS1
      00aah              _VC1OS2
-     046ah              __DELAYX0
-     0469h              __DELAYX1
-     0468h              __DELAYX2
-     0467h              __DELAYX3
-     0466h              __DELAYX4
-     0465h              __DELAYX5
-     0464h              __DELAYX6
+     0468h              __DELAYX0
+     0467h              __DELAYX1
+     0466h              __DELAYX2
+     0465h              __DELAYX3
+     0464h              __DELAYX4
+     0463h              __DELAYX5
+     0462h              __DELAYX6
      00bah              _builtin_holtek_dtadd
      0160h              _builtin_holtek_dtdecode1
      0155h              _builtin_holtek_dtdecode2
@@ -189,7 +189,7 @@ Input Library File: C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x
      00aeh              _counterR
      00b2h              _frame
      0174h              _main
-     0457h              _readSTimer
+     0455h              _readSTimer
      00c3h              _timerCuonter
      0098h              r128
      009bh              r12c
@@ -275,19 +275,19 @@ Input Library File: C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x
      0422h              _PTimerInit
      042eh              _PWMSeter
      0441h              _STimerInit
-     0457h              _readSTimer
-     0464h              __DELAYX6
-     0465h              __DELAYX5
-     0466h              __DELAYX4
-     0467h              __DELAYX3
-     0468h              __DELAYX2
-     0469h              __DELAYX1
-     046ah              __DELAYX0
+     0455h              _readSTimer
+     0462h              __DELAYX6
+     0463h              __DELAYX5
+     0464h              __DELAYX4
+     0465h              __DELAYX3
+     0466h              __DELAYX2
+     0467h              __DELAYX1
+     0468h              __DELAYX0
 
 
 ROM Usage Statistics
      Size      Used     Percentage
-     1000h     046dh    27%
+     1000h     046bh    27%
 
 RAM Usage Statistics
     Bank      Size      Used     Percentage
