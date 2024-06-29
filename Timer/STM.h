@@ -26,7 +26,7 @@
 #define STM_640_CLOCKS  5
 #define STM_768_CLOCKS  6
 #define STM_896_CLOCKS  7
-#define STM_PERIOD      STM_1024_CLOCKS  // Default STM comparator P match period
+#define STM_PERIOD      STM_896_CLOCKS  // Default STM comparator P match period
 
 // STM Operating Modes
 #define COMPARE_MATCH_OUTPUT_MODE   0

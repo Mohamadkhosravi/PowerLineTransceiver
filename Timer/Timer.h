@@ -15,7 +15,8 @@
 	
 	
 	
-	
+void DisableInterrupt(char interrupt_type);
+void EnableInterrupt(char interrupt_type);	
 	
 	
 

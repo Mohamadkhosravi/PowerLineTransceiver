@@ -1,5 +1,6 @@
 #ifndef PLT_SERIAL_PROTOCOL_H
 #define PLT_SERIAL_PROTOCOL_H
+#include <Main.h>
 
 #define ENABLE           	  1
 #define DISABLE               0
@@ -9,6 +10,7 @@
 
 #define _8_BIT_DATA_TRANSFER  8
 #define _9_BIT_DATA_TRANSFER  9
+
 #define  MAX_DATA_SIZE        9
 
 #define DATA_TRANSFER    _8_BIT_DATA_TRANSFER 
@@ -20,44 +22,37 @@
 
 #define TYPE_OF_PARITY   ODD_PARITY
 
-
 #define ONE_STOP_BIT          1
 #define TWO_STOP_BIT          2
 #define STOP_BIT         ONE_STOP_BIT
-
-
-
+char TranferBit=1;
 //for budrate
 unsigned int timerCuonter; 
 
+
 // Structure for the serial protocol frame
 
-struct PLTSerialProtocol
+ typedef struct PLTSerialProtocol
 {
     unsigned char startBit;          // Start bit
     unsigned char address;           // Address of the target device
     unsigned char control;           // Control field (e.g., frame type)
     unsigned short dataLength;       // Length of the data payload
-    unsigned char data[MAX_DATA_SIZE]; // Data payload
+    unsigned char  data[MAX_DATA_SIZE]; // Data payload
     unsigned short checksum;         // Checksum for error detection
-    unsigned char stopBit;           // Stop bit
+    unsigned char  stopBit;           // Stop bit
+    unsigned char  parity;
  
 };
 
-  struct PLTSerialProtocol frame;
-
-
-
-
-
-
+ struct PLTSerialProtocol frame;
 
 
 void PLT_SerialInit(unsigned int baudrate);
-void PLT_SerialTransmit(char data);
+void PLT_HandelSerialTransmit(void);
+void PLT_SerialSend(char* data);
 char PLT_SerialReceive(void);
-
-
+void calculate_parity_and_checksum(char *data, char length, char *parity, char *checksum);
 
 
 

@@ -2,7 +2,7 @@
 
 void IntrruptInit(void)
 {
-	_emi = Enable;
+	GLOBAL_INTERRUPT = Enable;
 		
 	#if EXTERNAL_PIN0_ISR      
 	_pltc0e=EXTERNAL_PIN0_ISR;
@@ -57,6 +57,185 @@ void IntrruptInit(void)
 	#endif	
 	//	_tb0e = 1;  
 }
+ // Function to enable a specific interrupt dynamically
+void EnableInterrupt(char interrupt_type)
+{
+    switch (interrupt_type)
+    {
+		#if EXTERNAL_PIN0_ISR   
+		   case EXTERNAL_PIN0_ISR_ADDRESS:
+		   	 _int0e = InterruptEnable;
+		    break;
+		#endif	
+		
+		#if EXTERNAL_PIN0_ISR  
+	    	case EXTERNAL_PIN1_ISR_ADDRESS:
+		    	_int1e = InterruptEnable;
+		    break;
+		#endif	
+		    
+		#if USIM_ISR  
+			case USIM_ISR_ADDRESS:
+		    	_usime = InterruptEnable;
+		    break;
+		#endif	
+		    
+		#if LVD_ISR 
+			case LVD_ISR_ADDRESS:
+		    	_lve = InterruptEnable;
+			break;
+		#endif	
+		
+		#if ADC_ISR       
+			case ADC_ISR_ADDRESS:
+		  	  _ade = InterruptEnable;
+		    break;
+		#endif	
+		
+		#if EEPROM_ISR
+			case EEPROM_ISR_ADDRESS:
+		  	  _dee = InterruptEnable;
+		    break;
+		#endif
+		
+		#if PTM_COMPAIR_P_ISR          
+			case PTM_COMPAIR_P_ISR_ADDRESS:
+		  	  _ptmpe = InterruptEnable;
+		    break;
+		#endif  
+		
+		#if PTM_COMPAIR_A_ISR     
+		case PTM_COMPAIR_A_ISR_ADDRESS:
+		    _ptmae = InterruptEnable;
+		    break;
+		#endif 
+		
+		#if STM_COMPAIR_P_ISR      
+			case STM_COMPAIR_P_ISR_ADDRESS:
+		   	 _stmpe = InterruptEnable;
+		    break;
+		#endif 
+		    
+		#if STM_COMPAIR_A_ISR        
+			case STM_COMPAIR_A_ISR_ADDRESS:
+		    	_stmae = InterruptEnable;
+		    break;
+		#endif 
+		
+		#if  BASE_TIMER0_ISR   
+			case BASE_TIMER0_ISR_ADDRESS:
+		   	 _tb0e = InterruptEnable;
+			break;
+		#endif	
+		
+		#if  BASE_TIMER1_ISR 	
+			case BASE_TIMER1_ISR_ADDRESS:
+		   	 _tb1e = InterruptEnable;
+			 break;
+		#endif	
+		    
+		#if  PLT_COMPAIR1_ISR       
+			case PLT_COMPAIR1_ISR_ADDRESS:
+		    	_pltc1e = InterruptEnable;
+		    break;
+		#endif
+      	      
+        default:
+            // Handle invalid interrupt type
+            break;
+    }
+
+}
+
+void DisableInterrupt(char interrupt_type)
+{
+    switch (interrupt_type)
+    {
+		#if EXTERNAL_PIN0_ISR   
+		   case EXTERNAL_PIN0_ISR_ADDRESS:
+		   	 _int0e = InterruptDisable;
+		    break;
+		#endif	
+		
+		#if EXTERNAL_PIN0_ISR  
+	    	case EXTERNAL_PIN1_ISR_ADDRESS:
+		    	_int1e = InterruptDisable;
+		    break;
+		#endif	
+		    
+		#if USIM_ISR  
+			case USIM_ISR_ADDRESS:
+		    	_usime = InterruptDisable;
+		    break;
+		#endif	
+		    
+		#if LVD_ISR 
+			case LVD_ISR_ADDRESS:
+		    	_lve = InterruptDisable;
+			break;
+		#endif	
+		
+		#if ADC_ISR       
+			case ADC_ISR_ADDRESS:
+		  	  _ade = InterruptDisable;
+		    break;
+		#endif	
+		
+		#if EEPROM_ISR
+			case EEPROM_ISR_ADDRESS:
+		  	  _dee = InterruptDisable;
+		    break;
+		#endif
+		
+		#if PTM_COMPAIR_P_ISR          
+			case PTM_COMPAIR_P_ISR_ADDRESS:
+		  	  _ptmpe = InterruptDisable;
+		    break;
+		#endif  
+		
+		#if PTM_COMPAIR_A_ISR     
+		case PTM_COMPAIR_A_ISR_ADDRESS:
+		    _ptmae = InterruptDisable;
+		    break;
+		#endif 
+		
+		#if STM_COMPAIR_P_ISR      
+			case STM_COMPAIR_P_ISR_ADDRESS:
+		   	 _stmpe = InterruptDisable;
+		    break;
+		#endif 
+		    
+		#if STM_COMPAIR_A_ISR        
+			case STM_COMPAIR_A_ISR_ADDRESS:
+		    	_stmae = InterruptDisable;
+		    break;
+		#endif 
+		
+		#if  BASE_TIMER0_ISR   
+			case BASE_TIMER0_ISR_ADDRESS:
+		   	 _tb0e = InterruptDisable;
+			break;
+		#endif	
+		
+		#if  BASE_TIMER1_ISR 	
+			case BASE_TIMER1_ISR_ADDRESS:
+		   	 _tb1e = InterruptDisable;
+			 break;
+		#endif	
+		    
+		#if  PLT_COMPAIR1_ISR       
+			case PLT_COMPAIR1_ISR_ADDRESS:
+		    	_pltc1e = InterruptDisable;
+		    break;
+		#endif
+      	      
+        default:
+            // Handle invalid interrupt type
+            break;
+    }
+
+}
+
 
 ////=======================================================================
 // External Pin 0 Interrupt Service Routine
@@ -158,8 +337,9 @@ void __attribute__((interrupt(PTM_COMPAIR_A_ISR_ADDRESS))) PTMCompairAISR(void)
 #if STM_COMPAIR_P_ISR
 void __attribute__((interrupt(STM_COMPAIR_P_ISR_ADDRESS))) STMCompairPISR(void)
 {
-		_pa3=~_pa3;
+        PLT_HandelSerialTransmit(); 
     // Here goes the code for STM Comparator P ISR
+    
 }
 #endif
 
@@ -171,7 +351,7 @@ void __attribute__((interrupt(STM_COMPAIR_P_ISR_ADDRESS))) STMCompairPISR(void)
 #if STM_COMPAIR_A_ISR
 void __attribute__((interrupt(STM_COMPAIR_A_ISR_ADDRESS))) STMCompairAISR(void)
 {
-		_pa3=~_pa3;
+
     // Here goes the code for STM Comparator A ISR
 }
 #endif
