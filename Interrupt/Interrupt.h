@@ -3,10 +3,9 @@
 #define ISR_H__
 #include "BA45F5240.h"
 
-
 #define Enable 1
 #define Disable 0
-
+extern unsigned short frame;
 #define InterruptEnable      	1
 #define InterruptDisable     	0
 
@@ -20,9 +19,9 @@
 #define PTM_COMPAIR_P_ISR      Disable
 #define PTM_COMPAIR_A_ISR      Disable
 #define STM_COMPAIR_P_ISR      Enable
-#define STM_COMPAIR_A_ISR      Disable
-#define BASE_TIMER0_ISR        Disable
-#define BASE_TIMER1_ISR        Disable
+#define STM_COMPAIR_A_ISR      Enable
+#define BASE_TIMER0_ISR        Enable
+#define BASE_TIMER1_ISR        Enable
 #define PLT_COMPAIR1_ISR       Disable
 
 void EnableInterrupt(char interrupt_type);

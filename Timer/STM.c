@@ -7,12 +7,12 @@ void STimerInit(void) {
     _stpau = 0; // Set STM counter to run mode
 
     // Select STM Counter Clock
-    _stck0 = STIMER_CLOCK & 1;
+    _stck0 =  STIMER_CLOCK & 1;
     _stck1 = (STIMER_CLOCK >> 1) & 1;
     _stck2 = (STIMER_CLOCK >> 2) & 1;
 
     // STON: STM Counter On/Off Control
-    _ston = 1; // Turn on STM counter
+    _ston = STM_COUNTER; // Turn on STM counter
 
     // Set STM Comparator P Match Period
     _strp0 = STM_PERIOD & 1;
@@ -20,16 +20,16 @@ void STimerInit(void) {
     _strp2 = (STM_PERIOD >> 2) & 1;
 
     // Set STM Operating Mode
-    _stio0 = STM_MODE & 1;
-    _stio1 = (STM_MODE >> 1) & 1;
+    _stm0 = STM_MODE & 1;
+    _stm1 = (STM_MODE >> 1) & 1;
 
     // Set STM Pin Function
     _stio0 = STM_PIN_FUNCTION & 1;
     _stio1 = (STM_PIN_FUNCTION >> 1) & 1;
 
-    // Set STM Counter
-    _stoc = STM_COUNTER;
-
+    // Compare Match Output Mode
+    _stoc =OUTPUT_MODE;//Output Control
+    
     // Set STM Output Polarity
     _stpol = OUTPUT_POLARITY;
 
@@ -37,16 +37,18 @@ void STimerInit(void) {
     _stdpx = STM_PWM_DUTY;
 
     // Set STM Compare Clear Condition
-    _stcclr = SELECT_COMPARE_MATCH;
+    _stcclr = SELECT_CLEAR_COMPARE_MATCH;
 
     // Set STM Comparator CCRA Low Byte
     _stmal = STM_CCRA_LOW_BYTE_MASK;
 
     // Set STM Comparator CCRA High Byte
     _stmah = STM_CCRA_HIGH_BYTE_MASK & 3;
+    
 }
 
-int readSTimer(void) {
+int readSTimer(void) 
+{
     // Read STM Timer Value
     return ((_stmdl) | (_stmdh << 8));
 }

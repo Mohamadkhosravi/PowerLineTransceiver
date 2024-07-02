@@ -1,13 +1,13 @@
 #ifndef PLT_SERIAL_PROTOCOL_H
 #define PLT_SERIAL_PROTOCOL_H
 #include <Main.h>
-
+extern unsigned short frame;
 #define ENABLE           	  1
 #define DISABLE               0
 
 #define TX_PIN       _pa3
 #define RX_BIT       ADDRESS_PLT_RECEIVE
-
+volatile char IndexOfBit=0;
 #define _8_BIT_DATA_TRANSFER  8
 #define _9_BIT_DATA_TRANSFER  9
 
@@ -30,27 +30,28 @@ char TranferBit=1;
 unsigned int timerCuonter; 
 
 
+
 // Structure for the serial protocol frame
 
- typedef struct PLTSerialProtocol
-{
-    unsigned char startBit;          // Start bit
-    unsigned char address;           // Address of the target device
-    unsigned char control;           // Control field (e.g., frame type)
-    unsigned short dataLength;       // Length of the data payload
-    unsigned char  data[MAX_DATA_SIZE]; // Data payload
-    unsigned short checksum;         // Checksum for error detection
-    unsigned char  stopBit;           // Stop bit
-    unsigned char  parity;
- 
-};
+// typedef struct PLTSerialProtocol
+//{
+//    unsigned char startBit;          // Start bit
+//    unsigned char address;           // Address of the target device
+//    unsigned char control;           // Control field (e.g., frame type)
+//    unsigned short dataLength;       // Length of the data payload
+//    unsigned char  data[MAX_DATA_SIZE]; // Data payload
+//    unsigned short checksum;         // Checksum for error detection
+//    unsigned char  stopBit;           // Stop bit
+//    unsigned char  parity;
+// 
+//};
 
- struct PLTSerialProtocol frame;
+// struct PLTSerialProtocol frame;
 
 
 void PLT_SerialInit(unsigned int baudrate);
 void PLT_HandelSerialTransmit(void);
-void PLT_SerialSend(char* data);
+unsigned short PLT_SerialSend(char* data,char dataLength );
 char PLT_SerialReceive(void);
 void calculate_parity_and_checksum(char *data, char length, char *parity, char *checksum);
 

@@ -6,7 +6,7 @@
 #define Enable  1
 #define Disable 0
 
-#define STIMER       Enable
+#define STIMER       Disable
 #define PTIMER       Disable
 #define BASE_TIMER   Enable
 
@@ -48,7 +48,7 @@ void EnableInterrupt(char interrupt_type);
 //             TBnON: Time Base n Control
 //===========================================================
 #define  TIME_BASE0  Enable
-#define  TIME_BASE1  Disable
+#define  TIME_BASE1  Enable
 
 //===========================================================
 //     TBn2~TBn0: Select Time Base n Time-out Period
@@ -67,7 +67,7 @@ enum
 	
 };
  #define TIM_BASE0_PERIOD   _32768_DIVIDE_PSC
- #define TIM_BASE1_PERIOD   Default	
+ #define TIM_BASE1_PERIOD   _32768_DIVIDE_PSC	
 //===========================================================
 //    TBn2~TBn0: Select Time Base n Time-out Period
 //===========================================================
