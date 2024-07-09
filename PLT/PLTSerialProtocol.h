@@ -3,8 +3,18 @@
 #include <Main.h>
 extern unsigned short frame;
 #define ENABLE           	  1
-#define DISABLE               0
+#define DISABLE              0 
 
+            
+   /*=============================================================
+	| Start | Data                  | Parity | Stop | CRC         |
+	|-------|-----------------------|--------|------|-------------|
+	| 1     |d7 d6 d5 d4 d3 d2 d1 d0| 1      | 1    | c3 c2 c1 c0 |
+     =============================================================*/
+
+
+
+#define  START_BIT    0;
 #define TX_PIN       _pa3
 #define RX_BIT       ADDRESS_PLT_RECEIVE
 volatile char IndexOfBit=0;
@@ -25,7 +35,9 @@ volatile char IndexOfBit=0;
 #define ONE_STOP_BIT          1
 #define TWO_STOP_BIT          2
 #define STOP_BIT         ONE_STOP_BIT
-char TranferBit=1;
+char TranferBit=0;
+
+
 //for budrate
 unsigned int timerCuonter; 
 
