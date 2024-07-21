@@ -36,7 +36,7 @@ volatile char IndexOfBit=0;
 #define TWO_STOP_BIT          2
 #define STOP_BIT         ONE_STOP_BIT
 char TranferBit=0;
-
+ char txCounter=8;
 
 //for budrate
 unsigned int timerCuonter; 

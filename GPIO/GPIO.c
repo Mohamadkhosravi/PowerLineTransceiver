@@ -36,7 +36,7 @@ void S_GPIO_Init()
 	_pas0=0b00000000;
 	_pas1=0b10010010;
 	
-  //  _pb = 0b00000000;
+    _pb = 0b00000000;
 	_pbc= 0b00000100;
 	_pbpu=0b00000100;
 	_pbs0=0b01000000;
@@ -45,7 +45,10 @@ void S_GPIO_Init()
 	_ifs0=0b00000000;
 
 };
-
+//	_pac3=0;
+//	_papu3=0;
+//	_pas06=0;
+//	_pas07=0;
 //
 //void S_GPIO_Init()
 //{

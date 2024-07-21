@@ -18,7 +18,7 @@ void S_RCC_Init()
 		_hircc=0b00000001;
 	#endif
 	
-	_wdtc =0b01010100;
+	_wdtc =0b10101111;
 
 }
 

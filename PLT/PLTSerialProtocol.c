@@ -5,7 +5,7 @@ unsigned short PLT_SerialSend(char* data,char dataLength )
     char  parity;
     char  checksum;
     char i;
-    char data1[8]={0,1,0,0,0,0,0,1};
+    char data1[8]={1,0,1,0,1,1,1,1};
 
 	calculate_parity_and_checksum(&data1, dataLength, &parity, &checksum);
 	frame=0;
@@ -46,19 +46,23 @@ void PLT_SerialInit(unsigned int baudrate){
 
 void PLT_HandelSerialTransmit(void)
 { 
-
-	if((frame)&1)_pa3=1;
-	else _pa3=0;	
-	frame=frame>>1;
-	if(frame==0)
-	{
-	    char i=0;
-	    for(i=0;i<7;i++)_nop();
-		DisableInterrupt(STM_COMPAIR_A_ISR_ADDRESS); 
 	
-		_pa3=1;
+	if((frame)&1)_pa3=1;
+	else 
+	{
+	    _pa3=0;
+		if((frame==0))
+		{
+			char i=0;
+			for(i=0;i<7;i++)_nop();
+			DisableInterrupt(STM_COMPAIR_A_ISR_ADDRESS); 
+			_pa3=1;
+		
+		}
+	
 	}
-   
+   	frame=frame>>1;
+
 
 }
 /*

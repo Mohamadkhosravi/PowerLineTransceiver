@@ -27,17 +27,17 @@ void STimerInit(void) {
     _stio0 = STM_PIN_FUNCTION & 1;
     _stio1 = (STM_PIN_FUNCTION >> 1) & 1;
 
-    // Compare Match Output Mode
-    _stoc =OUTPUT_MODE;//Output Control
+    //Output Control
+    _stoc =  STM_OUTPUT_MODE;
     
     // Set STM Output Polarity
-    _stpol = OUTPUT_POLARITY;
+    _stpol =  STM_OUTPUT_POLARITY;
 
     // Set STM PWM Duty/Period Control
     _stdpx = STM_PWM_DUTY;
 
     // Set STM Compare Clear Condition
-    _stcclr = SELECT_CLEAR_COMPARE_MATCH;
+    _stcclr =  STM_SELECT_CLEAR_COMPARE_MATCH;
 
     // Set STM Comparator CCRA Low Byte
     _stmal = STM_CCRA_LOW_BYTE_MASK;
@@ -47,7 +47,7 @@ void STimerInit(void) {
     
 }
 
-int readSTimer(void) 
+unsigned int readSTimer(void) 
 {
     // Read STM Timer Value
     return ((_stmdl) | (_stmdh << 8));

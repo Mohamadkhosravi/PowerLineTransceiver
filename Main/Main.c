@@ -1,5 +1,7 @@
 #include<Main.h>
 #include <Interrupt.h>
+#include "BA45F5240.h"
+
 unsigned int counter=0;
 unsigned int counterR=0;
 volatile char tx_data=0b10101101;
@@ -9,31 +11,27 @@ unsigned short frame;
 extern TranferBit;
 //char IndexOfBit=0;
 
-void main()
-{
-_tb0on=1;
-
+bool PLTState=False;
 unsigned int offset0 =0;
 unsigned int offset1=0;
-//	S_GPIO_Init();
-//	S_ADC_Init();
-	S_RCC_Init();
-
-//	TimerBaseInit();
-	STimerInit();
-	UART_Init(19200);
-/*	offset0 =PLT0InputOffsetCalibration();
-	offset1 =PLT1InputOffsetCalibration();
-	offset0 =PLT0AmplifierInputOffsetCalibration();	*/
-	 IntrruptInit();	
-	_pac3=0;
-	_papu3=0;
-	_pas06=0;
-	_pas07=0;
-
+ 
+ 
+void main()
+{
 	
-//	_int1s1=1;
-//	_int1s0=0;
+	S_RCC_Init();
+	S_ADC_Init();
+	STimerInit();
+	PTimerInit();
+	UART_Init(19200);
+	IntrruptInit();
+	S_GPIO_Init();	
+	
+	offset0 =PLT0InputOffsetCalibration();
+	offset1 =PLT1InputOffsetCalibration();
+	offset0 =PLT0AmplifierInputOffsetCalibration();	
+	_int1s1=1;
+	_int1s0=0;
 	
 	//	
 	//  	_pbc1=0;
@@ -45,22 +43,23 @@ unsigned int offset1=0;
 //_emi = 1;   
 //_tb0e = 1;  
 
+   /*	EnableInterrupt(STM_COMPAIR_A_ISR_ADDRESS);
+   	EnableInterrupt(PTM_COMPAIR_A_ISR_ADDRESS);
+	EnableInterrupt(PTM_COMPAIR_P_ISR_ADDRESS);*/
+    PLT_SerialInit(9600);
 
-//DisableInterrupt(STM_COMPAIR_P_ISR_ADDRESS);
-   PLT_SerialInit(9600);
-//DisableInterrupt(PTM_COMPAIR_A_ISR_ADDRESS);
- // DisableInterrupt(STM_COMPAIR_A_ISR_ADDRESS);
-  //EnableInterrupt(STM_COMPAIR_A_ISR_ADDRESS);
 	while(1)
-   { 
-	
+   {
+   	
+
      frame=PLT_SerialSend('M',8);
-  
-    GCC_DELAY(20000);
+
+    //GCC_DELAY(20000);
     
     // _pb1=(TranferBit^_pb1)?TranferBit:_pb1;
   //	_pb1=TranferBit;
-	_clrwdt();
+	//_clrwdt();
+
 		//void softuart_transmit(A); 
 	/*	if(counter==0)A=1;
 		if(counter==0)A=0;
@@ -83,41 +82,45 @@ unsigned int offset1=0;
 
     //UART_Transmit(10);
       //_pa3=0;
- 
+ /*
+ 	_clrwdt();
+ 	_clrwdt1();
+ 	_clrwdt2();	*/	
  	
-
-    /*
-    if(PLT0Recive()==0&&PLT1Recive()==0)
-    {
-		//UART_Transmit("1");
-		PLTState=1;
-	
-    }
-    else
-    {
-		PLTState=0;
-		//UART_Transmit("0");
-    }*/
+//_pa3=1;	
+    
+	/*    if(PLT0Recive()==0&&PLT1Recive()==0)
+	    {
+			//UART_Transmit("1");
+			PLTState=True;
+		
+	    }
+	    else
+	    {
+			PLTState=False;
+			//UART_Transmit("0");
+	    }
     
     //UART_Transmit(PLTState);
-	/*	if(PLTState)
+		if(PLTState)
 		{
-			_pa2=0;
-			_pb1=0;	
-		}
+			/*_pa2=0;
+			_pb1=0;	*/
+			//_pa3=0;
+/*		}
 		else
 		{
-			_pa2=1;	
-			_pb1=1;
+        	//_pa3=1;	
+         //_pa2=1;	
+			//_pb1=1;
 		
-		}*/
-		
-    
+		}
+*/
+   // asm("clr wdt");
     
 	/*UART_Transmit(PLT1Recive()+0x30);
 	UART_Transmit(10);*/
-	//GCC_CLRWDT();
-
+	GCC_CLRWDT();
 	
    }
 

@@ -51,9 +51,16 @@ void IntrruptInit(void)
 	_tb1e=BASE_TIMER1_ISR;
 	#endif
 	
+	#if PLT_COMPAIR0_ISR       
+	_pltc0e=PLT_COMPAIR0_ISR;
+	#endif
+	
 	#if PLT_COMPAIR1_ISR       
 	_pltc1e=PLT_COMPAIR1_ISR;
 	#endif	
+
+	
+	
 	//	_tb0e = 1;  
 }
  // Function to enable a specific interrupt dynamically
@@ -132,12 +139,20 @@ void EnableInterrupt(char interrupt_type)
 		   	 _tb1e = InterruptEnable;
 			 break;
 		#endif	
+		
+		#if  PLT_COMPAIR0_ISR       
+			case PLT_COMPAIR0_ISR_ADDRESS:
+				_pltc0e = InterruptEnable;
+			break;
+		#endif
+      	      
 		    
 		#if  PLT_COMPAIR1_ISR       
 			case PLT_COMPAIR1_ISR_ADDRESS:
 		    	_pltc1e = InterruptEnable;
 		    break;
 		#endif
+	
       	      
         default:
             // Handle invalid interrupt type
@@ -221,12 +236,19 @@ void DisableInterrupt(char interrupt_type)
 		   	 _tb1e = InterruptDisable;
 			 break;
 		#endif	
+		
+		#if  PLT_COMPAIR0_ISR       
+			case PLT_COMPAIR0_ISR_ADDRESS:
+				_pltc0e = InterruptDisable;
+			break;
+		#endif
 		    
 		#if  PLT_COMPAIR1_ISR       
 			case PLT_COMPAIR1_ISR_ADDRESS:
 		    	_pltc1e = InterruptDisable;
 		    break;
 		#endif
+		
       	      
         default:
             // Handle invalid interrupt type
@@ -310,6 +332,7 @@ void __attribute__((interrupt(EEPROM_ISR_ADDRESS))) EEPROMISR(void)
 #if PTM_COMPAIR_P_ISR
 void __attribute__((interrupt(PTM_COMPAIR_P_ISR_ADDRESS))) PTMCompairPISR(void)
 {
+
     // Here goes the code for PTM Comparator P ISR
 }
 #endif
@@ -323,7 +346,7 @@ void __attribute__((interrupt(PTM_COMPAIR_P_ISR_ADDRESS))) PTMCompairPISR(void)
 #if PTM_COMPAIR_A_ISR
 void __attribute__((interrupt(PTM_COMPAIR_A_ISR_ADDRESS))) PTMCompairAISR(void)
 {
-
+		 
 
     // Here goes the code for PTM Comparator A ISR
 }
@@ -338,7 +361,7 @@ void __attribute__((interrupt(PTM_COMPAIR_A_ISR_ADDRESS))) PTMCompairAISR(void)
 #if STM_COMPAIR_P_ISR
 void __attribute__((interrupt(STM_COMPAIR_P_ISR_ADDRESS))) STMCompairPISR(void)
 {
-     
+	   
     // Here goes the code for STM Comparator P ISR 
     
 }
@@ -353,7 +376,7 @@ void __attribute__((interrupt(STM_COMPAIR_P_ISR_ADDRESS))) STMCompairPISR(void)
 
 void __attribute__((interrupt(STM_COMPAIR_A_ISR_ADDRESS))) STMCompairAISR(void)
 {
-
+	//_pa3=~_pa3;
 	PLT_HandelSerialTransmit();  
 
     // Here goes the code for STM Comparator A ISR
@@ -411,6 +434,7 @@ void __attribute__((interrupt(PLT_COMPAIR1_ISR_ADDRESS))) PLT1CompairISR(void)
 #if PLT_COMPAIR0_ISR
 void __attribute__((interrupt(PLT_COMPAIR0_ISR_ADDRESS))) PLT0CompairISR(void)
 {
+
     // Here goes the code for PLT Comparator 0 ISR
 }
 

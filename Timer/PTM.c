@@ -3,77 +3,70 @@
 
 	void PTimerInit(void)
 	{
-		/*	
-		Bit 6~4 PTCK2~PTCK0: Select PTM Counter clock
-		000: fSYS/4
-		001: fSYS
-		010: fH/16
-		011: fH/64
-		100: fSUB
-		101: fSUB
-		110: PTCK rising edge clock
-		111: PTCK falling edge clock	
-			
-		*/
 		
-		_ptck0=0;
-		_ptck1=1;
-		_ptck2=0;
-		/************************
-		Bit 7~6 PTM1~PTM0: Select PTM Operating Mode
-		00: Compare Match Output Mode
-		01: Capture Input Mode
-		10: PWM Output Mode or Single Pulse Output Mode
-		11: Timer/Counter Mode	
-		*/
-		_ptm0=0;
-		_ptm1=1;	
+	// PTPAU: PTM Counter Pause Control
+		// 0: Run, 1: Pause
+		_ptpau=0;
+
+		// Select PTM Counter Clock
+		_ptck0 =  PTIMER_CLOCK & 1;
+		_ptck1 = (PTIMER_CLOCK >> 1) & 1;
+		_ptck2 = (PTIMER_CLOCK >> 2) & 1;
+
+		// STON: PTM Counter On/Off Control
+		_pton = PTM_COUNTER; // Turn on PTM counter
+
+		// Set PTM Operating Mode
+		_ptm0 = PTM_MODE & 1;
+		_ptm1 = (PTM_MODE >> 1) & 1; 
+
+		  // Set PTM Pin Function
+		_ptio0 = PTM_PIN_FUNCTION & 1;
+		_ptio1 = (PTM_PIN_FUNCTION >> 1) & 1;
 		
-		/*PTIO1~PTIO0: Select PTM External Pins Function/
-		PWM Output Mode/Single Pulse Output Mode
-		00: PWM output inactive state
-		01: PWM output active state
-		10: PWM output
-		11: Single pulse output*/
+	    //PTM Output Control
+		_ptoc=PTM_OUTPUT_MODE;
+
+		// Set PTM Output Polarity
+		_ptpol=PTM_OUTPUT_POLARITY;
+
+		// Set PTM Capture Trigger Source Selection
+		_ptcapts=PTM_CAPTURE_TRIGGER;
 		
-		/*_ptio0=0;
-		_ptio1=1;*/
+  		// Set PTM Compare Clear Condition
+		_ptcclr=PTM_SELECT_CLEAR_COMPARE_MATCH;
+
+			//Select PTM Counter clear condition in capture input mode only
+		#if PTM_MODE == PTM_CAPTURE_INPUT_MODE
+		_pttclr0=PTM_SELECT_CLEAR_CONDITION_IN_CAPTURE_INPUT&1;
+		_pttclr1=(PTM_SELECT_CLEAR_CONDITION_IN_CAPTURE_INPUT>>1)&1;
+		#endif
+	    // Set PTM counter value latch edge flag
+		_ptvlf=COUNTER_VALUE_LATCH_EDGE;
+
+		// Set PTM Comparator CCRA Low Byte
+    	_ptmal = PTM_CCRA_LOW_BYTE_MASK;
 		
+		// Set PTM Comparator CCRA High Byte
+    	_ptmah = PTM_CCRA_HIGH_BYTE_MASK & 3;
 		
-		_ptio0=0;
-		_ptio1=0;
+	// Set PTM Comparator CCRB Low Byte
+		_ptmbl = PTM_CCRB_LOW_BYTE_MASK;
 		
+		// Set PTM Comparator CCRB High Byte
+		_ptmbh = PTM_CCRB_HIGH_BYTE_MASK & 3;
 		
-		/*PTOC: PTM PTP Output control bit
-		PWM Output Mode/Single Pulse Output Mode
-		0: Active low
-		1: Active high*/
-		_ptoc=0;
-		/*
-		PTPOL: PTM PTP Output polarity Control
-		0: Non-invert
-		1: Invert*/
-		_ptpol=0;
-		/*PTCAPTS: PTM Capture Trigger Source Selection
-		0: From PTPI input
-		1: From PTCK input*/
+		// Set PTM Comparator CCRP Low Byte
+	/*	_ptmrpl = PTM_CCRP_LOW_BYTE_MASK;
 		
-		_ptcapts=0;
-		
-		
-		/*
-		PTCCLR: Select PTM Counter clear condition
-		0: PTM Comparator P match
-		1: PTM Comparator A match
-		*/
-		_ptcclr=1;
-		
-		
-		
-		
+		// Set PTM Comparator CCRP High Byte
+		_ptmrph = PTM_CCRP_HIGH_BYTE_MASK & 3;*/
+
+
 	}
 	
 	
+
 	 void PWMSeter(char status)
 	 {
 	 	if(status==1)
@@ -90,13 +83,13 @@
 			//PTM CCRP Low Byte Register
 			_ptmrpl=00;
 			//PTM CCRP High Byte Register
-			_ptmrph=0b00;
+			_ptmrph=0;
 			
 			//==================		
 			/************************
 			
 			
-			PTPAU: PTM Counter Pause Control
+			//PTPAU: PTM Counter Pause Control
 			0: Run
 			1: Pause	
 			*/	
@@ -118,4 +111,10 @@
 	 	}
 	 	
 	 }
-	 
+
+
+unsigned int readPTimer(void) 
+{
+    // Read STM Timer Value
+    return ((_ptmdl) | (_ptmdh << 8));
+}

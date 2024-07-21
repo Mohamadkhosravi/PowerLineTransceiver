@@ -4,14 +4,12 @@
 #include <PLT.h>
 #include <UART.h>
 #include <Timer.h>
-#include <PTM.h>
 #include <Interrupt.h>
 #include <GPIO.h>
-typedef  unsigned char uint8_t;
-
-//typedef uint16_t unsigned short;
-//typedef uint32_t unsigned int;
-
+typedef  unsigned char  uint8_t;
+typedef  unsigned short uint16_t;
+typedef  unsigned int   uint32_t;
+typedef enum{False,True} bool;
 
 
 
