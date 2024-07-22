@@ -13,7 +13,7 @@
 #define PT_STCK_RISING      6
 #define PT_STCK_FALLING     7
 //=========================================================================
-#define PTIMER_CLOCK    PT_SYS_DIVIDE_4   // Default STM counter clock selection
+#define PTIMER_CLOCK    PT_SYS   
 //=========================================================================
 
 // PTM Operating Modes
@@ -22,7 +22,7 @@
 #define PTM_PWM_OR_SINGLE_PULSE_OUTPUT_MODE    2
 #define PTM_TIMER_COUNTER_MODE                 3
 //=========================================================================
-#define PTM_MODE     PTM_COMPARE_MATCH_OUTPUT_MODE // Default PTM operating mode
+#define PTM_MODE     PTM_COMPARE_MATCH_OUTPUT_MODE 
 //=========================================================================
 
 // PTM External Pins Function
@@ -115,8 +115,8 @@
 
 // PTM CCRP Low & High Byte Mask
 //=========================================================================
-#define PTM_CCRP_LOW_BYTE_MASK 0x01  // Mask for PTM CCRP low byte  MAX=0xFF
-#define PTM_CCRP_HIGH_BYTE_MASK 0 // Mask for PTM CCRP high byte MAX=0x3
+#define PTM_CCRP_LOW_BYTE_MASK 0x01  // Mask for PTM CCRP low byte  MIN =1 MAX=0xFF
+#define PTM_CCRP_HIGH_BYTE_MASK 1 // Mask for PTM CCRP high byte MIN =1 MAX=0x3
 //=========================================================================
 
 

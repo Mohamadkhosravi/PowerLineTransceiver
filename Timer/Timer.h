@@ -6,20 +6,18 @@
 #define Enable  1
 #define Disable 0
 
-#define STIMER       Disable
-#define PTIMER       Disable
 #define BASE_TIMER   Enable
 
 #define InterruptEnable      	_emi = Enable
 #define InterruptDisable     	_emi = Disable
 	
 	
-	
+/*	
 void DisableInterrupt(char interrupt_type);
 void EnableInterrupt(char interrupt_type);	
 	
 	
-
+*/
 
 
 //TB1F: Time Base 1 interrupt request flag
@@ -66,8 +64,8 @@ enum
  Default=0,  	
 	
 };
- #define TIM_BASE0_PERIOD   _32768_DIVIDE_PSC
- #define TIM_BASE1_PERIOD   _32768_DIVIDE_PSC	
+ #define TIM_BASE0_PERIOD   0
+ #define TIM_BASE1_PERIOD   0	
 //===========================================================
 //    TBn2~TBn0: Select Time Base n Time-out Period
 //===========================================================

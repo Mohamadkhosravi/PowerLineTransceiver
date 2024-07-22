@@ -7,7 +7,9 @@ unsigned int counterR=0;
 volatile char tx_data=0b10101101;
 volatile char tx_busy = 0;
 volatile char bit_index = 0;
+
 unsigned short frame;
+char RXbit=0;
 extern TranferBit;
 //char IndexOfBit=0;
 
@@ -23,6 +25,7 @@ void main()
 	S_ADC_Init();
 	STimerInit();
 	PTimerInit();
+	TimerBaseInit();
 	UART_Init(19200);
 	IntrruptInit();
 	S_GPIO_Init();	
@@ -34,10 +37,10 @@ void main()
 	_int1s0=0;
 	
 	//	
-	//  	_pbc1=0;
-	//	_pbs02=0;
-	//	_pbs03=0;
-	//	_pbpu1=0;
+ 	_pbc1=0;
+	_pbs02=0;
+	_pbs03=0;
+	_pbpu1=0;
 //	unsigned char PLTState=0;
 
 //_emi = 1;   
@@ -51,8 +54,11 @@ void main()
 	while(1)
    {
    	
-
+     RXbit=0;
      frame=PLT_SerialSend('M',8);
+
+    _pb1=RXbit;
+
 
     //GCC_DELAY(20000);
     

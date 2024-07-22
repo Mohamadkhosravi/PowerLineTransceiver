@@ -2,6 +2,7 @@
 #define PLT_SERIAL_PROTOCOL_H
 #include <Main.h>
 extern unsigned short frame;
+extern char RXbit;
 #define ENABLE           	  1
 #define DISABLE              0 
 

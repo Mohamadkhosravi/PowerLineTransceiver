@@ -57,10 +57,10 @@
 		_ptmbh = PTM_CCRB_HIGH_BYTE_MASK & 3;
 		
 		// Set PTM Comparator CCRP Low Byte
-	/*	_ptmrpl = PTM_CCRP_LOW_BYTE_MASK;
+		_ptmrpl = PTM_CCRP_LOW_BYTE_MASK;
 		
 		// Set PTM Comparator CCRP High Byte
-		_ptmrph = PTM_CCRP_HIGH_BYTE_MASK & 3;*/
+		_ptmrph = PTM_CCRP_HIGH_BYTE_MASK & 3;
 
 
 	}
