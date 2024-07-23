@@ -1,7 +1,8 @@
 #ifndef PLT_SERIAL_PROTOCOL_H
 #define PLT_SERIAL_PROTOCOL_H
 #include <Main.h>
-extern unsigned short frame;
+extern volatile unsigned short frame;
+extern volatile char tx_busy;
 extern char RXbit;
 #define ENABLE           	  1
 #define DISABLE              0 
@@ -64,7 +65,7 @@ unsigned int timerCuonter;
 
 void PLT_SerialInit(unsigned int baudrate);
 void PLT_HandelSerialTransmit(void);
-unsigned short PLT_SerialSend(char* data,char dataLength );
+unsigned short PLT_SerialSend(char* data,char dataLength,unsigned short *frame );
 char PLT_SerialReceive(void);
 void calculate_parity_and_checksum(char *data, char length, char *parity, char *checksum);
 

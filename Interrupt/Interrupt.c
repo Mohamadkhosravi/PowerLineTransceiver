@@ -332,8 +332,11 @@ void __attribute__((interrupt(EEPROM_ISR_ADDRESS))) EEPROMISR(void)
 #if PTM_COMPAIR_P_ISR
 void __attribute__((interrupt(PTM_COMPAIR_P_ISR_ADDRESS))) PTMCompairPISR(void)
 {
-//	_pb1=~_pb1;	 
-
+//	static int cunt=0;
+//	cunt++;
+	_pb1=1;	 
+//	if(cunt>=8){DisableInterrupt(PTM_COMPAIR_P_ISR_ADDRESS); }
+//
     // Here goes the code for PTM Comparator P ISR
 }
 #endif
@@ -347,6 +350,7 @@ void __attribute__((interrupt(PTM_COMPAIR_P_ISR_ADDRESS))) PTMCompairPISR(void)
 #if PTM_COMPAIR_A_ISR
 void __attribute__((interrupt(PTM_COMPAIR_A_ISR_ADDRESS))) PTMCompairAISR(void)
 {
+		_pb1=0;
 //_pb1=~_pb1;	
     // Here goes the code for PTM Comparator A ISR
 }
@@ -392,7 +396,7 @@ void __attribute__((interrupt(STM_COMPAIR_A_ISR_ADDRESS))) STMCompairAISR(void)
 #if BASE_TIMER0_ISR
 void __attribute__((interrupt(BASE_TIMER0_ISR_ADDRESS))) BaseTimer0ISR(void)
 { //PLT_HandelSerialTransmit();
-
+  //PLT_HandelSerialTransmit();  
     // Here goes the code for Base Timer 0 ISR
 }
 #endif
@@ -406,27 +410,9 @@ void __attribute__((interrupt(BASE_TIMER0_ISR_ADDRESS))) BaseTimer0ISR(void)
 #if BASE_TIMER1_ISR
 void __attribute__((interrupt(BASE_TIMER1_ISR_ADDRESS))) BaseTimer1ISR(void)
 {
-//_pb1=~_pb1;
+  
  
- RXbit=1;
-	_nop();
-	_nop();
-	_nop();
-	_nop();
-	_nop();
-	_nop();
-	_nop();
-	_nop();
-	_nop();
-	_nop();
-	_nop();
-	_nop();
-	_nop();
-	_nop();
-	_nop();
-	_nop();
-	_nop();
-	_nop();
+ //RXbit=1;
 
     // Here goes the code for Base Timer 1 ISR
 }
@@ -441,6 +427,7 @@ void __attribute__((interrupt(BASE_TIMER1_ISR_ADDRESS))) BaseTimer1ISR(void)
 #if PLT_COMPAIR1_ISR
 void __attribute__((interrupt(PLT_COMPAIR1_ISR_ADDRESS))) PLT1CompairISR(void)
 {
+//_pb1=~_pb1;
     // Here goes the code for PLT Comparator 1 ISR
 }
 #endif
@@ -455,6 +442,7 @@ void __attribute__((interrupt(PLT_COMPAIR1_ISR_ADDRESS))) PLT1CompairISR(void)
 void __attribute__((interrupt(PLT_COMPAIR0_ISR_ADDRESS))) PLT0CompairISR(void)
 {
 
+	/*_pb1=1;*/
     // Here goes the code for PLT Comparator 0 ISR
 }
 

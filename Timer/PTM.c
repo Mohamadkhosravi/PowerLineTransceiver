@@ -3,7 +3,8 @@
 
 	void PTimerInit(void)
 	{
-		
+		_ifs06=1;
+		_ifs07=0;
 	// PTPAU: PTM Counter Pause Control
 		// 0: Run, 1: Pause
 		_ptpau=0;

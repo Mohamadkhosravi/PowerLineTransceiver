@@ -5,7 +5,7 @@
 
 #define Enable 1
 #define Disable 0
-extern unsigned short frame;
+extern volatile unsigned short frame;
 extern char RXbit;
 #define InterruptEnable      	1
 #define InterruptDisable     	0
@@ -23,7 +23,7 @@ extern char RXbit;
 #define STM_COMPAIR_A_ISR      Enable
 #define BASE_TIMER0_ISR        Enable
 #define BASE_TIMER1_ISR        Enable
-#define PLT_COMPAIR0_ISR       Enable
+#define PLT_COMPAIR0_ISR       Disable
 #define PLT_COMPAIR1_ISR       Disable
 
 void EnableInterrupt(char interrupt_type);

@@ -22,7 +22,7 @@
 #define PTM_PWM_OR_SINGLE_PULSE_OUTPUT_MODE    2
 #define PTM_TIMER_COUNTER_MODE                 3
 //=========================================================================
-#define PTM_MODE     PTM_COMPARE_MATCH_OUTPUT_MODE 
+#define PTM_MODE     PTM_CAPTURE_INPUT_MODE 
 //=========================================================================
 
 // PTM External Pins Function
@@ -64,12 +64,7 @@
 //=========================================================================
 #define PTM_OUTPUT_POLARITY  PTM_NON_INVERT
 //=========================================================================
-/*
-// PTM PWM Duty/Period Control
-#define PTM_DUTY            1
-#define PTM_PERIOD          0
-#define PTM_PWM_DUTY        PTM_DUTY
-*/
+
 // PTM Capture Trigger Source Selection*/
 //=========================================================================
 #define PTM_PTPI_INPUT 0
@@ -90,7 +85,7 @@
 #define PTM_COMPARE_P_MATCH_OR_PTCK_PTPI_FALING_EDGE 2
 #define PTM_COMPARE_P_MATCH_OR_PTCK_PTPI_DUAL_EDGE   3
 //=========================================================================
-#define PTM_SELECT_CLEAR_CONDITION_IN_CAPTURE_INPUT  PTM_COMPARE_P_MATCH
+#define PTM_SELECT_CLEAR_CONDITION_IN_CAPTURE_INPUT  PTM_COMPARE_P_MATCH_OR_PTCK_PTPI_RISING_EDGE
 //=========================================================================
 // PTM counter value latch edge flag
 #define FALLING_EDGE_TRIAGE_COUNTER_LATCH 0

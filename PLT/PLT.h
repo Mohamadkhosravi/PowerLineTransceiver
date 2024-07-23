@@ -50,7 +50,7 @@ enum
 
 /********************************
 D5~D0: PLT DAC0 output control code
-PLTDAC0O= ( DAC VDD/26)× PLTDA0L[5:0]*/
+PLTDAC0O= ( DAC VDD(1.2V)/26)× PLTDA0L[5:0]*/
 #define PLT_DAC0_VALUE	_pltda0l
 #define PLT_DAC1_VALUE	_pltda1l
 #define PLT_DAC2_VALUE	_pltda2l

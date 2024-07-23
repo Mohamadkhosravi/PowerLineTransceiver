@@ -1,24 +1,32 @@
 #include <PLTSerialProtocol.h>
 
-unsigned short PLT_SerialSend(char* data,char dataLength )
-{   unsigned short frame;
+unsigned short PLT_SerialSend(char* data,char dataLength,unsigned short *frame )
+{ 
+	// unsigned short frame;
     char  parity;
     char  checksum;
     char i;
     char data1[8]={1,0,1,0,1,1,1,1};
-
-	calculate_parity_and_checksum(&data1, dataLength, &parity, &checksum);
-	frame=0;
-	frame |= (0 << 0); // Start bit
-	for ( i = 0; i < dataLength; i++) {
-		frame |= ((data1[i] & 1) << (i + 1));
-	}
-	
-	frame |= (parity << (dataLength + 1));
-	frame |= (1 << (dataLength + 2)); // Stop bit
-	frame |= (checksum << (dataLength + 3)); // Checksum (assuming 4 bits for simplicity)}
-	EnableInterrupt(STM_COMPAIR_A_ISR_ADDRESS);
-	return frame;
+    if(tx_busy==0)
+    {
+	    tx_busy=1;
+		calculate_parity_and_checksum(&data1, dataLength, &parity, &checksum);
+		*frame=0;
+		*frame |= (0 << 0); // Start bit
+		for ( i = 0; i < dataLength; i++) {
+			*frame |= ((data1[i] & 1) << (i + 1));
+		}
+		
+		*frame |= (parity << (dataLength + 1));
+		*frame |= (1 << (dataLength + 2)); // Stop bit
+		*frame |= (checksum << (dataLength + 3)); // Checksum (assuming 4 bits for simplicity)}
+		EnableInterrupt(STM_COMPAIR_A_ISR_ADDRESS);
+	    return 1;
+    }
+    else
+   {
+     return 0;
+   }
 };
 
  
@@ -57,6 +65,7 @@ void PLT_HandelSerialTransmit(void)
 			for(i=0;i<7;i++)_nop();
 			DisableInterrupt(STM_COMPAIR_A_ISR_ADDRESS); 
 			_pa3=1;
+			tx_busy=0;
 		
 		}
 	
@@ -67,8 +76,23 @@ void PLT_HandelSerialTransmit(void)
 }
 /*
 unsigned short PLT_HandelSerialReceive(void)
-{
-    unsigned short received_frame = 0;
+{   
+       if(PLT0Recive()==0&&PLT1Recive()==0)
+	    {
+		
+		
+	    }
+	    else
+	    {
+			//PLTState=False;
+			//UART_Transmit("0");
+	    }
+}
+
+*/
+
+/*
+unsigned short received_frame = 0;
     char i;
 
     for (i = 0; i < DATA_LENGTH; i++) {
@@ -79,4 +103,4 @@ unsigned short PLT_HandelSerialReceive(void)
     }
 
     return received_frame;
-}*/
+*/
