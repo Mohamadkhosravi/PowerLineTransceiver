@@ -3,7 +3,6 @@
 
 #include <Main.h>  // Assuming this includes necessary main header file
 
-
 // STM Counter Clock Selection
 #define ST_FSYS_DIVIDE_4   0
 #define ST_FSYS            1
@@ -14,7 +13,7 @@
 #define ST_STCK_RISING     6
 #define ST_STCK_FALLING    7
 //=========================================================================
-#define STIMER_CLOCK    ST_FSYS  // Default STM counter clock selection
+#define STIMER_CLOCK    ST_FSYS  
 //=========================================================================
 
 // STM Comparator P Match Period
@@ -27,7 +26,7 @@
 #define STM_768_CLOCKS  6
 #define STM_896_CLOCKS  7
 //=========================================================================
-#define STM_PERIOD    STM_1024_CLOCKS // Default STM comparator P match period
+#define STM_PERIOD    STM_1024_CLOCKS 
 //=========================================================================
 
 // STM Operating Modes
@@ -37,7 +36,7 @@
 #define STM_PWM_OUTPUT_MODE             3
 #define STM_SINGLE_PULSE_OUTPUT_MODE    4
 //=========================================================================
-#define STM_MODE     STM_COMPARE_MATCH_OUTPUT_MODE // Default STM operating mode
+#define STM_MODE     STM_COMPARE_MATCH_OUTPUT_MODE 
 //=========================================================================
 
 // STM External Pins Function
@@ -74,37 +73,37 @@
 #define STM_COUNTER_OFF 0
 #define STM_COUNTER_ON  1
 //=========================================================================
-#define STM_COUNTER     STM_COUNTER_ON  // Default STM counter on/off control
+#define STM_COUNTER     STM_COUNTER_ON  
 //=========================================================================
 
 // STM Output Polarity
 #define STM_NON_INVERT  0
 #define STM_INVERT      1
 //=========================================================================
-#define  STM_OUTPUT_POLARITY STM_NON_INVERT  // Default STM output polarity
+#define  STM_OUTPUT_POLARITY STM_NON_INVERT 
 //=========================================================================
 
 // STM PWM Duty/Period Control
 #define STM_DUTY        1
 #define STM_PERIOD      0
 //=========================================================================
-#define STM_PWM_DUTY    STM_DUTY  // Default STM PWM duty/period control
+#define STM_PWM_DUTY    STM_DUTY  
 //=========================================================================
 
 // STM Comparator Clear Condition Selection
 #define STM_COMPARE_MATCH_P 0
 #define STM_COMPARE_MATCH_A 1
 //=========================================================================
-#define STM_SELECT_CLEAR_COMPARE_MATCH  STM_COMPARE_MATCH_A  // Default STM compare match selection
+#define STM_SELECT_CLEAR_COMPARE_MATCH  STM_COMPARE_MATCH_A  
 //=========================================================================
 
 // STM CCRA Low Byte Mask
 //=========================================================================
-#define STM_CCRA_LOW_BYTE_MASK 0x01  // Mask for STM CCRA low byte
+#define STM_CCRA_LOW_BYTE_MASK 0x01// Mask for STM CCRA low byte Max=0xFF Min=1
 //=========================================================================
 // STM CCRA High Byte Mask
 //=========================================================================
-#define STM_CCRA_HIGH_BYTE_MASK 0x0 // Mask for STM CCRA high byte
+#define STM_CCRA_HIGH_BYTE_MASK 0x0 // Mask for STM CCRA high byte Max=0x03
 //=========================================================================
 
 
