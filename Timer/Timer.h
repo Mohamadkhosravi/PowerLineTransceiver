@@ -1,56 +1,33 @@
 
 #include "BA45F5240.h"
-#define TM_H
-#ifdef TM_H
+#define BTM_H
+#ifdef BTM_H
 
+//TBnON: Time Base 0 & 1 Control
 #define Enable  1
 #define Disable 0
-
-#define BASE_TIMER   Enable
-
-#define InterruptEnable      	_emi = Enable
-#define InterruptDisable     	_emi = Disable
-	
-	
-/*	
-void DisableInterrupt(char interrupt_type);
-void EnableInterrupt(char interrupt_type);	
-	
-	
-*/
-
-
-//TB1F: Time Base 1 interrupt request flag
-//0: No request
-//1: Interrupt request
-
-
-//===========================================================
-//  //TBnF: Time Base n interrupt request flag
-//===========================================================
-
-#define TIME_BASE0_INTRRUPT_FLAG  _tb0f
-#define TIME_BASE1_INTRRUPT_FLAG  _tb1f
-
-
-//===========================================================
-//   CLKSEL1~CLKSEL0: Prescaler clock source selection
-//===========================================================
-//#define FSYS           0 //fSYS
-//#define FSYS_DIVIDE_4  1 //fSYS/4
-//#define FSUB           2 //fSUB     
-
-#define PRESCALER_CLOCK_SURSE_BASE_TIMER   0
-
-//===========================================================
-//             TBnON: Time Base n Control
 //===========================================================
 #define  TIME_BASE0  Enable
 #define  TIME_BASE1  Enable
+//===========================================================
 
+//Timer base Interrupts Status and control
 //===========================================================
-//     TBn2~TBn0: Select Time Base n Time-out Period
+#define InterruptEnable      	_emi = Enable
+#define InterruptDisable     	_emi = Disable
+#define TIME_BASE0_INTRRUPT_FLAG  _tb0f
+#define TIME_BASE1_INTRRUPT_FLAG  _tb1f
 //===========================================================
+
+// CLKSEL1~CLKSEL0: Prescaler clock source selection
+#define TB_FSYS           0 //fSYS
+#define TB_FSYS_DIVIDE_4  1 //fSYS/4
+#define TB_FSUB           2 //fSUB     
+//===========================================================
+#define PRESCALER_CLOCK_SURSE_BASE_TIMER   TB_FSUB
+//===========================================================
+
+// TBn2~TBn0: Select Time Base n Time-out Period
 enum
 {
  _256_DIVIDE_PSC , 
@@ -64,11 +41,12 @@ enum
  Default=0,  	
 	
 };
- #define TIM_BASE0_PERIOD   0
- #define TIM_BASE1_PERIOD   0	
 //===========================================================
-//    TBn2~TBn0: Select Time Base n Time-out Period
+ #define TIM_BASE0_PERIOD   Default
+ #define TIM_BASE1_PERIOD   Default	
 //===========================================================
+
+// Function declaration
 void TimerBaseInit(void);
 		
 
