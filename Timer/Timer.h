@@ -1,7 +1,7 @@
 
 #include "BA45F5240.h"
+#ifndef BTM_H
 #define BTM_H
-#ifdef BTM_H
 
 //TBnON: Time Base 0 & 1 Control
 #define Enable  1
