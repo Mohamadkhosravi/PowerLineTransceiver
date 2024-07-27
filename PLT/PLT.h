@@ -161,4 +161,6 @@ int PLT0InputOffsetCalibration(void);
 int PLT1InputOffsetCalibration(void);
 char PLT0Receive(void);
 char PLT1Recive(void);
+void PLT0Init(void);
+void PLT1Init(void);
 #endif

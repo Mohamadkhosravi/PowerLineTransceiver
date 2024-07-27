@@ -9,6 +9,7 @@ volatile char tx_data=0b10101101;
 volatile char bit_index = 0;
 
 volatile unsigned short frame=0;
+volatile unsigned short frameResive=0;
 volatile char tx_busy = 0;
 
 unsigned short *frame1=0;
@@ -48,71 +49,67 @@ void main()
 	_pbpu1=0;
 	unsigned char PLTState=0;
 
-    PLT_SerialInit(9600);
-	offset0 =PLT0InputOffsetCalibration();
-	offset1 =PLT1InputOffsetCalibration();
-
+	PLT_SerialInit(9600);
+	/*offset0 =PLT0InputOffsetCalibration();
+	offset1 =PLT1InputOffsetCalibration();*/
+	
 	_emi=1;
-		unsigned int cunt=0;
-	
-	   
-	while(1)
+	unsigned int cunt=0;
+	offset0 =	PLT0Recive();
+	offset1 =	PLT1Recive();
+	//	EnableInterrupt(PTM_COMPAIR_A_ISR_ADDRESS);	 
+	PLT0Init();
+	PLT1Init();
+   while(1)
    {
-	//_pb1=0;
-   
-        cunt++;
-
-        if(PLT0Recive()==0)
-        {
-          	
-	   
-			//UART_Transmit("1");
-			PLTState=1;
-		//	_pb1=0;
-	    }
-	    else
-	    {
-			PLTState=0;
-		//	_pb1=1;
-	    }
-
-
-
-	  if(PLT_SerialSend('M',8,frame1)){
-	         frame=*frame1;
-	  }   
-
-     
-	       /* if(tx_busy==0){
-	        	
-	         frame=0b01010101;
-	         tx_busy=1;	
-	         //EnableInterrupt(STM_COMPAIR_A_ISR_ADDRESS);	
-	        }
-	         
-	         
-	/*      if(PLT1Recive()==0)
-        {
-	   
-			//UART_Transmit("1");
-			PLTState=1;
-			_pb1=1;
-	    }
-	    else
-	    {
-			PLTState=0;
-			_pb1=0;
-	    }*/
-	    
-	    
-	    
-      //UART_Transmit(PLTState);
+ 
+	//	_pb1=1;
+	/*
+	if(PLT0Recive()==0&&PLT1Recive()==0)
+	{
 	
-   // asm("clr wdt");
-    
+	
+	//UART_Transmit("1");
+	PLTState=1;
+	_pb1=0;
+	}
+	else
+	{
+	PLTState=0;
+	_pb1=1;
+	}
+	
+	*/
+	/* if(tx_busy==0){
+	
+	frame=0b01010101;
+	tx_busy=1;	
+	//EnableInterrupt(STM_COMPAIR_A_ISR_ADDRESS);	
+	}
+	
+	
+	/*      if(PLT1Recive()==0)
+	{
+	
+	//UART_Transmit("1");
+	PLTState=1;
+	_pb1=1;
+	}
+	else
+	{
+	PLTState=0;
+	_pb1=0;
+	}*/
+	
+	
+	
+	//UART_Transmit(PLTState);
+	
+	// asm("clr wdt");
+	
 	/*UART_Transmit(PLT1Recive()+0x30);
 	UART_Transmit(10);*/
-	GCC_CLRWDT();
+	//GCC_CLRWDT();
 	
    }
 

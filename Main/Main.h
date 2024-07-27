@@ -3,7 +3,6 @@
 #include "BA45F5240.h"
 #include <PLT.h>
 #include <UART.h>
-#include <Timer.h>
 #include <Interrupt.h>
 #include <GPIO.h>
 typedef  unsigned char  uint8_t;
