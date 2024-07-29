@@ -7,21 +7,21 @@ unsigned int counterR=0;
 volatile char tx_data=0b10101101;
 
 volatile char bit_index = 0;
-
-volatile unsigned short frame=0;
+unsigned short frame=0;
 volatile unsigned short frameResive=0;
 volatile char tx_busy = 0;
 
 unsigned short *frame1=0;
-
-
+unsigned char receiveSerialData(void);
+unsigned char Data1=0b10101101;	
+unsigned char *Data;
 char RXbit=0;
 extern TranferBit;
 //char IndexOfBit=0;
 
 unsigned int offset0 =0;
 unsigned int offset1=0;
- 
+ unsigned short  RXBuffer=0;
  
 void main()
 {
@@ -31,10 +31,10 @@ void main()
 	STimerInit();
 	PTimerInit();
 	TimerBaseInit();
-	UART_Init(19200);
+	
 	IntrruptInit();
 	S_GPIO_Init();	
-	
+	UART_Init(9600);
 	offset0 =PLT0InputOffsetCalibration();
 	offset1 =PLT1InputOffsetCalibration();
 	offset0 =PLT0AmplifierInputOffsetCalibration();	
@@ -43,10 +43,10 @@ void main()
 	_int1s0=0;
 	
 	//	
- 	_pbc1=0;
+/*	_pbc1=0;
 	_pbs02=0;
 	_pbs03=0;
-	_pbpu1=0;
+	_pbpu1=0;*/
 	unsigned char PLTState=0;
 
 	PLT_SerialInit(9600);
@@ -57,29 +57,46 @@ void main()
 	unsigned int cunt=0;
 	offset0 =	PLT0Recive();
 	offset1 =	PLT1Recive();
-	//	EnableInterrupt(PTM_COMPAIR_A_ISR_ADDRESS);	 
+
 	PLT0Init();
 	PLT1Init();
+
+
    while(1)
    {
- 
+
+    // Data=receiveSerialData();
+   // Data=PLT_SerialSend('m',8,frame); 
+     
+	if(PLT_SerialSend('u',frame1)){
+	         frame=*frame1;
+	  } 
+	  
+		if (PLT_SerialSend('M', &frame1)) {
+		frame = frame1;
+			
+		} else {
+		
+		}
+	  
+	    
+
+	GCC_CLRWDT();
+         
 	//	_pb1=1;
-	/*
-	if(PLT0Recive()==0&&PLT1Recive()==0)
+
+/*	if(PLT0Recive()==0&&PLT1Recive()==0)
 	{
-	
-	
-	//UART_Transmit("1");
-	PLTState=1;
-	_pb1=0;
+		PLTState=1;
+		_pb1=0;
 	}
 	else
 	{
-	PLTState=0;
-	_pb1=1;
-	}
-	
-	*/
+		PLTState=0;
+		_pb1=1;
+	}*/
+
+
 	/* if(tx_busy==0){
 	
 	frame=0b01010101;
@@ -91,7 +108,7 @@ void main()
 	/*      if(PLT1Recive()==0)
 	{
 	
-	//UART_Transmit("1");
+    UART_Transmit("1");
 	PLTState=1;
 	_pb1=1;
 	}
@@ -105,16 +122,40 @@ void main()
 	
 	//UART_Transmit(PLTState);
 	
-	// asm("clr wdt");
+
 	
-	/*UART_Transmit(PLT1Recive()+0x30);
-	UART_Transmit(10);*/
-	//GCC_CLRWDT();
-	
+	/*UART_Transmit(PLT1Recive()+0x30);*/
+	UART_Transmit(10);
+		UART_Transmit('U');
+	     GCC_DELAY(1000);
+	     UART_Transmit('A');
+	     GCC_DELAY(1000);
+	     UART_Transmit('R');
+	     GCC_DELAY(1000);
+	     UART_Transmit('T');
+	     GCC_DELAY(1000);
    }
 
    
 }
+unsigned char receiveSerialData(void) {
+    unsigned char data = 0;
+    int i;
+
+    for (i = 0; i < 8; i++) {
+        data <<= 1; 
+
+        if (PLT0Recive() == 1) {
+            data |= 1;
+        } else if (PLT1Recive() == 1) {
+            data |= 0; 
+            }
+    }
+
+    return data;
+}
+
+
 void softuart_transmit(char data) {
     while (tx_busy)
 

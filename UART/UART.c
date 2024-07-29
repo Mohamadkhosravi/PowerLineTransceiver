@@ -14,14 +14,14 @@ void UART_Init(unsigned int baudrate){
 
 
 	//PAS15~PAS14: PA6 Pin-Shared function selection(PLT TX)	
-//	_pbs02=0;
-//	_pbs03=1;	
+	_pbs02=0;
+	_pbs03=1;	
 	
 	
-
+/*
  //port A3 Share function PAS07~PAS06 TX(LED PIN):
 	_pas06=1;
-	_pas07=0;
+	_pas07=0;*/
 	
 //PAS15~PAS14: PA6 Pin-Shared function selection RX ()
 	_pas14=0;

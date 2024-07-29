@@ -10,7 +10,7 @@
 //============================================
 // Assuming a clock frequency 
 //============================================
-#define F_CPU            8000000 
+#define F_CPU            4000000 
 //============================================
 // Calculate and set the baud rate
 // UBRGH: Baud Rate speed selection
