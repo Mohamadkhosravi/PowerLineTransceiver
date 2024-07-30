@@ -43,10 +43,10 @@ void main()
 	_int1s0=0;
 	
 	//	
-/*	_pbc1=0;
+_pbc1=0;
 	_pbs02=0;
 	_pbs03=0;
-	_pbpu1=0;*/
+	_pbpu1=0;
 	unsigned char PLTState=0;
 
 	PLT_SerialInit(9600);
@@ -68,33 +68,37 @@ void main()
     // Data=receiveSerialData();
    // Data=PLT_SerialSend('m',8,frame); 
      
-	if(PLT_SerialSend('u',frame1)){
-	         frame=*frame1;
-	  } 
-	  
-		if (PLT_SerialSend('M', &frame1)) {
-		frame = frame1;
-			
-		} else {
+	/*	if(PLT_SerialSend('u',frame1)){
+			 frame=*frame1;
+		} 
 		
-		}
-	  
+		if (PLT_SerialSend('M', &frame1)) {
+			frame = frame1;
+		
+		} 
+		else 
+		{
+		
+		}*/
+		
 	    
 
 	GCC_CLRWDT();
          
 	//	_pb1=1;
 
-/*	if(PLT0Recive()==0&&PLT1Recive()==0)
+	if(PLT0Recive()==0&&PLT1Recive()==0)
 	{
 		PLTState=1;
-		_pb1=0;
+	//	_pa3=1;
+	//	_pb1=0;
 	}
 	else
 	{
 		PLTState=0;
-		_pb1=1;
-	}*/
+	//	_pa3=1;
+	//	_pb1=1;
+	}
 
 
 	/* if(tx_busy==0){
@@ -125,15 +129,15 @@ void main()
 
 	
 	/*UART_Transmit(PLT1Recive()+0x30);*/
-	UART_Transmit(10);
-		UART_Transmit('U');
-	     GCC_DELAY(1000);
-	     UART_Transmit('A');
-	     GCC_DELAY(1000);
-	     UART_Transmit('R');
-	     GCC_DELAY(1000);
-	     UART_Transmit('T');
-	     GCC_DELAY(1000);
+/*	UART_Transmit(10);
+	UART_Transmit('U');
+	GCC_DELAY(1000);
+	UART_Transmit('A');
+	GCC_DELAY(1000);
+	UART_Transmit('R');
+	GCC_DELAY(1000);
+	UART_Transmit('T');
+	GCC_DELAY(1000);*/
    }
 
    

@@ -105,7 +105,7 @@ void PLT0Init(void){
 	Offset= PLT0AmplifierInputOffsetCalibration();
 	PLT0_Voltage_Calibration_Mode_Selection	= Normal_Operation;	
 	PLT_DAC0_Control=Enable;
-	PLT_DAC0_VALUE=20;
+	PLT_DAC0_VALUE=19;//PLTDAC0O= ( DAC VDD/64) × PLTDA0L[5:0]
 	S0_S1_ON_S2_OFF;
 	PLT_Comparator_0_Hysteresis_voltage(0); 
 	PLT_Comparator_0_Current_Control_Value(0);
@@ -118,10 +118,11 @@ void PLT1Init(void){
 	Offset=  PLT1InputOffsetCalibration();
 	PLT1_Voltage_Calibration_Mode_Selection	= Normal_Operation;		
 	PLT_DAC1_Control=Enable;
-	PLT_DAC1_VALUE=20;
+	PLT_DAC1_VALUE=18;
 	S3_S4_ON_S5_OFF;
 	PLT_Comparator_1_Hysteresis_voltage(0); 
 	PLT_Comparator_1_Current_Control_Value(0);
+	PLT_Comparator_1_Output_Polarity=Invert;
 	PLT_OPAMP_1_CONTROL=Enable;
 
 };
