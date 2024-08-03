@@ -14,7 +14,7 @@ volatile char tx_busy = 0;
 unsigned short *frame1=0;
 unsigned char receiveSerialData(void);
 unsigned char Data1=0b10101101;	
-unsigned char *Data;
+int  Data;
 char RXbit=0;
 extern TranferBit;
 //char IndexOfBit=0;
@@ -27,14 +27,14 @@ void main()
 {
 	
 	S_RCC_Init();
-	S_ADC_Init();
+/*	S_ADC_Init();
 	STimerInit();
 	PTimerInit();
 	TimerBaseInit();
 	
-	IntrruptInit();
+	IntrruptInit();*/
 	S_GPIO_Init();	
-	UART_Init(9600);
+
 	offset0 =PLT0InputOffsetCalibration();
 	offset1 =PLT1InputOffsetCalibration();
 	offset0 =PLT0AmplifierInputOffsetCalibration();	
@@ -43,29 +43,56 @@ void main()
 	_int1s0=0;
 	
 	//	
-_pbc1=0;
+    /*_pbc1=0;
 	_pbs02=0;
 	_pbs03=0;
-	_pbpu1=0;
+	_pbpu1=0;*/
 	unsigned char PLTState=0;
 
-	PLT_SerialInit(9600);
+
 	/*offset0 =PLT0InputOffsetCalibration();
 	offset1 =PLT1InputOffsetCalibration();*/
 	
 	_emi=1;
-	unsigned int cunt=0;
+/*	unsigned int cunt=0;
 	offset0 =	PLT0Recive();
-	offset1 =	PLT1Recive();
+	offset1 =	PLT1Recive();*/
 
-	PLT0Init();
-	PLT1Init();
-
-
+/*	PLT0Init();
+	PLT1Init();*/
+//	PLT_SerialInit(9600);
+	UART_Init(9600);
    while(1)
    {
+    
 
-    // Data=receiveSerialData();
+
+    Data=UART_Receive();
+     UART_Transmit('U');
+		
+    	if (Data >= 0) // Check for valid data
+        {
+		UART_Transmit('D');
+		UART_Transmit('=');
+          UART_Transmit((char)Data);
+         
+        }
+        else
+        {
+	   
+		    UART_Transmit('E');
+			UART_Transmit('R');
+			UART_Transmit('R');
+			UART_Transmit('O');
+			UART_Transmit('R');
+			if(Data==-1)UART_Transmit('1');
+			else if(Data==-2)UART_Transmit('2');
+			else if(Data==-3)UART_Transmit('3');
+			else if(Data==-4)UART_Transmit('4');
+						
+        }
+
+     
    // Data=PLT_SerialSend('m',8,frame); 
      
 	/*	if(PLT_SerialSend('u',frame1)){
@@ -87,7 +114,7 @@ _pbc1=0;
          
 	//	_pb1=1;
 
-	if(PLT0Recive()==0&&PLT1Recive()==0)
+/*	if(PLT0Recive()==0&&PLT1Recive()==0)
 	{
 		PLTState=1;
 	//	_pa3=1;
@@ -99,7 +126,7 @@ _pbc1=0;
 	//	_pa3=1;
 	//	_pb1=1;
 	}
-
+*/
 
 	/* if(tx_busy==0){
 	

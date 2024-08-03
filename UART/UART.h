@@ -55,10 +55,17 @@
 0: No break character is transmitted
 1: Break characters transmit*/
 //============================================
+#define UART_ERROR          -1
+#define UART_FRAMING_ERROR  -2
+#define UART_PARITY_ERROR   -3
+#define UART_OVERRUN_ERROR  -4
+
+
+
 
 void UART_Init(unsigned int baudrate);
 void UART_Transmit(char data);
-char UART_Receive(void);
+int UART_Receive(void);
 
 
 
