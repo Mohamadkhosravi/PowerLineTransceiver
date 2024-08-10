@@ -27,75 +27,41 @@ void main()
 {
 	
 	S_RCC_Init();
-/*	S_ADC_Init();
+	S_ADC_Init();
 	STimerInit();
 	PTimerInit();
 	TimerBaseInit();
-	
-	IntrruptInit();*/
+	IntrruptInit();
 	S_GPIO_Init();	
-
-	offset0 =PLT0InputOffsetCalibration();
-	offset1 =PLT1InputOffsetCalibration();
-	offset0 =PLT0AmplifierInputOffsetCalibration();	
-
-	_int1s1=1;
-	_int1s0=0;
-	
-	//	
-    /*_pbc1=0;
-	_pbs02=0;
-	_pbs03=0;
-	_pbpu1=0;*/
-	unsigned char PLTState=0;
-
-
-	/*offset0 =PLT0InputOffsetCalibration();
-	offset1 =PLT1InputOffsetCalibration();*/
-	
-	_emi=1;
-/*	unsigned int cunt=0;
-	offset0 =	PLT0Recive();
-	offset1 =	PLT1Recive();*/
-
-/*	PLT0Init();
-	PLT1Init();*/
-//	PLT_SerialInit(9600);
-	UART_Init(9600);
+//	PLT0Init();
+//	PLT1Init();
+  // PLT_SerialInit(9600);PB1 output
+ UART_Init(9600);//PB1 TX
    while(1)
    {
     
-
+   // UART_Transmit('m');
 
     Data=UART_Receive();
-     UART_Transmit('U');
-		
-    	if (Data >= 0) // Check for valid data
-        {
-		UART_Transmit('D');
-		UART_Transmit('=');
-          UART_Transmit((char)Data);
-         
-        }
-        else
-        {
-	   
-		    UART_Transmit('E');
-			UART_Transmit('R');
-			UART_Transmit('R');
-			UART_Transmit('O');
-			UART_Transmit('R');
+
+	
+			
 			if(Data==-1)UART_Transmit('1');
 			else if(Data==-2)UART_Transmit('2');
 			else if(Data==-3)UART_Transmit('3');
 			else if(Data==-4)UART_Transmit('4');
-						
-        }
+			else{
+				UART_Transmit('D');
+			UART_Transmit('=');
+			UART_Transmit((char)Data);	
+			}
+			
+	
 
      
    // Data=PLT_SerialSend('m',8,frame); 
      
-	/*	if(PLT_SerialSend('u',frame1)){
+/*	if(PLT_SerialSend('u',frame1)){
 			 frame=*frame1;
 		} 
 		
@@ -113,8 +79,8 @@ void main()
 	GCC_CLRWDT();
          
 	//	_pb1=1;
-
-/*	if(PLT0Recive()==0&&PLT1Recive()==0)
+/*
+	if(PLT0Recive()==0&&PLT1Recive()==0)
 	{
 		PLTState=1;
 	//	_pa3=1;
@@ -126,8 +92,8 @@ void main()
 	//	_pa3=1;
 	//	_pb1=1;
 	}
+/*
 */
-
 	/* if(tx_busy==0){
 	
 	frame=0b01010101;

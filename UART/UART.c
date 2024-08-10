@@ -11,27 +11,48 @@ void UART_Init(unsigned int baudrate){
     _pas14 = 1;
     _pas15 = 1;
     _papu6=  1;
-    
-    
+   //=============
+   //(PLT TX)output
+ _pbc1=0; 
+/*
+PBS03~PBS02: PB1 Pin-Shared function selection
+00: PB1
+01: PLTX
+10: SDO/TX
+11: PB1
+*/
+_pbs02=0;
+_pbs03=1;
    
+//   ====================== 
+    //PB3 RX (PLTRX)
+   /*
+   PxCn: I/O Port x Pin type selection
+0: Output
+1: Input
+*/ 
+ /*
     // Set PB3 as UART RX (input)
     _pbc3=1;
     //pin shair rx
-    _pbs06=0;
-    _pbs07=1;
-
-    // Set PA3 as UART TX (output)
-    _pas06 = 0;
+	 /*   
+	Bit 7~6 PBS07~PBS06: PB3 Pin-Shared function selection
+	00: PB3
+	01: PLRX
+	10: SDI/*/
+/*	_pbs06=0;
+	_pbs07=0;
+*/
+ //=================================== 
+ // Set PA3 as UART TX (output)
+ /*   _pas06 = 0;
     _pas07 = 0;
     _pbs02 = 0;
     _pbs03 = 1;
+*/
+  
 
 
-
-    // Enable UART, TX, and RX
-    _uren = 1;
-    _utxen = 1;
-    _urxen = 1;	
 
 //	//PAS15~PAS14: PA6 Pin-Shared function selection(PLT RX)
 //	_pas13=0;
@@ -41,13 +62,12 @@ void UART_Init(unsigned int baudrate){
 
 
 	//PAS15~PAS14: PA6 Pin-Shared function selection(PLT TX)	
-//	_pbs02=0;
-//	_pbs03=1;	
+   
 //	
 	
-/*
+
  //port A3 Share function PAS07~PAS06 TX(LED PIN):
-	_pas06=1;
+/*	_pas06=1;
 	_pas07=0;*/
 //	
 //
@@ -57,7 +77,10 @@ void UART_Init(unsigned int baudrate){
 //	_pas15=1;
 	
 
-
+    // Enable UART, TX, and RX
+ /*   _uren = 1;
+    _utxen = 1;
+    _urxen = 1;	*/
 
 
 //	UMD: UART mode selection bit
@@ -107,9 +130,15 @@ char UART_Receive(void) {
 }*/
 int UART_Receive(void)
 {
+//	 _utxr_rxr=0;
   // Wait for data to be received
    // while (!(_urxif)); // Wait until URXIF is set
-  while (!(_uusr & (1 << 0))); // Wait until URXIF is set
+ 	_acc=0;
+	if(_urxif)					//Receive Data Finish?
+	{
+		_acc = _utxr_rxr;
+	}
+	return _acc;
   
 
     // Check for parity error

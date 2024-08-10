@@ -47,7 +47,10 @@ void calculate_parity_and_checksum(char *data, char length, char *parity, char *
 
 void PLT_SerialInit(unsigned int baudrate){
 
-	
+	_pbc1=0;
+	_pbs02=0;
+	_pbs03=0;
+	_pbpu1=0;	
 	
 }
 	
@@ -58,16 +61,16 @@ void PLT_SerialInit(unsigned int baudrate){
 void PLT_HandelSerialTransmit(void)
 { 
 	
-	if((frame)&1)_pa3=1;
+	if((frame)&1)_pb1=1;
 	else 
 	{
-	    _pa3=0;
+	    _pb1=0;
 		if((frame==0))
 		{
 			char i=0;
 			for(i=0;i<7;i++)_nop();
 			DisableInterrupt(STM_COMPAIR_A_ISR_ADDRESS); 
-			_pa3=1;
+			_pb1=1;
 			tx_busy=0;
 		
 		}
