@@ -7,14 +7,17 @@ unsigned int counterR=0;
 volatile char tx_data=0b10101101;
 
 volatile char bit_index = 0;
-unsigned short frame=0;
+unsigned short *frame;
 volatile unsigned short frameResive=0;
 volatile char tx_busy = 0;
 
 unsigned short *frame1=0;
 unsigned char receiveSerialData(void);
-unsigned char Data1=0b10101101;	
-int  Data;
+unsigned char *Data1;	
+
+unsigned char Data;
+
+//int  Data;
 char RXbit=0;
 extern TranferBit;
 //char IndexOfBit=0;
@@ -35,26 +38,51 @@ void main()
 	S_GPIO_Init();	
 //	PLT0Init();
 //	PLT1Init();
-  // PLT_SerialInit(9600);PB1 output
- UART_Init(9600);//PB1 TX
+ PLT_SerialInit(9600);//PB1 output
+ //UART_Init(9600);//PB1 TX
    while(1)
    {
     
    // UART_Transmit('m');
 
-    Data=UART_Receive();
-
+           
+           
+         //  counter++;
+       /*    if(counter<1000)
+           {*/
+          /*	EnableInterrupt(PLT_COMPAIR1_ISR_ADDRESS);
+			EnableInterrupt(PLT_COMPAIR0_ISR_ADDRESS);
+           	Data=receiveSerialData();
+			DisableInterrupt(PLT_COMPAIR1_ISR_ADDRESS);
+			DisableInterrupt(PLT_COMPAIR0_ISR_ADDRESS);*/
+			Data='m';
+		    PLT_SerialSend(&Data,frame);
+		
 	
-			
-			if(Data==-1)UART_Transmit('1');
+         /*  }*/
+          /* else if(counter>=1000)
+           {*/
+         /*  
+           if(Data=!0){
+	    	DisableInterrupt(PLT_COMPAIR1_ISR_ADDRESS);
+			DisableInterrupt(PLT_COMPAIR0_ISR_ADDRESS);
+			UART_Transmit('D');
+			UART_Transmit('=');
+			UART_Transmit((char)Data);	
+			Data=0;
+	    	EnableInterrupt(PLT_COMPAIR1_ISR_ADDRESS);
+			EnableInterrupt(PLT_COMPAIR0_ISR_ADDRESS);
+           }*/
+        /*   }
+           if(counter>=2000)counter=0;
+	*/
+		/*	if(Data2==-1)UART_Transmit('1');
 			else if(Data==-2)UART_Transmit('2');
 			else if(Data==-3)UART_Transmit('3');
 			else if(Data==-4)UART_Transmit('4');
-			else{
-				UART_Transmit('D');
-			UART_Transmit('=');
-			UART_Transmit((char)Data);	
-			}
+			else{*/
+		
+		/*	}*/
 			
 	
 
@@ -142,9 +170,9 @@ unsigned char receiveSerialData(void) {
     for (i = 0; i < 8; i++) {
         data <<= 1; 
 
-        if (PLT0Recive() == 1) {
+        if (RXbit == 1) {
             data |= 1;
-        } else if (PLT1Recive() == 1) {
+        } else if (RXbit == 1) {
             data |= 0; 
             }
     }

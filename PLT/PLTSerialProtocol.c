@@ -1,16 +1,15 @@
 #include <PLTSerialProtocol.h>
-unsigned short PLT_SerialSend(char data, unsigned short *frame)
+unsigned short PLT_SerialSend(unsigned char *data, unsigned short *frame)
 {
     char parity = 0;
     char checksum = 0;
     char i;
-    char data1[8];
+    char data1[8]={0};
 
     // Convert the character to its binary representation
     for (i = 0; i < 8; i++) {
-        data1[i] = (data >> i) & 1;
-    }
-
+        data1[i] = (*data >> i) & 1;
+     }
     if (tx_busy == 0)
     {
         tx_busy = 1;
@@ -61,11 +60,11 @@ void PLT_SerialInit(unsigned int baudrate){
 void PLT_HandelSerialTransmit(void)
 { 
 	
-	if((frame)&1)_pb1=1;
+	if((*frame)&1)_pb1=1;
 	else 
 	{
-	    _pb1=0;
-		if((frame==0))
+	   _pb1=0;
+		if((*frame==0))
 		{
 			char i=0;
 			for(i=0;i<7;i++)_nop();
@@ -76,7 +75,7 @@ void PLT_HandelSerialTransmit(void)
 		}
 	
 	}
-   	frame=frame>>1;
+   	*frame=*frame>>1;
 
 
 }

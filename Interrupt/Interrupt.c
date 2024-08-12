@@ -70,86 +70,86 @@ void EnableInterrupt(char interruptAddress)
     {
 		#if EXTERNAL_PIN0_ISR   
 		   case EXTERNAL_PIN0_ISR_ADDRESS:
-		   	 _int0e = InterruptEnable;
+		   	 _int0e = Enable;
 		    break;
 		#endif	
 		
 		#if EXTERNAL_PIN0_ISR  
 	    	case EXTERNAL_PIN1_ISR_ADDRESS:
-		    	_int1e = InterruptEnable;
+		    	_int1e = Enable;
 		    break;
 		#endif	
 		    
 		#if USIM_ISR  
 			case USIM_ISR_ADDRESS:
-		    	_usime = InterruptEnable;
+		    	_usime = Enable;
 		    break;
 		#endif	
 		    
 		#if LVD_ISR 
 			case LVD_ISR_ADDRESS:
-		    	_lve = InterruptEnable;
+		    	_lve = Enable;
 			break;
 		#endif	
 		
 		#if ADC_ISR       
 			case ADC_ISR_ADDRESS:
-		  	  _ade = InterruptEnable;
+		  	  _ade = Enable;
 		    break;
 		#endif	
 		
 		#if EEPROM_ISR
 			case EEPROM_ISR_ADDRESS:
-		  	  _dee = InterruptEnable;
+		  	  _dee = Enable;
 		    break;
 		#endif
 		
 		#if PTM_COMPAIR_P_ISR          
 			case PTM_COMPAIR_P_ISR_ADDRESS:
-		  	  _ptmpe = InterruptEnable;
+		  	  _ptmpe = Enable;
 		    break;
 		#endif  
 		
 		#if PTM_COMPAIR_A_ISR     
 		case PTM_COMPAIR_A_ISR_ADDRESS:
-		    _ptmae = InterruptEnable;
+		    _ptmae = Enable;
 		    break;
 		#endif 
 		
 		#if STM_COMPAIR_P_ISR      
 			case STM_COMPAIR_P_ISR_ADDRESS:
-		   	 _stmpe = InterruptEnable;
+		   	 _stmpe = Enable;
 		    break;
 		#endif 
 		    
 		#if STM_COMPAIR_A_ISR        
 			case STM_COMPAIR_A_ISR_ADDRESS:
-		    	_stmae = InterruptEnable;
+		    	_stmae = Enable;
 		    break;
 		#endif 
 		
 		#if  BASE_TIMER0_ISR   
 			case BASE_TIMER0_ISR_ADDRESS:
-		   	 _tb0e = InterruptEnable;
+		   	 _tb0e = Enable;
 			break;
 		#endif	
 		
 		#if  BASE_TIMER1_ISR 	
 			case BASE_TIMER1_ISR_ADDRESS:
-		   	 _tb1e = InterruptEnable;
+		   	 _tb1e = Enable;
 			 break;
 		#endif	
 		
 		#if  PLT_COMPAIR0_ISR       
 			case PLT_COMPAIR0_ISR_ADDRESS:
-				_pltc0e = InterruptEnable;
+				_pltc0e = Enable;
 			break;
 		#endif
       	      
 		    
 		#if  PLT_COMPAIR1_ISR       
 			case PLT_COMPAIR1_ISR_ADDRESS:
-		    	_pltc1e = InterruptEnable;
+		    	_pltc1e = Enable;
 		    break;
 		#endif
 	
@@ -167,85 +167,85 @@ void DisableInterrupt(char interruptAddress)
     {
 		#if EXTERNAL_PIN0_ISR   
 		   case EXTERNAL_PIN0_ISR_ADDRESS:
-		   	 _int0e = InterruptDisable;
+		   	 _int0e = Disable;
 		    break;
 		#endif	
 		
 		#if EXTERNAL_PIN0_ISR  
 	    	case EXTERNAL_PIN1_ISR_ADDRESS:
-		    	_int1e = InterruptDisable;
+		    	_int1e = Disable;
 		    break;
 		#endif	
 		    
 		#if USIM_ISR  
 			case USIM_ISR_ADDRESS:
-		    	_usime = InterruptDisable;
+		    	_usime = Disable;
 		    break;
 		#endif	
 		    
 		#if LVD_ISR 
 			case LVD_ISR_ADDRESS:
-		    	_lve = InterruptDisable;
+		    	_lve = Disable;
 			break;
 		#endif	
 		
 		#if ADC_ISR       
 			case ADC_ISR_ADDRESS:
-		  	  _ade = InterruptDisable;
+		  	  _ade = Disable;
 		    break;
 		#endif	
 		
 		#if EEPROM_ISR
 			case EEPROM_ISR_ADDRESS:
-		  	  _dee = InterruptDisable;
+		  	  _dee = Disable;
 		    break;
 		#endif
 		
 		#if PTM_COMPAIR_P_ISR          
 			case PTM_COMPAIR_P_ISR_ADDRESS:
-		  	  _ptmpe = InterruptDisable;
+		  	  _ptmpe = Disable;
 		    break;
 		#endif  
 		
 		#if PTM_COMPAIR_A_ISR     
 		case PTM_COMPAIR_A_ISR_ADDRESS:
-		    _ptmae = InterruptDisable;
+		    _ptmae = Disable;
 		    break;
 		#endif 
 		
 		#if STM_COMPAIR_P_ISR      
 			case STM_COMPAIR_P_ISR_ADDRESS:
-		   	 _stmpe = InterruptDisable;
+		   	 _stmpe = Disable;
 		    break;
 		#endif 
 		    
 		#if STM_COMPAIR_A_ISR        
 			case STM_COMPAIR_A_ISR_ADDRESS:
-		    	_stmae = InterruptDisable;
+		    	_stmae = Disable;
 		    break;
 		#endif 
 		
 		#if  BASE_TIMER0_ISR   
 			case BASE_TIMER0_ISR_ADDRESS:
-		   	 _tb0e = InterruptDisable;
+		   	 _tb0e = Disable;
 			break;
 		#endif	
 		
 		#if  BASE_TIMER1_ISR 	
 			case BASE_TIMER1_ISR_ADDRESS:
-		   	 _tb1e = InterruptDisable;
+		   	 _tb1e = Disable;
 			 break;
 		#endif	
 		
 		#if  PLT_COMPAIR0_ISR       
 			case PLT_COMPAIR0_ISR_ADDRESS:
-				_pltc0e = InterruptDisable;
+				_pltc0e = Disable;
 			break;
 		#endif
 		    
 		#if  PLT_COMPAIR1_ISR       
 			case PLT_COMPAIR1_ISR_ADDRESS:
-		    	_pltc1e = InterruptDisable;
+		    	_pltc1e = Disable;
 		    break;
 		#endif
 		
@@ -422,7 +422,8 @@ void __attribute__((interrupt(BASE_TIMER1_ISR_ADDRESS))) BaseTimer1ISR(void)
 //=========================================================================
 #if PLT_COMPAIR1_ISR
 void __attribute__((interrupt(PLT_COMPAIR1_ISR_ADDRESS))) PLT1CompairISR(void)
-{
+{ 
+	RXbit=0;
 	_pa3=0;
 //	_pb1=0;
 //_pb1=~_pb1;
@@ -439,6 +440,7 @@ void __attribute__((interrupt(PLT_COMPAIR1_ISR_ADDRESS))) PLT1CompairISR(void)
 #if PLT_COMPAIR0_ISR
 void __attribute__((interrupt(PLT_COMPAIR0_ISR_ADDRESS))) PLT0CompairISR(void){
 _pa3=1;
+RXbit=1;
 //_pb1=1;
     // Here goes the code for PLT Comparator 0 ISR
 }
