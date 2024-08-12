@@ -6,8 +6,8 @@
 #define Enable 1
 #define Disable 0
 extern  unsigned short *frame;
-extern volatile unsigned short frameResive;
-
+extern unsigned short frameResive;
+extern  unsigned char counterR;
 extern char RXbit;
 
 

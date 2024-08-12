@@ -3,12 +3,12 @@
 #include "BA45F5240.h"
 
 unsigned int counter=0;
-unsigned int counterR=0;
+unsigned char counterR=0;
 volatile char tx_data=0b10101101;
 
 volatile char bit_index = 0;
 unsigned short *frame;
-volatile unsigned short frameResive=0;
+unsigned short frameResive=0;
 volatile char tx_busy = 0;
 
 unsigned short *frame1=0;
@@ -36,27 +36,39 @@ void main()
 	TimerBaseInit();
 	IntrruptInit();
 	S_GPIO_Init();	
-//	PLT0Init();
-//	PLT1Init();
- PLT_SerialInit(9600);//PB1 output
+	PLT0Init();
+	PLT1Init();
+    PLT_SerialInit(9600);//PB1 output
  //UART_Init(9600);//PB1 TX
    while(1)
    {
     
    // UART_Transmit('m');
 
-           
+         
+
            
          //  counter++;
        /*    if(counter<1000)
            {*/
-          /*	EnableInterrupt(PLT_COMPAIR1_ISR_ADDRESS);
+        	EnableInterrupt(PLT_COMPAIR1_ISR_ADDRESS);
 			EnableInterrupt(PLT_COMPAIR0_ISR_ADDRESS);
-           	Data=receiveSerialData();
+			DisableInterrupt(STM_COMPAIR_A_ISR_ADDRESS);
+			frame=0;
+	        while(counterR<11)
+			EnableInterrupt(STM_COMPAIR_A_ISR_ADDRESS);
 			DisableInterrupt(PLT_COMPAIR1_ISR_ADDRESS);
-			DisableInterrupt(PLT_COMPAIR0_ISR_ADDRESS);*/
-			Data='m';
-		    PLT_SerialSend(&Data,frame);
+			DisableInterrupt(PLT_COMPAIR0_ISR_ADDRESS);
+			Data=&frameResive;
+			PLT_SerialSend(&Data,frame);
+			frameResive=0;
+			Data=0;
+			counterR=0;
+           //	Data=receiveSerialData();
+         	GCC_DELAY(25000);
+           	
+			//Data='m';
+		    
 		
 	
          /*  }*/
@@ -170,11 +182,13 @@ unsigned char receiveSerialData(void) {
     for (i = 0; i < 8; i++) {
         data <<= 1; 
 
-        if (RXbit == 1) {
+        if (RXbit == 1) 
+        {
             data |= 1;
-        } else if (RXbit == 1) {
+        } else if (RXbit == 1) 
+        {
             data |= 0; 
-            }
+         }
     }
 
     return data;
