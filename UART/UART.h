@@ -65,7 +65,7 @@
 
 void UART_Init(unsigned int baudrate);
 void UART_Transmit(char data);
-int UART_Receive(void);
+int  UART_Receive(void);
 
 
 

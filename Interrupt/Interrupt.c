@@ -423,11 +423,11 @@ void __attribute__((interrupt(BASE_TIMER1_ISR_ADDRESS))) BaseTimer1ISR(void)
 #if PLT_COMPAIR1_ISR
 void __attribute__((interrupt(PLT_COMPAIR1_ISR_ADDRESS))) PLT1CompairISR(void)
 { 
-	RXbit=0;
+/*	RXbit=0;
    counterR++;
    frameResive<<1;
    frameResive|= 0;
-   _pa3=0;
+   _pa3=0;*/
 	
 	
 //	_pb1=0;
@@ -444,15 +444,15 @@ void __attribute__((interrupt(PLT_COMPAIR1_ISR_ADDRESS))) PLT1CompairISR(void)
 //=========================================================================
 #if PLT_COMPAIR0_ISR
 void __attribute__((interrupt(PLT_COMPAIR0_ISR_ADDRESS))) PLT0CompairISR(void){
-counterR++;
-_pa3=1;
-RXbit=1;
-frameResive <<= 1;
-frameResive |= 1;
-if(counterR>=11)
-{
-	
-}
+//counterR++;
+//_pa3=1;
+//RXbit=1;
+//frameResive <<= 1;
+//frameResive |= 1;
+//if(counterR>=11)
+//{
+//	
+//}
 
 
 //_pb1=1;
