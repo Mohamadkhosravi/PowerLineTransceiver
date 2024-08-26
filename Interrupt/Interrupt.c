@@ -1,5 +1,5 @@
 #include <Interrupt.h>
-
+#include <UART.h>
 void IntrruptInit(void)
 {
 	GLOBAL_INTERRUPT = Enable;
@@ -10,6 +10,11 @@ void IntrruptInit(void)
 	#if EXTERNAL_PIN0_ISR      
 	_int0e=EXTERNAL_PIN0_ISR;
 	#endif
+	
+	#if EXTERNAL_PIN1_ISR      
+	_int1e=EXTERNAL_PIN1_ISR;
+	#endif
+	
 	
 	#if USIM_ISR
 	_usime=USIM_ISR;             
@@ -74,7 +79,7 @@ void EnableInterrupt(char interruptAddress)
 		    break;
 		#endif	
 		
-		#if EXTERNAL_PIN0_ISR  
+		#if EXTERNAL_PIN1_ISR  
 	    	case EXTERNAL_PIN1_ISR_ADDRESS:
 		    	_int1e = Enable;
 		    break;
@@ -171,7 +176,7 @@ void DisableInterrupt(char interruptAddress)
 		    break;
 		#endif	
 		
-		#if EXTERNAL_PIN0_ISR  
+		#if EXTERNAL_PIN1_ISR  
 	    	case EXTERNAL_PIN1_ISR_ADDRESS:
 		    	_int1e = Disable;
 		    break;
@@ -254,9 +259,7 @@ void DisableInterrupt(char interruptAddress)
             // Handle invalid interrupt type
             break;
     }
-
 }
-
 
 ////=======================================================================
 // External Pin 0 Interrupt Service Routine
@@ -291,8 +294,11 @@ void __attribute__((interrupt(EXTERNAL_PIN1_ISR_ADDRESS))) ExternalPin1ISR(void)
 // It is executed when an interrupt is triggered by the USIM.
 //=========================================================================
 #if USIM_ISR
+
 void __attribute__((interrupt(USIM_ISR_ADDRESS))) UniversalSerialInterfaceISR(void)
 {
+	_pa3=~_pa3;	
+
     // Here goes the code for Universal Serial Interface ISR
 }
 #endif
@@ -423,11 +429,11 @@ void __attribute__((interrupt(BASE_TIMER1_ISR_ADDRESS))) BaseTimer1ISR(void)
 #if PLT_COMPAIR1_ISR
 void __attribute__((interrupt(PLT_COMPAIR1_ISR_ADDRESS))) PLT1CompairISR(void)
 { 
-/*	RXbit=0;
+//	RXbit=0;
    counterR++;
-   frameResive<<1;
-   frameResive|= 0;
-   _pa3=0;*/
+  /* frameResive<<1;*/
+   //frameResive|= 0<<counterR;
+  // _pa3=0;
 	
 	
 //	_pb1=0;
@@ -444,15 +450,12 @@ void __attribute__((interrupt(PLT_COMPAIR1_ISR_ADDRESS))) PLT1CompairISR(void)
 //=========================================================================
 #if PLT_COMPAIR0_ISR
 void __attribute__((interrupt(PLT_COMPAIR0_ISR_ADDRESS))) PLT0CompairISR(void){
-//counterR++;
+counterR++;
 //_pa3=1;
-//RXbit=1;
+RXbit=1;
 //frameResive <<= 1;
 //frameResive |= 1;
-//if(counterR>=11)
-//{
-//	
-//}
+
 
 
 //_pb1=1;

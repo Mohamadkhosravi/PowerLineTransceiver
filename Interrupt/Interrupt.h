@@ -3,18 +3,19 @@
 #define ISR_H__
 #include "BA45F5240.h"
 
+
 #define Enable 1
 #define Disable 0
 extern  unsigned short *frame;
 extern unsigned short frameResive;
 extern  unsigned char counterR;
 extern char RXbit;
-
+extern char Data[16];
 
 #define GLOBAL_INTERRUPT        _emi
 #define EXTERNAL_PIN0_ISR      Disable
-#define EXTERNAL_PIN0_ISR      Disable
-#define USIM_ISR               Disable
+#define EXTERNAL_PIN1_ISR      Disable
+#define USIM_ISR               Enable
 #define LVD_ISR                Disable
 #define ADC_ISR                Disable
 #define EEPROM_ISR             Disable
@@ -47,12 +48,6 @@ void DisableInterrupt(char interruptAddress);
 #define BASE_TIMER1_ISR_ADDRESS    0x34 // Priority 12
 #define PLT_COMPAIR1_ISR_ADDRESS   0x38 // Priority 13 (Low)
 
-
-
-
-
-
-
 void IntrruptInit(void);
 void __attribute__((interrupt(EXTERNAL_PIN0_ISR_ADDRESS))) ExternalPin0ISR(void);
 void __attribute__((interrupt(EXTERNAL_PIN1_ISR_ADDRESS))) ExternalPin1ISR(void);
@@ -67,4 +62,5 @@ void __attribute__((interrupt(BASE_TIMER0_ISR_ADDRESS))) BaseTimer0ISR(void);
 void __attribute__((interrupt(BASE_TIMER1_ISR_ADDRESS))) BaseTimer1ISR(void);
 void __attribute__((interrupt(PLT_COMPAIR1_ISR_ADDRESS))) PLT1CompairISR(void);
 void __attribute__((interrupt(PLT_COMPAIR0_ISR_ADDRESS))) PLT0CompairISR(void);
+
 #endif
