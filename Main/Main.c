@@ -33,22 +33,21 @@ void main()
 //	PTimerInit();
 //	TimerBaseInit();
 	S_GPIO_Init();	
+	IntrruptInit();
 //	PLT0Init();
 //	PLT1Init();
 // PLT_SerialInit(9600);//PB1 output
    UART_Init(9600);//PB1 TX
 //	S_UART_Init();
-	IntrruptInit();
+   UART_EnableInterrupts();
 	int i=0;
 	int Counter=0;
-	EnableInterrupt(USIM_ISR_ADDRESS);
 
    while(1)
    {
-
 	GCC_CLRWDT();
-	Data[0]= S_UART_ReceiveData();
-	S_UART_SendData(Data[0]);
+	Data[0]= UART_Receive();
+	UART_Transmit(Data[0]);
 	GCC_DELAY(10000);
 	GCC_CLRWDT();
 	     

@@ -13,8 +13,8 @@ extern char RXbit;
 extern char Data[16];
 
 #define GLOBAL_INTERRUPT        _emi
-#define EXTERNAL_PIN0_ISR      Disable
-#define EXTERNAL_PIN1_ISR      Disable
+#define EXTERNAL_PIN0_ISR      Enable
+#define EXTERNAL_PIN1_ISR      Enable
 #define USIM_ISR               Enable
 #define LVD_ISR                Disable
 #define ADC_ISR                Disable

@@ -297,8 +297,16 @@ void __attribute__((interrupt(EXTERNAL_PIN1_ISR_ADDRESS))) ExternalPin1ISR(void)
 
 void __attribute__((interrupt(USIM_ISR_ADDRESS))) UniversalSerialInterfaceISR(void)
 {
-	_pa3=~_pa3;	
-
+	_pa3=1;
+	_nop();	
+	_nop();		
+	_nop();	
+	_nop();	
+	_nop();	
+	_nop();		
+	_nop();	
+	_nop();	
+	_pa3=0;
     // Here goes the code for Universal Serial Interface ISR
 }
 #endif
