@@ -297,7 +297,7 @@ void __attribute__((interrupt(EXTERNAL_PIN1_ISR_ADDRESS))) ExternalPin1ISR(void)
 
 void __attribute__((interrupt(USIM_ISR_ADDRESS))) UniversalSerialInterfaceISR(void)
 {
-	_pa3=1;
+/*	_pa3=1;
 	_nop();	
 	_nop();		
 	_nop();	
@@ -307,7 +307,7 @@ void __attribute__((interrupt(USIM_ISR_ADDRESS))) UniversalSerialInterfaceISR(vo
 	_nop();	
 	_nop();	
 	_pa3=0;
-    // Here goes the code for Universal Serial Interface ISR
+    // Here goes the code for Universal Serial Interface ISR*/
 }
 #endif
 
@@ -438,10 +438,10 @@ void __attribute__((interrupt(BASE_TIMER1_ISR_ADDRESS))) BaseTimer1ISR(void)
 void __attribute__((interrupt(PLT_COMPAIR1_ISR_ADDRESS))) PLT1CompairISR(void)
 { 
 //	RXbit=0;
-   counterR++;
+   /*counterR++;*/
   /* frameResive<<1;*/
    //frameResive|= 0<<counterR;
-  // _pa3=0;
+   _pa3=0;
 	
 	
 //	_pb1=0;
@@ -458,9 +458,9 @@ void __attribute__((interrupt(PLT_COMPAIR1_ISR_ADDRESS))) PLT1CompairISR(void)
 //=========================================================================
 #if PLT_COMPAIR0_ISR
 void __attribute__((interrupt(PLT_COMPAIR0_ISR_ADDRESS))) PLT0CompairISR(void){
-counterR++;
-//_pa3=1;
-RXbit=1;
+/*counterR++;*/
+ _pa3=1;
+/*RXbit=1;*/
 //frameResive <<= 1;
 //frameResive |= 1;
 

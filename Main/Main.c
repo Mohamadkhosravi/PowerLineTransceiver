@@ -28,23 +28,30 @@ void main()
 {
 	
 	S_RCC_Init();
-//	S_ADC_Init();
-//	STimerInit();
-//	PTimerInit();
-//	TimerBaseInit();
+	S_ADC_Init();
+	STimerInit();
+	PTimerInit();
+    TimerBaseInit();
 	S_GPIO_Init();	
 	IntrruptInit();
-//	PLT0Init();
-//	PLT1Init();
-// PLT_SerialInit(9600);//PB1 output
+	
+	
+	
+	
+	
+
+  // PLT_SerialInit(9600);//PB1 output
    UART_Init(9600);//PB1 TX
 //	S_UART_Init();
-   UART_EnableInterrupts();
+   //UART_EnableInterrupts();
+  	PLT0Init();
+	PLT1Init();
 	int i=0;
 	int Counter=0;
 
    while(1)
    {
+ 
 	GCC_CLRWDT();
 	Data[0]= UART_Receive();
 	UART_Transmit(Data[0]);

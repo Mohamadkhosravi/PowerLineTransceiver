@@ -42,20 +42,20 @@ void S_GPIO_Init()
 	_pbs0=0b01000000;
 	_pbs1=0b00000000;
 
-	
+
 //=====================================
 	// Set PA6 as UART RX (input)
 	_pac6 =1;//1: Input
 	_pas15 = 1;_pas14 = 0;//PAS15~PAS14:10: SDI/SDA/RX
-	_papu6=  1;  
+/*	_papu6=  1;  */
 //================================
 	//(PLT TX)output
 	_pbc1=0;// Set PB1 as UART TX (output 0 ) 
 	_pbs03=1;_pbs02=0;//PAS03~PAS02:10: SDO/TX
 //================================ 
-	//PB3 RX (PLTRX)
+/*	///PB3 RX (PLTRX)
 	_pbc3=1;// Set PB3 as UART RX (input 1 )
-	_pbs07=1;_pbs06=0;//PAS07~PAS06:10: SDI/SDA/RX
+	_pbs07=1;_pbs06=0;//PAS07~PAS06:10: SDI/SDA/RX*/
 
  //=================================== 
 	 // Set PA3 as UART TX (output)
@@ -67,8 +67,8 @@ void S_GPIO_Init()
 	01: SDI/SDA/RX on PA6
 	10: SDI/SDA/RX on PB3
 	11: SDI/SDA/RX on PA2*/
-	_ifs0=0b00000000;
-	_ifs01=1;_ifs00=0;
+     _ifs0=0b00000000;
+	_ifs01=0;_ifs00=1;
 
 
 }	

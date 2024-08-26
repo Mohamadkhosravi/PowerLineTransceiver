@@ -13,9 +13,9 @@ extern char RXbit;
 extern char Data[16];
 
 #define GLOBAL_INTERRUPT        _emi
-#define EXTERNAL_PIN0_ISR      Enable
-#define EXTERNAL_PIN1_ISR      Enable
-#define USIM_ISR               Enable
+#define EXTERNAL_PIN0_ISR      Disable
+#define EXTERNAL_PIN1_ISR      Disable
+#define USIM_ISR               Disable
 #define LVD_ISR                Disable
 #define ADC_ISR                Disable
 #define EEPROM_ISR             Disable
@@ -25,8 +25,8 @@ extern char Data[16];
 #define STM_COMPAIR_A_ISR      Disable
 #define BASE_TIMER0_ISR        Disable
 #define BASE_TIMER1_ISR        Disable
-#define PLT_COMPAIR0_ISR       Disable
-#define PLT_COMPAIR1_ISR       Disable
+#define PLT_COMPAIR0_ISR       Enable
+#define PLT_COMPAIR1_ISR       Enable
 
 void EnableInterrupt(char interruptAddress);
 void DisableInterrupt(char interruptAddress);
