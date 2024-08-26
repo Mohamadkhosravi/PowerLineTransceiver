@@ -34,12 +34,6 @@ void main()
     TimerBaseInit();
 	S_GPIO_Init();	
 	IntrruptInit();
-	
-	
-	
-	
-	
-
   // PLT_SerialInit(9600);//PB1 output
    UART_Init(9600);//PB1 TX
 //	S_UART_Init();
