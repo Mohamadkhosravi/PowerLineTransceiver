@@ -36,7 +36,8 @@ void main()
 //	PLT0Init();
 //	PLT1Init();
 // PLT_SerialInit(9600);//PB1 output
-	UART_Init(9600);//PB1 TX
+   UART_Init(9600);//PB1 TX
+//	S_UART_Init();
 	IntrruptInit();
 	int i=0;
 	int Counter=0;
@@ -46,7 +47,8 @@ void main()
    {
 
 	GCC_CLRWDT();
-	UART_Transmit('m');
+	Data[0]= S_UART_ReceiveData();
+	S_UART_SendData(Data[0]);
 	GCC_DELAY(10000);
 	GCC_CLRWDT();
 	     

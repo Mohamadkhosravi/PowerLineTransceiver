@@ -42,7 +42,7 @@ void S_GPIO_Init()
 	_pbs0=0b01000000;
 	_pbs1=0b00000000;
 	
-	_ifs0=0b00000000;
+
 	
 	
 	
@@ -65,6 +65,15 @@ void S_GPIO_Init()
    /* _pbs02 = 0;
     _pbs03 = 1;
 */
+/*Bit 1~0 IFS01~IFS00: SDI/SDA/RX input source pin selection
+00: SDI/SDA/RX on PA2
+01: SDI/SDA/RX on PA6
+10: SDI/SDA/RX on PB3
+11: SDI/SDA/RX on PA2*/
+_ifs0=0b00000000;
+_ifs01=1;_ifs00=0;
+
+
 }	
 	
 

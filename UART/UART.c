@@ -153,6 +153,20 @@ void UART_DisableInterrupts(void) {
 //*@retval		: None
 //===========================================================
 #if _UART_DRIVER
+
+#endif
+
+
+#if _UART_DRIVER
+
+#endif
+
+*/
+//===========================================================
+//*@brief		: UART Receive Data
+//*@param[in]	: None
+//*@retval		: ACC
+//===========================================================
 void S_UART_Init()
 {
 	_simc0=0b11110000;
@@ -163,24 +177,6 @@ void S_UART_Init()
 	_usime=0;
 	_usimf=0;
 }
-#endif
-
-
-#if _UART_DRIVER
-void S_UART_SendData( unsigned char Data)
-{
-	_utxr_rxr=Data;
-	while(!_utidle);			//Send Data Finish??
-}
-#endif
-
-*/
-//===========================================================
-//*@brief		: UART Receive Data
-//*@param[in]	: None
-//*@retval		: ACC
-//===========================================================
-
 unsigned char S_UART_ReceiveData()
 {
 	_acc=0;
@@ -191,3 +187,8 @@ unsigned char S_UART_ReceiveData()
 	return _acc;
 }
 
+void S_UART_SendData( unsigned char Data)
+{
+	_utxr_rxr=Data;
+	while(!_utidle);			//Send Data Finish??
+}
