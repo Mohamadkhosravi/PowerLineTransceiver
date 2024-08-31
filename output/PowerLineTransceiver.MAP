@@ -34,13 +34,13 @@ Input Library File: C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x
      00h     0142h     0175h    0034h      CODE               _builtin_holtek_dtnorm (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
      00h     0176h     018dh    0018h      CODE               @builtin_holtek_dtdecode (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
      00h     018eh     01a9h    001ch      CODE               _main (c:\users\tech\desktop\powerlinetransceiver\output\MAIN.OBJ)
-     00h     01aah     01c3h    001ah      CODE               _S_GPIO_Init (c:\users\tech\desktop\powerlinetransceiver\output\GPIO.OBJ)
-     00h     01c4h     01c9h    0006h      CODE               _S_RCC_Init (c:\users\tech\desktop\powerlinetransceiver\output\RCC.OBJ)
-     00h     01cah     01d5h    000ch      CODE               _S_Timebase_Init (c:\users\tech\desktop\powerlinetransceiver\output\RCC.OBJ)
-     00h     01d6h     01e3h    000eh      CODE               _EnableInterrupt (c:\users\tech\desktop\powerlinetransceiver\output\INTERRUPT.OBJ)
-     00h     01e4h     01f1h    000eh      CODE               _DisableInterrupt (c:\users\tech\desktop\powerlinetransceiver\output\INTERRUPT.OBJ)
-     00h     01f2h     01f7h    0006h      CODE               _PLT1CompairISR (c:\users\tech\desktop\powerlinetransceiver\output\INTERRUPT.OBJ)
-     00h     01f8h     01fdh    0006h      CODE               _PLT0CompairISR (c:\users\tech\desktop\powerlinetransceiver\output\INTERRUPT.OBJ)
+     00h     01aah     01c5h    001ch      CODE               _S_GPIO_Init (c:\users\tech\desktop\powerlinetransceiver\output\GPIO.OBJ)
+     00h     01c6h     01cbh    0006h      CODE               _S_RCC_Init (c:\users\tech\desktop\powerlinetransceiver\output\RCC.OBJ)
+     00h     01cch     01d7h    000ch      CODE               _S_Timebase_Init (c:\users\tech\desktop\powerlinetransceiver\output\RCC.OBJ)
+     00h     01d8h     01e5h    000eh      CODE               _EnableInterrupt (c:\users\tech\desktop\powerlinetransceiver\output\INTERRUPT.OBJ)
+     00h     01e6h     01f3h    000eh      CODE               _DisableInterrupt (c:\users\tech\desktop\powerlinetransceiver\output\INTERRUPT.OBJ)
+     00h     01f4h     01f8h    0005h      CODE               _PLT1CompairISR (c:\users\tech\desktop\powerlinetransceiver\output\INTERRUPT.OBJ)
+     00h     01f9h     01fdh    0005h      CODE               _PLT0CompairISR (c:\users\tech\desktop\powerlinetransceiver\output\INTERRUPT.OBJ)
      00h     01feh     0203h    0006h      CODE               _TimerBaseInit (c:\users\tech\desktop\powerlinetransceiver\output\BTM.OBJ)
      00h     0204h     0220h    001dh      CODE               _PTimerInit (c:\users\tech\desktop\powerlinetransceiver\output\PTM.OBJ)
      00h     0221h     0233h    0013h      CODE               _PWMSeter (c:\users\tech\desktop\powerlinetransceiver\output\PTM.OBJ)
@@ -180,16 +180,16 @@ Input Library File: C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x
      0001h              _Crom2PromNext
      00cch              _Data
      00f1h              _Data1
-     01e4h              _DisableInterrupt
-     01d6h              _EnableInterrupt
+     01e6h              _DisableInterrupt
+     01d8h              _EnableInterrupt
      00eeh              _IndexOfBit
      0033h              _IntrruptInit
      03a8h              _PLT0AmplifierInputOffsetCalibration
-     01f8h              _PLT0CompairISR
+     01f9h              _PLT0CompairISR
      0408h              _PLT0Init
      0262h              _PLT0InputOffsetCalibration
      039eh              _PLT0Recive
-     01f2h              _PLT1CompairISR
+     01f4h              _PLT1CompairISR
      0384h              _PLT1Init
      02c3h              _PLT1InputOffsetCalibration
      03a3h              _PLT1Recive
@@ -206,9 +206,9 @@ Input Library File: C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x
      0241h              _STimerInit
      05f1h              _S_ADC_Init
      01aah              _S_GPIO_Init
-     01c4h              _S_RCC_Init
+     01c6h              _S_RCC_Init
      05f7h              _S_READ_ADC
-     01cah              _S_Timebase_Init
+     01cch              _S_Timebase_Init
      05d0h              _S_UART_ReceiveData
      05c9h              _S_UART_SendData
      01feh              _TimerBaseInit
@@ -353,12 +353,12 @@ Input Library File: C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x
      018ch              _builtin_holtek_dtzero1
      018eh              _main
      01aah              _S_GPIO_Init
-     01c4h              _S_RCC_Init
-     01cah              _S_Timebase_Init
-     01d6h              _EnableInterrupt
-     01e4h              _DisableInterrupt
-     01f2h              _PLT1CompairISR
-     01f8h              _PLT0CompairISR
+     01c6h              _S_RCC_Init
+     01cch              _S_Timebase_Init
+     01d8h              _EnableInterrupt
+     01e6h              _DisableInterrupt
+     01f4h              _PLT1CompairISR
+     01f9h              _PLT0CompairISR
      01feh              _TimerBaseInit
      0204h              _PTimerInit
      0221h              _PWMSeter
