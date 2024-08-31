@@ -442,7 +442,7 @@ void __attribute__((interrupt(PLT_COMPAIR1_ISR_ADDRESS))) PLT1CompairISR(void)
   /* frameResive<<1;*/
    //frameResive|= 0<<counterR;
    _pa3=0;
-	
+   _pa1=0;
 	
 //	_pb1=0;
 //_pb1=~_pb1;
@@ -460,6 +460,7 @@ void __attribute__((interrupt(PLT_COMPAIR1_ISR_ADDRESS))) PLT1CompairISR(void)
 void __attribute__((interrupt(PLT_COMPAIR0_ISR_ADDRESS))) PLT0CompairISR(void){
 /*counterR++;*/
  _pa3=1;
+ _pa1=1;
 /*RXbit=1;*/
 //frameResive <<= 1;
 //frameResive |= 1;
