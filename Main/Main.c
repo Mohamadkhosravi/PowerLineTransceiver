@@ -51,10 +51,10 @@ void main()
 	UART_Transmit(Data[0]);
 	GCC_DELAY(10000);
 	GCC_CLRWDT();
-	     
+	   
 
    }
 
-   
+  
 }
 

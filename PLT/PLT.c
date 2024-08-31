@@ -7,7 +7,8 @@ unsigned int VC0OS1=0;
 unsigned int VC0OS2=0;
 unsigned int VC1OS1=0;
 unsigned int VC1OS2=0;
-
+unsigned int VC2OS1=0;
+unsigned int VC2OS2=0;
 int PLT0InputOffsetCalibration(void){
 	
 	int repeat=0;	
@@ -53,7 +54,6 @@ int PLT0InputOffsetCalibration(void){
 
      return (value);
 };
-
 int PLT1InputOffsetCalibration(void){
 	
 	int repeat=0;	
@@ -97,7 +97,45 @@ int PLT1InputOffsetCalibration(void){
 	
      return (value);
 };
+int PLTAInputOffsetCalibration(void){
+	PLT_A_READ_OUTPUT_CONTOROL=Enable;
 
+	int repeat=0;	
+	static unsigned int value =0;
+	PLTA_Voltage_Calibration_Mode_Selection = Offset_Calibration_Mode;
+    S7_S8_ON_S6_OFF;
+	PLTA_Input_Offset_Voltage_Calibration_Value(0);
+	value=1;
+	for(repeat=0;repeat<3;repeat++){
+		
+		value+=repeat;
+    	PLTA_Input_Offset_Voltage_Calibration_Value(5);
+		VC2OS1=value;
+		if( PLT_Comparator_A_Output_Value){	
+			repeat=0;
+			break;
+	 	} 
+	    
+	}
+	 
+    repeat=0;
+	value=0b11111;
+	for(repeat=0;repeat<5;repeat++){
+		
+		value-=repeat;
+		PLTA_Input_Offset_Voltage_Calibration_Value(value);
+		VC2OS2=value;
+		if( PLT_Comparator_A_Output_Value)
+		{
+			repeat=0;
+			break;
+		}
+	 
+	}
+	value= (int)(VC2OS1+VC2OS2)/2;
+	PLTA_Input_Offset_Voltage_Calibration_Value(value);
+    return (value);
+};
 
 void PLT0Init(void){
 	int Offset;
@@ -112,7 +150,6 @@ void PLT0Init(void){
 	PLT_OPAMP_0_CONTROL=Enable;
 	
 }
-
 void PLT1Init(void){
 	int Offset;
 	Offset=  PLT1InputOffsetCalibration();
@@ -126,6 +163,20 @@ void PLT1Init(void){
 	PLT_OPAMP_1_CONTROL=Enable;
 
 };
+void PLTAInit(void){
+	int Offset;
+	Offset=  PLTAInputOffsetCalibration();
+	PLTA_Voltage_Calibration_Mode_Selection	= Normal_Operation;		
+	PLT_DAC2_Control=Enable;
+	PLT_DAC2_VALUE=18;
+	PLTS2_Switch_Selection=Connect_to_PLTDAC2O;
+	PLTS1_Switch_Selection=Connect_to_PLIS;
+	PLTS0_Switch_Selection=Connect_to_OPAMP_output;
+	S6_S7_ON_S8_OFF
+	PLT_Comparator_A_Control=Enable;
+	PLT_OPA_Gain_Bandwidth_Control=_2MHz;
+
+};
 
 char PLT0Recive(void){
 
@@ -137,11 +188,7 @@ char PLT1Recive(void){
 	return PLT_OP1_Output_Status;
 
 };
-
-
-
-int PLT0AmplifierInputOffsetCalibration(void)
-{
+int PLT0AmplifierInputOffsetCalibration(void){
 	int repeat=0;	
 	static unsigned int value =0;
 	PLT0_Voltage_Calibration_Mode_Selection = Offset_Calibration_Mode;

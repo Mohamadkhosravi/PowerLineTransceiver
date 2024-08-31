@@ -3,25 +3,26 @@
 
 #define S0_S1_ON_S2_OFF  _pltc0ofm=0,_pltc0rsp=0;
 #define S0_S1_OFF_S2_ON
-
+//===================================================
 #define S0_S2_ON_S1_OFF  _pltc0ofm=1,_pltc0rsp=1;
 #define S0_S1_OFF_S2_ON
-
-
+//===================================================
 #define S3_S4_ON_S5_OFF  _pltc1ofm=0,_pltc1rsp=0;
 #define S3_S4_OFF_S5_ON
-
+//===================================================
 #define S3_S5_ON_S4_OFF  _pltc1ofm=1,_pltc1rsp=1;
 #define S3_S4_OFF_S5_ON
-
-
+//===================================================
+#define S6_S7_ON_S8_OFF   _pltaofm=0,_pltarsp=0;
+//==================================================
+#define S7_S8_ON_S6_OFF   _pltaofm=1,_pltarsp=0;
 enum{
  Disable,
  Enable
 };
 
 
-
+#define PLT_A_READ_OUTPUT_CONTOROL _pltaofm
 //*******************************
 #define PLTS2_Switch_Selection 	_plts2 
 enum {
@@ -50,7 +51,7 @@ enum
 
 /********************************
 D5~D0: PLT DAC0 output control code
-PLTDAC0O= ( DAC VDD(1.2V)/26)× PLTDA0L[5:0]*/
+PLTDAC0O= ( DAC VDD(1.2V)/26)? PLTDA0L[5:0]*/
 #define PLT_DAC0_VALUE	_pltda0l
 #define PLT_DAC1_VALUE	_pltda1l
 #define PLT_DAC2_VALUE	_pltda2l
@@ -61,13 +62,13 @@ PLTDAC0O= ( DAC VDD(1.2V)/26)× PLTDA0L[5:0]*/
 //Enable Or Disable 
 #define PLT_Comparator_0_Control  _pltc0en 
 #define PLT_Comparator_1_Control  _pltc1en 
-#define PLT_Comparator_2_Control  _pltc2en 
+#define PLT_Comparator_A_Control  _pltaen
 /*********************************
 PLT Comparator 0 debounced output
 The PLTC0O is de-bounced version of PLTC0OUT
-If PLTC0POL=0, the PLTC0O outputs “1” only when the current and the previous N
-samples of PLTC0OUT are all “1”. If PLTC0POL=1, The PLTC0O outputs “0” only
-when the current and the previous N samples of PLTC0OUT are all “0”. The sampling
+If PLTC0POL=0, the PLTC0O outputs 1 only when the current and the previous N
+samples of PLTC0OUT are all 1 If PLTC0POL=1, The PLTC0O outputs 0 only
+when the current and the previous N samples of PLTC0OUT are all 0. The sampling
 frequency is depend on the PLTC0DEB[1:0] bit configuration.*/
 #define PLT_Comparator_0_Debounced_Output 	_pltc0o
 #define PLT_Comparator_1_Debounced_Output	_pltc1o
@@ -104,7 +105,7 @@ enum{
 //*****************************
 #define PLT_Comparator_0_Output_Value _pltc0out
 #define PLT_Comparator_1_Output_Value _pltc1out
-#define PLT_Comparator_2_Output_Value _pltc2out
+#define PLT_Comparator_A_Output_Value _pltao
 
 //****************************************	
 // PLT Comparator Hysteresis voltage (pltc1hys1|pltc1hys0|_pltc0hys1|pltc0hys0) max value 2
