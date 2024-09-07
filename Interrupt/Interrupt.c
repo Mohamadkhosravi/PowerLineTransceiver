@@ -124,12 +124,15 @@ void EnableInterrupt(char interruptAddress)
 		#if STM_COMPAIR_P_ISR      
 			case STM_COMPAIR_P_ISR_ADDRESS:
 		   	 _stmpe = Enable;
+		   	//	_ston=1;
 		    break;
 		#endif 
 		    
 		#if STM_COMPAIR_A_ISR        
 			case STM_COMPAIR_A_ISR_ADDRESS:
 		    	_stmae = Enable;
+		    //	_ston=1;
+		    
 		    break;
 		#endif 
 		
@@ -221,12 +224,17 @@ void DisableInterrupt(char interruptAddress)
 		#if STM_COMPAIR_P_ISR      
 			case STM_COMPAIR_P_ISR_ADDRESS:
 		   	 _stmpe = Disable;
+		   	 //_ston=0;
+		  
+		   	 
 		    break;
 		#endif 
 		    
 		#if STM_COMPAIR_A_ISR        
 			case STM_COMPAIR_A_ISR_ADDRESS:
 		    	_stmae = Disable;
+		    //	_ston=0;
+		    
 		    break;
 		#endif 
 		

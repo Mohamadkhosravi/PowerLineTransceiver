@@ -20,9 +20,9 @@ unsigned short PLT_SerialSend(unsigned char *data, unsigned short *frame)
             *frame |= ((data1[i] & 1) << (i + 1));
         }
 
-        *frame |= (parity << 9); // Parity bit
+      /*  *frame |= (parity << 9); // Parity bit
         *frame |= (1 << 10); // Stop bit
-        *frame |= (checksum << 11); // Checksum (assuming 4 bits for simplicity)
+        *frame |= (checksum << 11); // Checksum (assuming 4 bits for simplicity)*/
         EnableInterrupt(STM_COMPAIR_A_ISR_ADDRESS);
         return 1;
     }
@@ -60,16 +60,16 @@ void PLT_SerialInit(unsigned int baudrate){
 void PLT_HandelSerialTransmit(void)
 { 
 	
-	if((*frame)&1)_pb1=1;
+	if((*frame)&1)TX_PIN=1;
 	else 
 	{
-	   _pb1=0;
+	    TX_PIN=0;
 		if((*frame==0))
 		{
 			char i=0;
 			for(i=0;i<7;i++)_nop();
 			DisableInterrupt(STM_COMPAIR_A_ISR_ADDRESS); 
-			_pb1=1;
+			TX_PIN=1;
 			tx_busy=0;
 		
 		}

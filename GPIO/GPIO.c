@@ -49,12 +49,12 @@ void S_GPIO_Init()
 	_pas15 = 1;_pas14 = 0;//PAS15~PAS14:10: SDI/SDA/RX
 /*	_papu6=  1;  */
 //================================
-/*	//(PLT TX)output
-	_pbc1=0;// Set PB1 as UART TX (output 0 ) 
-	_pbs03=1;_pbs02=0;//PAS03~PAS02:10: SDO/TX*/
+	//(PLT TX)output
+//	_pbc1=0;// Set PB1 as UART TX (output 0 ) 
+//	_pbs03=1;_pbs02=0;//PAS03~PAS02:10: SDO/TX
 	
 //PBS03~PBS02: PB1 Pin-Shared function selection 01: PLTX
-  _pbs03=0;_pbs02=1;
+_pbs03=0;_pbs02=1;
 //================================ 
 /*	///PB3 RX (PLTRX)
 	_pbc3=1;// Set PB3 as UART RX (input 1 )
@@ -75,6 +75,19 @@ void S_GPIO_Init()
  //port A3 Share function PAS07~PAS06 TX(LED PIN):
 	_pas06=1;
 	_pas07=0;
+	
+//========================================================	
+//// Set PA3 as UART TX (output)
+////PAS07~PAS06: PA3 Pin-Shared function selection :01: SDO/TX
+ //port A3 Share function PAS07~PAS06 TX(LED PIN):
+	_pas06=1;
+	_pas07=0;
+	
+//========================================================		
+//PBS05~PBS04: PB2 Pin-Shared function selection:01: PLIS	
+_pbs05=0;_pbs04=1;
+			
+	
 }	
 	
 

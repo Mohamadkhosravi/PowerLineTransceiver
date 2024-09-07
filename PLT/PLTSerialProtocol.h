@@ -17,7 +17,10 @@ extern char RXbit;
 
 
 #define  START_BIT    0;
-#define TX_PIN       _pb1=1;
+
+#define TX_PIN      	_pb1
+
+  	
 #define RX_BIT       ADDRESS_PLT_RECEIVE
 volatile char IndexOfBit=0;
 #define _8_BIT_DATA_TRANSFER  8
