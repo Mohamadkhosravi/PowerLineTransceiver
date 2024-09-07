@@ -17,7 +17,6 @@ extern char RXbit;
 
 
 #define  START_BIT    0;
-
 #define TX_PIN      	_pb1
 
   	

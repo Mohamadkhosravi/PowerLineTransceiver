@@ -9,7 +9,7 @@ unsigned short PLT_SerialSend(unsigned char *data, unsigned short *frame)
     // Convert the character to its binary representation
     for (i = 0; i < 8; i++) {
         data1[i] = (*data >> i) & 1;
-     }
+    }
     if (tx_busy == 0)
     {
         tx_busy = 1;
@@ -69,8 +69,8 @@ void PLT_HandelSerialTransmit(void)
 			char i=0;
 			for(i=0;i<7;i++)_nop();
 			DisableInterrupt(STM_COMPAIR_A_ISR_ADDRESS); 
-			TX_PIN=1;
-			tx_busy=0;
+			_pb1=1;
+			TX_PIN=0;
 		
 		}
 	
