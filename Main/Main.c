@@ -8,7 +8,7 @@ void main()
 {
     uint8_t Data=0;	
     S_RCC_Init();
-	S_ADC_Init();
+	ADCInit();
 	S_GPIO_Init();	
 	IntrruptInit();
 	UART_Init(9600);
@@ -17,7 +17,8 @@ void main()
 	PLTAInit();
 	while(1)
 	{
-		Data= UART_Receive();
+		//Data= UART_Receive();
+		Data=UART_ReceiveNonBlocking();
 		GCC_DELAY(5000);
 		if(Data=='O')
 		{
