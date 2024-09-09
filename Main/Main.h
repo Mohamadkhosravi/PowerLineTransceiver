@@ -5,9 +5,13 @@
 #include <UART.h>
 #include <Interrupt.h>
 #include <GPIO.h>
-typedef  unsigned char  uint8_t;
-typedef  unsigned short uint16_t;
-typedef  unsigned int   uint32_t;
+typedef  unsigned char   uint8_t;  //0~255
+typedef  unsigned int    uint16_t; //0~65535
+typedef  unsigned long   uint32_t; //0~4294967295
+typedef  char   int8_t;  //-128~127
+typedef  int    int16_t; //-32 768~32 767
+typedef  long   int32_t; //-2147483648~2147483647
+
 typedef enum{False,True} bool;
 
 

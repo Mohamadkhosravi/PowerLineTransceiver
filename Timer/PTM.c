@@ -68,54 +68,54 @@ _ptmrph = PTM_CCRP_HIGH_BYTE_MASK & 3;
 
 	
 
-	 void PWMSeter(char status)
-	 {
-	 	if(status==1)
-	 	{
-		 	//==================
-			//PTM CCRA Low Byte
-			 _ptmal=37;
-			//PTM CCRA High Byte Register 
-			_ptmah=0b00;
-			//==================
-			//*********************
-			//==================
-			
-			//PTM CCRP Low Byte Register
-			_ptmrpl=00;
-			//PTM CCRP High Byte Register
-			_ptmrph=0;
-			
-			//==================		
-			/************************
-			
-			
-			//PTPAU: PTM Counter Pause Control
-			0: Run
-			1: Pause	
-			*/	
-			_ptpau=0;
-			
-			/*PTON: PTM Counter On/Off Control
-			0: Off
-			1: On
-			*/
-		   _pton=1;
-			
-	 	}
-	 	else if(status==0)
-	 	{
-			_ptpau=1;
-			_pton=0;
-			_ptmrpl=0;
-			_ptmal=0;
-	 	}
-	 	
-	 }
+void PWMSeter(char status)
+{
+	if(status==1)
+	{
+		//==================
+		//PTM CCRA Low Byte
+		_ptmal=37;
+		//PTM CCRA High Byte Register 
+		_ptmah=0b00;
+		//==================
+		//*********************
+		//==================
+		
+		//PTM CCRP Low Byte Register
+		_ptmrpl=00;
+		//PTM CCRP High Byte Register
+		_ptmrph=0;
+		
+		//==================		
+		/************************
+		
+		
+		//PTPAU: PTM Counter Pause Control
+		0: Run
+		1: Pause	
+		*/	
+		_ptpau=0;
+		
+		/*PTON: PTM Counter On/Off Control
+		0: Off
+		1: On
+		*/
+		_pton=1;
+		
+	}
+	else if(status==0)
+	{
+		_ptpau=1;
+		_pton=0;
+		_ptmrpl=0;
+		_ptmal=0;
+	}
+
+}
 
 
 unsigned int readPTimer(void) 
 {
-    // Read STM Timer Value
-    return ((_ptmdl) | (_ptmdh << 8));
+	// Read STM Timer Value
+	return ((_ptmdl) | (_ptmdh << 8));
 }

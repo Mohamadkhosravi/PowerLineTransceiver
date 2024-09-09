@@ -1,31 +1,6 @@
 
 #include "GPIO.h"
 
-//
-////===========================================================
-////*@brief		: GPIO Init
-////*@param[in]	: None
-////*@retval		: None
-////===========================================================
-//void S_GPIO_Init()
-//{
-//	_pa = 0b00000000;
-//	_pac= 0b00010001;
-//	_papu=0b00000001;
-//	_pawu=0b00000001;
-//	_pas0=0b10000000;
-//	_pas1=0b10010010;
-//	
-//	_pb = 0b00000000;
-//	_pbc= 0b00000100;
-//	_pbpu=0b00000100;
-//	_pbs0=0b00001000;
-//	_pbs1=0b00000000;
-//	
-//	_ifs0=0b00000000;
-//
-//}
-
 
 void S_GPIO_Init()
 {
@@ -77,15 +52,15 @@ _pbc1=0;// Set PB1 as UART TX (output 0 )
 //// Set PA3 as UART TX (output)
 ///PAS07~PAS06: PA3 Pin-Shared function selection :01: SDO/TX
  //port A3 Share function PAS07~PAS06 TX(LED PIN):
-	_pas06=1;
-	_pas07=0;
+//	_pas06=1;
+//	_pas07=0;
+	
+//PAS07~PAS06: PA3 Pin-Shared function selection: 00: PA3
+	_pas07=0;	_pas06=0;
+
 	
 //========================================================	
-//// Set PA3 as UART TX (output)
-////PAS07~PAS06: PA3 Pin-Shared function selection :01: SDO/TX
- //port A3 Share function PAS07~PAS06 TX(LED PIN):
-	_pas06=1;
-	_pas07=0;
+
 	
 //========================================================		
 //PBS05~PBS04: PB2 Pin-Shared function selection:01: PLIS	

@@ -305,16 +305,6 @@ void __attribute__((interrupt(EXTERNAL_PIN1_ISR_ADDRESS))) ExternalPin1ISR(void)
 
 void __attribute__((interrupt(USIM_ISR_ADDRESS))) UniversalSerialInterfaceISR(void)
 {
-/*	_pa3=1;
-	_nop();	
-	_nop();		
-	_nop();	
-	_nop();	
-	_nop();	
-	_nop();		
-	_nop();	
-	_nop();	
-	_pa3=0;
     // Here goes the code for Universal Serial Interface ISR*/
 }
 #endif
@@ -354,11 +344,6 @@ void __attribute__((interrupt(EEPROM_ISR_ADDRESS))) EEPROMISR(void)
 #if PTM_COMPAIR_P_ISR
 void __attribute__((interrupt(PTM_COMPAIR_P_ISR_ADDRESS))) PTMCompairPISR(void)
 {
-// static int cunt=0;
-///	cunt++;
-//	_pb1=1;		
-//	if(cunt>=8){DisableInterrupt(PTM_COMPAIR_P_ISR_ADDRESS); }
-
     // Here goes the code for PTM Comparator P ISR
 }
 #endif
@@ -372,8 +357,6 @@ void __attribute__((interrupt(PTM_COMPAIR_P_ISR_ADDRESS))) PTMCompairPISR(void)
 #if PTM_COMPAIR_A_ISR
 void __attribute__((interrupt(PTM_COMPAIR_A_ISR_ADDRESS))) PTMCompairAISR(void)
 {
-	// _pb1=0;
-	//_pb1=~_pb1;	
     // Here goes the code for PTM Comparator A ISR
 }
 #endif
@@ -402,7 +385,7 @@ void __attribute__((interrupt(STM_COMPAIR_P_ISR_ADDRESS))) STMCompairPISR(void)
 
 void __attribute__((interrupt(STM_COMPAIR_A_ISR_ADDRESS))) STMCompairAISR(void)
 { 
-    PLT_HandelSerialTransmit();  
+    //PLT_HandelSerialTransmit();  
     // Here goes the code for STM Comparator A ISR
 }
 #endif
@@ -430,9 +413,7 @@ void __attribute__((interrupt(BASE_TIMER0_ISR_ADDRESS))) BaseTimer0ISR(void)
 #if BASE_TIMER1_ISR
 void __attribute__((interrupt(BASE_TIMER1_ISR_ADDRESS))) BaseTimer1ISR(void)
 {
- //RXbit=1;
-
-    // Here goes the code for Base Timer 1 ISR
+	// Here goes the code for Base Timer 1 ISR
 }
 #endif
 
@@ -445,14 +426,8 @@ void __attribute__((interrupt(BASE_TIMER1_ISR_ADDRESS))) BaseTimer1ISR(void)
 #if PLT_COMPAIR1_ISR
 void __attribute__((interrupt(PLT_COMPAIR1_ISR_ADDRESS))) PLT1CompairISR(void)
 { 
-//	RXbit=0;
-   /*counterR++;*/
-  /* frameResive<<1;*/
-   //frameResive|= 0<<counterR;
-   _pa1=0;
-	
-//	_pb1=0;
-//_pb1=~_pb1;
+
+    _pa1=0;
     // Here goes the code for PLT Comparator 1 ISR
 }
 #endif
@@ -464,17 +439,10 @@ void __attribute__((interrupt(PLT_COMPAIR1_ISR_ADDRESS))) PLT1CompairISR(void)
 // It is executed when an interrupt is triggered by PLT Comparator 0.
 //=========================================================================
 #if PLT_COMPAIR0_ISR
-void __attribute__((interrupt(PLT_COMPAIR0_ISR_ADDRESS))) PLT0CompairISR(void){
-/*counterR++;*/
- _pa1=1;
-/*RXbit=1;*/
-//frameResive <<= 1;
-//frameResive |= 1;
-
-
-
-//_pb1=1;
-    // Here goes the code for PLT Comparator 0 ISR
+void __attribute__((interrupt(PLT_COMPAIR0_ISR_ADDRESS))) PLT0CompairISR(void)
+{
+	_pa1=1;
+   // Here goes the code for PLT Comparator 0 ISR
 }
 #endif
 

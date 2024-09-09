@@ -10,9 +10,9 @@ unsigned short PLT_SerialSend(unsigned char *data, unsigned short *frame)
     for (i = 0; i < 8; i++) {
         data1[i] = (*data >> i) & 1;
      }
-    if (tx_busy == 0)
+    if (TXBusy == 0)
     {
-        tx_busy = 1;
+        TXBusy = 1;
         calculate_parity_and_checksum(data1, 8, &parity, &checksum);
         *frame = 0;
         *frame |= (0 << 0); // Start bit
@@ -70,7 +70,7 @@ void PLT_HandelSerialTransmit(void)
 			for(i=0;i<7;i++)_nop();
 			DisableInterrupt(STM_COMPAIR_A_ISR_ADDRESS); 
 			_pb1=1;
-			tx_busy=0;
+			TXBusy=0;
 		
 		}
 	

@@ -9,7 +9,7 @@ volatile char tx_data=0b10101101;
 volatile char bit_index = 0;
 unsigned short *frame;
 unsigned short frameResive=0;
-volatile char tx_busy = 0;
+volatile char TXBusy = 0;
 
 unsigned short *frame1=0;
 unsigned char receiveSerialData(void);
