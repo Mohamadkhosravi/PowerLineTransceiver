@@ -79,6 +79,13 @@ typedef struct {
 //
 //#define SDS6(S6, S7, S8, S9) (!( (S6) && (S7) && !(S8) && (S9) ))
 //#define SDS5(S6, S7, S8, S9) ( (S6) && !(S7) && !(S8) && !(S9) )
+#define R1  1 //R1= SDA0PGA[5:0] × 100kO
+#define R2  1 //R2= SDA1PGA[5:0] × 100kO
+#define _10KR  0// 10kO
+#define _20KR  1// 20kO
+#define _30KR  2// 30kO
+#define _40KR  3// 40kO
+#define R3  _10KR //R1= SDA0PGA[5:0] × 100kO
 
 
 

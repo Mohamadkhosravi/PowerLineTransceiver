@@ -22,8 +22,8 @@
 
 // Initialize the Operational Amplifiers and ISINK
 void InitOPA()
-{SwitchType switches;
-	
+{
+	SwitchType switches;
     // OPAMP0 initialization
     _sda0en =  OPAMP0_CONTROL;  // Enable OPAMP0
     _sda0bw1 = OPAMP0_BANDWIDTH >> 1; // Set OPAMP0 bandwidth to 600kHz
@@ -33,22 +33,27 @@ void InitOPA()
     _sda1en = OPAMP1_CONTROL;  // Enable OPAMP1
     _sda1bw1 = OPAMP1_BANDWIDTH >> 1; // Set OPAMP1 bandwidth to 600kHz
     _sda1bw0 = OPAMP1_BANDWIDTH & 1;
-    /*
-    
-    Sw.S0=0;
-    Sw.S1=0;
-    Sw.S2=1;
-    
-    Sw.S3=0;
-    Sw.S4=0;
-    Sw.S5=1;*/
-    
-    
-	/*_sda0ofm=SDA0OFM(Sw.S0, Sw.S1, Sw.S2);  
-	_sda0rsp=SDA0RSP(Sw.S0, Sw.S1, Sw.S2);  
-	_sda1ofm=SDA1OFM(Sw.S3, Sw.S4, Sw.S5); 
-	_sda1rsp=SDA1RSP(Sw.S3, Sw.S4, Sw.S5);*/
-
+ 
+	_sds0=Open;
+	_sds1=Open;
+	_sds2=Close;
+	_sds3=Open;
+	_sds4=Open; 
+	switches.S0=Close;
+	switches.S1=Close;
+	switches.S2=Open;
+	switches.S3=Close;
+	switches.S4=Close;
+  
+	_sda0ofm=SDA0OFM(switches.S0, switches.S1, switches.S2);  
+	_sda0rsp=SDA0RSP(switches.S0, switches.S1, switches.S2);  
+	_sda1ofm=SDA1OFM(switches.S3, switches.S4, switches.S5); 
+	_sda1rsp=SDA1RSP(switches.S3, switches.S4, switches.S5);
+//	_sda0pga|=0x3F&R1;
+//	_sda1pga|=0x3F&R2;
+	//?
+//	_sda1pga0=R3>>1;
+//	_sda1pga1|=R3&1;
 
 }
 

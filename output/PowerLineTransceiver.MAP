@@ -71,15 +71,15 @@ Input Library File: C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x
      00h     05b8h     05c9h    0012h      CODE               _UART_DisableInterrupts (c:\users\tech\desktop\powerlinetransceiver\output\UART.OBJ)
      00h     05cah     05d0h    0007h      CODE               _ADCInit (c:\users\tech\desktop\powerlinetransceiver\output\ADC.OBJ)
      00h     05d1h     0630h    0060h      CODE               _ReadADC (c:\users\tech\desktop\powerlinetransceiver\output\ADC.OBJ)
-     00h     0631h     0637h    0007h      CODE               _InitOPA (c:\users\tech\desktop\powerlinetransceiver\output\SMOKEDETECTOR.OBJ)
-     00h     0638h     0666h    002fh      CODE               _CalibrateOPA0 (c:\users\tech\desktop\powerlinetransceiver\output\SMOKEDETECTOR.OBJ)
-     00h     0667h     0695h    002fh      CODE               _CalibrateOPA1 (c:\users\tech\desktop\powerlinetransceiver\output\SMOKEDETECTOR.OBJ)
-     00h     0696h     06a3h    000eh      CODE               _builtin_holtek_delay_isr00 (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
-     00h     06a4h     06adh    000ah      CODE               __DELAYX (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
-     00h     06aeh     06b0h    0003h      CODE               _CROM2PROM (CROM2PROM)
-     00h     0080h     0080h    0001h      DATA     90        @data_ra (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
-     00h     0081h     0081h    0001h      DATA     97        @data_rb (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
-     00h     0082h     0082h    0001h      DATA     79        @data_rc (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
+     00h     0631h     0673h    0043h      CODE               _InitOPA (c:\users\tech\desktop\powerlinetransceiver\output\SMOKEDETECTOR.OBJ)
+     00h     0674h     06a2h    002fh      CODE               _CalibrateOPA0 (c:\users\tech\desktop\powerlinetransceiver\output\SMOKEDETECTOR.OBJ)
+     00h     06a3h     06d1h    002fh      CODE               _CalibrateOPA1 (c:\users\tech\desktop\powerlinetransceiver\output\SMOKEDETECTOR.OBJ)
+     00h     06d2h     06dfh    000eh      CODE               _builtin_holtek_delay_isr00 (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
+     00h     06e0h     06e9h    000ah      CODE               __DELAYX (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
+     00h     06eah     06ech    0003h      CODE               _CROM2PROM (CROM2PROM)
+     00h     0080h     0080h    0001h      DATA     108       @data_ra (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
+     00h     0081h     0081h    0001h      DATA     102       @data_rb (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
+     00h     0082h     0082h    0001h      DATA     82        @data_rc (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
      00h     0083h     0083h    0001h      DATA     65        @data_rd (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
      00h     0084h     0084h    0001h      DATA     63        @data_re (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
      00h     0085h     0085h    0001h      DATA     48        @data_rf (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
@@ -172,11 +172,11 @@ Input Library File: C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x
      Public Symbols Information
      Address            Public by Name
      05cah              _ADCInit
-     0638h              _CalibrateOPA0
-     0667h              _CalibrateOPA1
+     0674h              _CalibrateOPA0
+     06a3h              _CalibrateOPA1
      0002h              _CheckSmokeLevel
-     06afh              _Crom2Prom
-     06aeh              _Crom2PromNext
+     06ebh              _Crom2Prom
+     06eah              _Crom2PromNext
      01e3h              _DisableInterrupt
      01d5h              _EnableInterrupt
      0001h              _InitISINK
@@ -218,19 +218,19 @@ Input Library File: C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x
      00c7h              _VC1OS2
      00c5h              _VC2OS1
      00c3h              _VC2OS2
-     06aah              __DELAYX0
-     06a9h              __DELAYX1
-     06a8h              __DELAYX2
-     06a7h              __DELAYX3
-     06a6h              __DELAYX4
-     06a5h              __DELAYX5
-     06a4h              __DELAYX6
-     069bh              __DELAYY0_isr00
-     069ah              __DELAYY1_isr00
-     0699h              __DELAYY2_isr00
-     0698h              __DELAYY3_isr00
-     0697h              __DELAYY4_isr00
-     0696h              __DELAYY5_isr00
+     06e6h              __DELAYX0
+     06e5h              __DELAYX1
+     06e4h              __DELAYX2
+     06e3h              __DELAYX3
+     06e2h              __DELAYX4
+     06e1h              __DELAYX5
+     06e0h              __DELAYX6
+     06d7h              __DELAYY0_isr00
+     06d6h              __DELAYY1_isr00
+     06d5h              __DELAYY2_isr00
+     06d4h              __DELAYY3_isr00
+     06d3h              __DELAYY4_isr00
+     06d2h              __DELAYY5_isr00
      00bah              _builtin_holtek_dtadd
      0160h              _builtin_holtek_dtdecode1
      0155h              _builtin_holtek_dtdecode2
@@ -356,28 +356,28 @@ Input Library File: C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x
      05cah              _ADCInit
      05d1h              _ReadADC
      0631h              _InitOPA
-     0638h              _CalibrateOPA0
-     0667h              _CalibrateOPA1
-     0696h              __DELAYY5_isr00
-     0697h              __DELAYY4_isr00
-     0698h              __DELAYY3_isr00
-     0699h              __DELAYY2_isr00
-     069ah              __DELAYY1_isr00
-     069bh              __DELAYY0_isr00
-     06a4h              __DELAYX6
-     06a5h              __DELAYX5
-     06a6h              __DELAYX4
-     06a7h              __DELAYX3
-     06a8h              __DELAYX2
-     06a9h              __DELAYX1
-     06aah              __DELAYX0
-     06aeh              _Crom2PromNext
-     06afh              _Crom2Prom
+     0674h              _CalibrateOPA0
+     06a3h              _CalibrateOPA1
+     06d2h              __DELAYY5_isr00
+     06d3h              __DELAYY4_isr00
+     06d4h              __DELAYY3_isr00
+     06d5h              __DELAYY2_isr00
+     06d6h              __DELAYY1_isr00
+     06d7h              __DELAYY0_isr00
+     06e0h              __DELAYX6
+     06e1h              __DELAYX5
+     06e2h              __DELAYX4
+     06e3h              __DELAYX3
+     06e4h              __DELAYX2
+     06e5h              __DELAYX1
+     06e6h              __DELAYX0
+     06eah              _Crom2PromNext
+     06ebh              _Crom2Prom
 
 
 ROM Usage Statistics
      Size      Used     Percentage
-     1000h     06b0h    41%
+     1000h     06ech    43%
 
 RAM Usage Statistics
     Bank      Size      Used     Percentage
