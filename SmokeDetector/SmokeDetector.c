@@ -16,48 +16,70 @@
  * Date: 2024
  */
 
-/*#include "SmokeDetector.h"
+#include "SmokeDetector.h"
 #include "ADC.h"
+
 
 // Initialize the Operational Amplifiers and ISINK
 void InitOPA()
-{
+{SwitchType switches;
+	
     // OPAMP0 initialization
-    _sda0en = 1;  // Enable OPAMP0
-    _sda0bw1 = 1; // Set OPAMP0 bandwidth to 600kHz
-    _sda0bw0 = 0;
+    _sda0en =  OPAMP0_CONTROL;  // Enable OPAMP0
+    _sda0bw1 = OPAMP0_BANDWIDTH >> 1; // Set OPAMP0 bandwidth to 600kHz
+    _sda0bw0 = OPAMP0_BANDWIDTH & 1;
 
     // OPAMP1 initialization
-    _sda1en = 1;  // Enable OPAMP1
-    _sda1bw1 = 1; // Set OPAMP1 bandwidth to 600kHz
-    _sda1bw0 = 0;
+    _sda1en = OPAMP1_CONTROL;  // Enable OPAMP1
+    _sda1bw1 = OPAMP1_BANDWIDTH >> 1; // Set OPAMP1 bandwidth to 600kHz
+    _sda1bw0 = OPAMP1_BANDWIDTH & 1;
+    /*
+    
+    Sw.S0=0;
+    Sw.S1=0;
+    Sw.S2=1;
+    
+    Sw.S3=0;
+    Sw.S4=0;
+    Sw.S5=1;*/
+    
+    
+	/*_sda0ofm=SDA0OFM(Sw.S0, Sw.S1, Sw.S2);  
+	_sda0rsp=SDA0RSP(Sw.S0, Sw.S1, Sw.S2);  
+	_sda1ofm=SDA1OFM(Sw.S3, Sw.S4, Sw.S5); 
+	_sda1rsp=SDA1RSP(Sw.S3, Sw.S4, Sw.S5);*/
+
+
 }
 
 // Initialize ISINK (Sink current generator)
 void InitISINK()
-{
+{/*
+
     _isinken0 = 1;  // Enable ISINK0
-    _isinken1 = 1;  // Enable ISINK1
-    _isinkcfg0 = 0b010;  // Set ISINK0 current to 4mA
-    _isinkcfg1 = 0b011;  // Set ISINK1 current to 6mA
+    _isinken1 = 1;  // Enable ISINK1*/
+//    _isinkcfg0 = ISINK0_CURRENT_4MA;  // Set ISINK0 current to 4mA
+  //  _isinkcfg1 = ISINK1_CURRENT_6MA;  // Set ISINK1 current to 6mA
 }
 
 // Calibrate OPAMP0 for input offset voltage
 void CalibrateOPA0()
 {
-    unsigned int VAnOS1, VAnOS2;
-    
+    unsigned char VAnOS1, VAnOS2, OffsetValue;
+    unsigned char i=0;
+  
     // Set OPAMP0 to offset calibration mode
-    _sda0ofm = 1;  // Enable offset calibration mode
-    _sda0rsp = 1;  // Use A0PI as reference
+    _sda0ofm = OPAMP_OFFSET_CAL_MODE;  // Enable offset calibration mode
+    _sda0rsp = OPAMP_REF_A0PI;  // Use A0PI as reference
     
     // Find the minimum offset value
-    _sda0of = 0x00;
+     SET_OFFSET_OPAMP0(OPAMP_OFFSET_MIN);
     while (_sda0o == 0);
     
-    for (unsigned int i = 0; i < 64; i++)
+    for ( i = OPAMP_OFFSET_MIN; i <= OPAMP_OFFSET_MAX; i++)
     {
-        _sda0of = i;
+    	SET_OFFSET_OPAMP0(i);
+    	
         if (_sda0o == 1)
         {
             VAnOS1 = i;
@@ -66,12 +88,13 @@ void CalibrateOPA0()
     }
 
     // Set offset to maximum and reduce to find second offset value
-    _sda0of = 0x3F;
-    while (_sda0o == 1);
+     SET_OFFSET_OPAMP0(OPAMP_OFFSET_MAX);
+     while (_sda0o == 1);
     
-    for (unsigned int i = 63; i >= 0; i--)
+    for (i = OPAMP_OFFSET_MAX; i >= OPAMP_OFFSET_MIN; i--)
     {
-        _sda0of = i;
+    	
+        SET_OFFSET_OPAMP0(i);
         if (_sda0o == 0)
         {
             VAnOS2 = i;
@@ -79,26 +102,29 @@ void CalibrateOPA0()
         }
     }
 
-    // Store the final offset value
-    _sda0of = (VAnOS1 + VAnOS2) / 2;
+      // Store the final offset value
+      OffsetValue=(char)(VAnOS1 + VAnOS2) / 2;
+      SET_OFFSET_OPAMP0(OffsetValue);
 }
 
 // Calibrate OPAMP1 for input offset voltage
 void CalibrateOPA1()
 {
-    unsigned int VAnOS1, VAnOS2;
-
-    // Set OPAMP1 to offset calibration mode
-    _sda1ofm = 1;  // Enable offset calibration mode
-    _sda1rsp = 1;  // Use A1PI as reference
-
+  unsigned char VAnOS1, VAnOS2, OffsetValue;
+  unsigned char i=0;
+  
+    // Set OPAMP0 to offset calibration mode
+    _sda1ofm = OPAMP_OFFSET_CAL_MODE;  // Enable offset calibration mode
+    _sda1rsp = OPAMP_REF_A1PI;  // Use A0PI as reference
+    
     // Find the minimum offset value
-    _sda1of = 0x00;
+     SET_OFFSET_OPAMP1(OPAMP_OFFSET_MIN);
     while (_sda1o == 0);
-
-    for (unsigned int i = 0; i < 64; i++)
+    
+    for ( i = OPAMP_OFFSET_MIN; i <= OPAMP_OFFSET_MAX; i++)
     {
-        _sda1of = i;
+    	SET_OFFSET_OPAMP1(i);
+    	
         if (_sda1o == 1)
         {
             VAnOS1 = i;
@@ -107,12 +133,13 @@ void CalibrateOPA1()
     }
 
     // Set offset to maximum and reduce to find second offset value
-    _sda1of = 0x3F;
+     SET_OFFSET_OPAMP1(OPAMP_OFFSET_MAX);
     while (_sda1o == 1);
-
-    for (unsigned int i = 63; i >= 0; i--)
+    
+    for (i = OPAMP_OFFSET_MAX; i >= OPAMP_OFFSET_MIN; i--)
     {
-        _sda1of = i;
+    	
+        SET_OFFSET_OPAMP1(i);
         if (_sda1o == 0)
         {
             VAnOS2 = i;
@@ -121,7 +148,8 @@ void CalibrateOPA1()
     }
 
     // Store the final offset value
-    _sda1of = (VAnOS1 + VAnOS2) / 2;
+      OffsetValue=(char)(VAnOS1 + VAnOS2) / 2;
+      SET_OFFSET_OPAMP1(OffsetValue);
 }
 
 // Initialize the smoke detection system (AFE, OPAMP, ISINK, ADC)
@@ -137,26 +165,12 @@ int CheckSmokeLevel()
 {
     unsigned int smokeLevel;
 
-    // Read smoke level from OPA1 output using ADC
-    smokeLevel = ReadADC(OPA1O);  // Using previously implemented ReadADC function
+  /*  // Read smoke level from OPA1 output using ADC
+      smokeLevel = ReadADC(OPA1O);  // Using previously implemented ReadADC function
 
-    if (smokeLevel > SMOKE_THRESHOLD) {
+   if (smokeLevel > SMOKE_THRESHOLD) {
         TriggerAlarm();  // Trigger alarm if smoke level is above threshold
         return 1;  // Smoke detected
     } else {
-        ResetAlarm();  // Reset alarm if smoke level is below threshold
-        return 0;  // No smoke detected
-    }
-}
-
-// Trigger alarm when smoke is detected
-void TriggerAlarm()
-{
-   // Activate alarm (e.g., LED or buzzer)
-}
-
-// Reset alarm when smoke level is below threshold
-void ResetAlarm()
-{
-     // Deactivate alarm
+     ResetAlarm();  */
 }

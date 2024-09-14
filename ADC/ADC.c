@@ -18,6 +18,7 @@
 
 #include "ADC.h"
 
+#include "SmokeDetector.h"
 /**
  * @brief Initialize the ADC module.
  * 

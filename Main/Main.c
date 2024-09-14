@@ -17,8 +17,8 @@ void main()
 	PLTAInit();
 	while(1)
 	{
-		//Data= UART_Receive();
-		Data=UART_ReceiveNonBlocking();
+		Data= UART_Receive();
+		//Data=UART_ReceiveNonBlocking();
 		GCC_DELAY(5000);
 		if(Data=='O')
 		{
