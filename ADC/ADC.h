@@ -75,7 +75,7 @@
 
 #if USE_ADC_OPA0O
 #define OPA0O 0x05
-#define READ_ADC_SET_OPA0O { _sadc1 = 0b01000011; _sadc0 = 0b00000111; }
+#define READ_ADC_SET_OPA0O { _sadc1 = 0b01101011; _sadc0 = 0b00000111; }
 #endif
 
 #if USE_ADC_OPA1O

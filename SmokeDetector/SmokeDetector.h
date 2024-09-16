@@ -32,6 +32,9 @@
 #define OFF    0
 #define ON     1
 
+#define USE_OF_OPAMP0   Enable
+#define USE_OF_OPAMP1   Disable
+#define SWITCH_CONTOROL Disable
 
 typedef unsigned char uint8_t;
 // --------- General Smoke Detection Settings ---------
@@ -52,43 +55,22 @@ typedef unsigned char uint8_t;
 #define SDSW_EXTERNAL_MODE      0b00  // External mode
 
 // Switch control for SDS0-SDS6
-#define SDS0_SWITCH_ON          1
-#define SDS0_SWITCH_OFF         0
-#define SDS1_SWITCH_ON          1
-#define SDS1_SWITCH_OFF         0
-#define SDS2_SWITCH_ON          1
-#define SDS2_SWITCH_OFF         0
-#define SDS3_SWITCH_ON          1
-#define SDS3_SWITCH_OFF         0
 
+#ifdef USE_OF_OPAMP0
 
-typedef struct {
-    uint8_t S0 : 1;
-    uint8_t S1 : 1; 
-    uint8_t S2 : 1;  
-    uint8_t S3 : 1;  
-    uint8_t S4 : 1; 
-    uint8_t S5 : 1; 
+#define R1  0x3f //R1= SDA0PGA[5:0] × 100kO
 
-} SwitchType;
+#endif
 
-#define SDA0OFM(S0, S1, S2)  (!( (S0) && (S1) && !(S2) ))
-#define SDA0RSP(S0, S1, S2)  ( (S0) && !(S1) && (S2) )
-#define SDA1OFM(S3, S4, S5)  (!( (S3) && (S4) && !(S5) ))
-#define SDA1RSP(S3, S4, S5)  ( (S3) && !(S4) && (S5) )
-//
-//#define SDS6(S6, S7, S8, S9) (!( (S6) && (S7) && !(S8) && (S9) ))
-//#define SDS5(S6, S7, S8, S9) ( (S6) && !(S7) && !(S8) && !(S9) )
-#define R1  1 //R1= SDA0PGA[5:0] × 100kO
-#define R2  1 //R2= SDA1PGA[5:0] × 100kO
+#ifdef USE_OF_OPAMP1
+
+#define  R2    1 //R2= SDA1PGA[5:0] × 100kO
 #define _10KR  0// 10kO
 #define _20KR  1// 20kO
 #define _30KR  2// 30kO
 #define _40KR  3// 40kO
-#define R3  _10KR //R1= SDA0PGA[5:0] × 100kO
-
-
-
+#define  R3   _10KR //SDA1PGA7 ~ SDA1PGA6: R3 resistance control
+#endif
 // --------- OPAMP Control ---------
 /**
  * OPAMP Control Register (SDA0C and SDA1C)
@@ -104,8 +86,8 @@ typedef struct {
 #define BANDWIDTH_600KHZ  2
 #define BANDWIDTH_2MHZ    3
 
-#define OPAMP0_BANDWIDTH   BANDWIDTH_600KHZ
-#define OPAMP1_BANDWIDTH   BANDWIDTH_600KHZ
+#define OPAMP0_BANDWIDTH   BANDWIDTH_2MHZ
+#define OPAMP1_BANDWIDTH   BANDWIDTH_2MHZ
 
 // --------- OPAMP Offset Calibration ---------
 /**
@@ -135,9 +117,39 @@ typedef struct {
  * ISINK (Sink Current) Generator Settings
  * - Configure the current settings for ISINK0 and ISINK1.
  * - These settings control the current output for specific pins.
+ * -The sink current range is 50mA ~ 360mA.
  */
-#define ISINK0_CURRENT_4MA         0b010  // Set ISINK0 current to 4mA
-#define ISINK1_CURRENT_6MA         0b011  // Set ISINK1 current to 6mA
+ 
+#define ISINK0_CONTOROL Enable
+#define ISINK1_CONTOROL Disable
+#define ISINK0_CURRENT	4 // Set ISINK0 current Current value (mA) = 50 + 10 × (ISGDATA0[4:0])
+#define ISINK1_CURRENT	1  // Set ISINK1 current Current value (mA) = 50 + 10 × (ISGDATA0[4:0])
+
+
+
+
+
+#ifdef SWITCH_CONTOROL 
+typedef struct {
+    uint8_t S0 : 1;
+    uint8_t S1 : 1; 
+    uint8_t S2 : 1;  
+    uint8_t S3 : 1;  
+    uint8_t S4 : 1; 
+    uint8_t S5 : 1; 
+
+} SwitchType;
+#define SDA0OFM(S0, S1, S2)  (!( (S0) && (S1) && !(S2) ))
+#define SDA0RSP(S0, S1, S2)  ( (S0) && !(S1) && (S2) )
+#define SDA1OFM(S3, S4, S5)  (!( (S3) && (S4) && !(S5) ))
+#define SDA1RSP(S3, S4, S5)  ( (S3) && !(S4) && (S5) )
+
+#endif
+
+
+
+
+
 
 // Function prototypes
 void InitSmokeDetection();  // Initialize the smoke detection system
