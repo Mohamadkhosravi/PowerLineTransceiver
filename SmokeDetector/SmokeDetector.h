@@ -33,7 +33,7 @@
 #define ON     1
 
 #define USE_OF_OPAMP0   Enable
-#define USE_OF_OPAMP1   Disable
+#define USE_OF_OPAMP1   Enable
 #define SWITCH_CONTOROL Disable
 
 typedef unsigned char uint8_t;
@@ -58,7 +58,7 @@ typedef unsigned char uint8_t;
 
 #ifdef USE_OF_OPAMP0
 
-#define R1  0x3f //R1= SDA0PGA[5:0] × 100kO
+#define R1  0b111111//R1= SDA0PGA[5:0] × 100kO
 
 #endif
 
@@ -69,7 +69,7 @@ typedef unsigned char uint8_t;
 #define _20KR  1// 20kO
 #define _30KR  2// 30kO
 #define _40KR  3// 40kO
-#define  R3   _10KR //SDA1PGA7 ~ SDA1PGA6: R3 resistance control
+#define  R3   _40KR //SDA1PGA7 ~ SDA1PGA6: R3 resistance control
 #endif
 // --------- OPAMP Control ---------
 /**
@@ -87,7 +87,7 @@ typedef unsigned char uint8_t;
 #define BANDWIDTH_2MHZ    3
 
 #define OPAMP0_BANDWIDTH   BANDWIDTH_2MHZ
-#define OPAMP1_BANDWIDTH   BANDWIDTH_2MHZ
+#define OPAMP1_BANDWIDTH   BANDWIDTH_5KHZ
 
 // --------- OPAMP Offset Calibration ---------
 /**
@@ -122,8 +122,8 @@ typedef unsigned char uint8_t;
  
 #define ISINK0_CONTOROL Enable
 #define ISINK1_CONTOROL Disable
-#define ISINK0_CURRENT	4 // Set ISINK0 current Current value (mA) = 50 + 10 × (ISGDATA0[4:0])
-#define ISINK1_CURRENT	1  // Set ISINK1 current Current value (mA) = 50 + 10 × (ISGDATA0[4:0])
+#define ISINK0_CURRENT	0b11111 // Set ISINK0 current Current value (mA) = 50 + 10 × (ISGDATA0[4:0])
+#define ISINK1_CURRENT	8  // Set ISINK1 current Current value (mA) = 50 + 10 × (ISGDATA0[4:0])
 
 
 

@@ -30,23 +30,27 @@ void main()
 		{
 	    	_pa3=0;	
 		}*/
-		Data=0;
+	/*	Data=0;
 		for(i=0;i<=10;i++)
 		{
 		 _isgs0=~_isgen;
 		 
-		}
+		}*/
+		_isgen=1;
+		_isgs0=1;
 	
-		
 		 Data=ReadADC(5);
+		 GCC_DELAY(10000);
 		//Data=5687;
-		UART_Transmit((Data/1000)%10+0x30);
+		if(Data>498)((Data/10000)%10+0x30);
+    	UART_Transmit((Data/1000)%10+0x30);
 	    UART_Transmit((Data/100)%10+0x30);
 		UART_Transmit((Data/10)%10+0x30);
 		UART_Transmit((Data)%10+0x30);
-		 
-		
-		GCC_DELAY(5000);
+		UART_Transmit(10);
+	/*	_isgs0=0;*/
+		GCC_DELAY(10000);
+	/*	GCC_DELAY(5000);*/
 		GCC_CLRWDT();
 	}	
 	

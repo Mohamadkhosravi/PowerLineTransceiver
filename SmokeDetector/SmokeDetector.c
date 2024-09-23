@@ -22,71 +22,53 @@
 // Initialize the Operational Amplifiers and set the Coupling Mode (AC/DC)
 void InitOPA()
 {
-#ifdef USE_OF_OPAMP0
-    // OPAMP0 initialization
-    _sda0en = OPAMP0_CONTROL;  // Enable OPAMP0
+#if USE_OF_OPAMP0
     _sda0bw1 = OPAMP0_BANDWIDTH >> 1; // Set OPAMP0 bandwidth to 600kHz
     _sda0bw0 = OPAMP0_BANDWIDTH & 1;
-
-    // Configure coupling mode using SDSW register from the header
-    _sds0 = (SDSW_AC_COUPLING_MODE & 0x01);   // Set S0 based on coupling mode
-    _sds1 = (SDSW_AC_COUPLING_MODE & 0x02) >> 1;
-    _sds2 = (SDSW_AC_COUPLING_MODE & 0x04) >> 2;
-/*
-
-_sds0=Close;
-_sds1=Close;
-_sds2=Close;*/
-
-    // Close unused switches and open the necessary ones based on coupling mode
-    _sds3 = Open;
-    _sds4 = Open;
-
+      // Close unused switches and open the necessary ones based on coupling mode
+	_sds0 = Open;
+	_sds1 = Close;
+	_sds2 = Close;
+	_sds3 = Open;
+	_sds4 = Open ;
     // OPAMP0 offset mode and input reference selection
     _sda0ofm = OPAMP_NORMAL_MODE;   // Normal operation mode
     _sda0rsp = OPAMP_REF_A0NI;      // Reference input from A0NI
 
     // Set R1 resistance for OPAMP0
     _sdpgac0 |= 0x3F & R1;
+    _sda0en = OPAMP0_CONTROL;  // Enable OPAMP0
+#endif
+#if USE_OF_OPAMP1
+	// Configure coupling mode for OPAMP1 using SDSW register
+	_sds5 = (SDSW_EXTERNAL_MODE & 0x01);   // Set S5 based on coupling mode
+	_sds6 = (SDSW_EXTERNAL_MODE & 0x02) >> 1;
+	
+	_sdpgac1 |= 0x3F & R2;          // Set R2 resistance
+	_sda1pga6 = R3 >> 1;            // Set R3 resistance (two bits)
+	_sda1pga7 |= R3 & 1;
+	
+	//OPAMP0 bandwidth control 00: 5kHz
+	_sda1bw1 = OPAMP1_BANDWIDTH >> 1; // Set OPAMP1 bandwidth to 600kHz
+	_sda1bw0 = OPAMP1_BANDWIDTH & 1;
+	//// OPAMP1 offset mode and input reference selection
+	_sda1ofm = OPAMP_NORMAL_MODE;   // Normal operation mode
+	_sda1rsp = OPAMP_REF_A1NI;      // Reference input from A1NI
 
 #endif
 
-#ifdef USE_OF_OPAMP1
-    // OPAMP1 initialization
-    _sda1en = OPAMP1_CONTROL;  // Enable OPAMP1
-    _sda1bw1 = OPAMP1_BANDWIDTH >> 1; // Set OPAMP1 bandwidth to 600kHz
-    _sda1bw0 = OPAMP1_BANDWIDTH & 1;
-
-    // Configure coupling mode for OPAMP1 using SDSW register
-    _sds5 = (SDSW_DC_COUPLING_MODE & 0x01);   // Set S5 based on coupling mode
-    _sds6 = (SDSW_DC_COUPLING_MODE & 0x02) >> 1;
-
-    // OPAMP1 offset mode and input reference selection
-    _sda1ofm = OPAMP_NORMAL_MODE;   // Normal operation mode
-    _sda1rsp = OPAMP_REF_A1NI;      // Reference input from A1NI
-
-    // Set R2 and R3 resistances for OPAMP1
-    _sdpgac1 |= 0x3F & R2;          // Set R2 resistance
-    _sda1pga6 = R3 >> 1;            // Set R3 resistance (two bits)
-    _sda1pga7 |= R3 & 1;
-
-    // Calibration setup for OPAMP1 (Offset calibration mode)
-    _sda1ofm = OPAMP_OFFSET_CAL_MODE;  // Enable offset calibration mode
-    _sda1rsp = OPAMP_REF_A1PI;         // Use A1PI as reference for calibration
-
-#endif
 }
 
 // Initialize ISINK (Sink current generator)
 void InitISINK()
 {
 _isgen=1;	
-#ifdef ISINK0_CONTOROL	
+#if ISINK0_CONTOROL	
 	_isgs0 = ISINK0_CONTOROL;
 	_isgdata0 = ISINK0_CURRENT&0x31;
 	
 #endif
-#ifdef ISINK1_CONTOROL	
+#if ISINK1_CONTOROL	
 	_isgs1 |= ISINK1_CONTOROL;
 	_isgdata1 |= ISINK1_CURRENT&0x31;
 #endif
@@ -98,7 +80,7 @@ _isgen=1;
     _isinkcfg0 = ISINK0_CURRENT_4MA;  // Set ISINK0 current to 4mA
     _isinkcfg1 = ISINK1_CURRENT_6MA;  // Set ISINK1 current to 6mA*/
 }
-#ifdef USE_OF_OPAMP0
+#if USE_OF_OPAMP0
 // Calibrate OPAMP0 for input offset voltage
 void CalibrateOPA0()
 {
@@ -152,7 +134,7 @@ void CalibrateOPA0()
 }
 #endif
 // Calibrate OPAMP1 for input offset voltage
-#ifdef USE_OF_OPAMP1
+#if USE_OF_OPAMP1
 void CalibrateOPA1()
 {
     unsigned char VAnOS1, VAnOS2, OffsetValue;
@@ -208,11 +190,11 @@ void CalibrateOPA1()
 void InitSmokeDetection()
 {
 	
-#ifdef USE_OF_OPAMP0
+#if USE_OF_OPAMP0
 	CalibrateOPA0();
 #endif
 	
-#ifdef USE_OF_OPAMP1
+#if USE_OF_OPAMP1
 	CalibrateOPA1();
 #endif
     InitOPA();      // Initialize Operational Amplifiers
