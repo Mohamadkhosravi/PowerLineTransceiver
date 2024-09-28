@@ -27,10 +27,10 @@ void InitOPA()
     _sda0bw0 = OPAMP0_BANDWIDTH & 1;
       // Close unused switches and open the necessary ones based on coupling mode
 	_sds0 = Open;
-	_sds1 = Close;
+	_sds1 = Open;
 	_sds2 = Close;
 	_sds3 = Open;
-	_sds4 = Open ;
+	_sds4 = Close ;
     // OPAMP0 offset mode and input reference selection
     _sda0ofm = OPAMP_NORMAL_MODE;   // Normal operation mode
     _sda0rsp = OPAMP_REF_A0NI;      // Reference input from A0NI

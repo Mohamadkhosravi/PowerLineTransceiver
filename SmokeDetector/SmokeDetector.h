@@ -122,8 +122,8 @@ typedef unsigned char uint8_t;
  
 #define ISINK0_CONTOROL Enable
 #define ISINK1_CONTOROL Disable
-#define ISINK0_CURRENT	0b11111 // Set ISINK0 current Current value (mA) = 50 + 10 × (ISGDATA0[4:0])
-#define ISINK1_CURRENT	8  // Set ISINK1 current Current value (mA) = 50 + 10 × (ISGDATA0[4:0])
+#define ISINK0_CURRENT	2  // Set ISINK0 current Current value (mA) = 50 + 10 × (ISGDATA0[4:0])
+#define ISINK1_CURRENT	1  // Set ISINK1 current Current value (mA) = 50 + 10 × (ISGDATA0[4:0])
 
 
 

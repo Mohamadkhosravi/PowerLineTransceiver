@@ -16,6 +16,7 @@ void main()
 	PLT1Init();
 	PLTAInit();
     InitSmokeDetection();
+    unsigned int Counter;
 	int i=0;
 	while(1)
 	{
@@ -36,20 +37,27 @@ void main()
 		 _isgs0=~_isgen;
 		 
 		}*/
-		_isgen=1;
+	//	_isgen=1;
 		_isgs0=1;
-	
+     	GCC_DELAY(1000);
 		 Data=ReadADC(5);
-		 GCC_DELAY(10000);
+		// _isgen=0;
+		_isgs0=0;
+		GCC_CLRWDT();
+		GCC_DELAY(200000);
+		GCC_CLRWDT();
+		GCC_DELAY(200000);
 		//Data=5687;
-		if(Data>498)((Data/10000)%10+0x30);
-    	UART_Transmit((Data/1000)%10+0x30);
-	    UART_Transmit((Data/100)%10+0x30);
-		UART_Transmit((Data/10)%10+0x30);
-		UART_Transmit((Data)%10+0x30);
-		UART_Transmit(10);
-	/*	_isgs0=0;*/
-		GCC_DELAY(10000);
+//		while(Counter>=10000){
+//		if(Data>498)((Data/10000)%10+0x30);
+//    	UART_Transmit((Data/1000)%10+0x30);
+//	    UART_Transmit((Data/100)%10+0x30);
+//		UART_Transmit((Data/10)%10+0x30);
+//		UART_Transmit((Data)%10+0x30);
+//		UART_Transmit(10);
+//		Counter++;
+//		}
+		Counter=0;
 	/*	GCC_DELAY(5000);*/
 		GCC_CLRWDT();
 	}	
