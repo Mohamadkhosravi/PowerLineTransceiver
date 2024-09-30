@@ -2,6 +2,7 @@
 #include <Interrupt.h>
 #include "BA45F5240.h"	
 #include "ADC.h"
+#include "SmokeDetector.h"
 unsigned short *frame;
 volatile char tx_busy;
 void main()
@@ -38,26 +39,35 @@ void main()
 		 
 		}*/
 	//	_isgen=1;
-		_isgs0=1;
-     	GCC_DELAY(1000);
-		 Data=ReadADC(5);
-		// _isgen=0;
-		_isgs0=0;
+	//	_isgs0=1;
+	    OPA_ON();
+		ISINK0_ON();
+		GCC_DELAY(100);
+		Data=ReadADC(5);
+		GCC_DELAY(1000);
+	
+		ISINK0_OFF();
+		OPA_OFF();
+		GCC_DELAY(1000);
+	
+		
+		/*_isgen=0;
+		_isgs0=0;*/
 		GCC_CLRWDT();
-		GCC_DELAY(200000);
+		GCC_DELAY(20000);
 		GCC_CLRWDT();
-		GCC_DELAY(200000);
+		GCC_DELAY(20000);
 		//Data=5687;
 //		while(Counter>=10000){
-//		if(Data>498)((Data/10000)%10+0x30);
-//    	UART_Transmit((Data/1000)%10+0x30);
-//	    UART_Transmit((Data/100)%10+0x30);
-//		UART_Transmit((Data/10)%10+0x30);
-//		UART_Transmit((Data)%10+0x30);
-//		UART_Transmit(10);
-//		Counter++;
-//		}
-		Counter=0;
+ 	   if(Data>498)((Data/10000)%10+0x30);
+    	UART_Transmit((Data/1000)%10+0x30);
+	    UART_Transmit((Data/100)%10+0x30);
+		UART_Transmit((Data/10)%10+0x30);
+		UART_Transmit((Data)%10+0x30);
+		UART_Transmit(10);
+		Counter++;
+	/*	}
+		Counter=0;*/
 	/*	GCC_DELAY(5000);*/
 		GCC_CLRWDT();
 	}	

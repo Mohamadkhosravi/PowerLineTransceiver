@@ -22,6 +22,16 @@
 // Initialize the Operational Amplifiers and set the Coupling Mode (AC/DC)
 void InitOPA()
 {
+	
+    _isgdata0 = 7;
+	_sdpgac0  = R1;
+	_sdpgac1  = (R3<<6)+R2;
+	_sda0c = 0b01000011;
+	_sda1c = 0b01000011;
+	_sdsw  = 0b01110111;
+	
+	
+	/*
 #if USE_OF_OPAMP0
     _sda0bw1 = OPAMP0_BANDWIDTH >> 1; // Set OPAMP0 bandwidth to 600kHz
     _sda0bw0 = OPAMP0_BANDWIDTH & 1;
@@ -55,7 +65,7 @@ void InitOPA()
 	_sda1ofm = OPAMP_NORMAL_MODE;   // Normal operation mode
 	_sda1rsp = OPAMP_REF_A1NI;      // Reference input from A1NI
 
-#endif
+#endif*/
 
 }
 
@@ -63,15 +73,14 @@ void InitOPA()
 void InitISINK()
 {
 _isgen=1;	
-#if ISINK0_CONTOROL	
+
 	_isgs0 = ISINK0_CONTOROL;
 	_isgdata0 = ISINK0_CURRENT&0x31;
 	
-#endif
-#if ISINK1_CONTOROL	
+
 	_isgs1 |= ISINK1_CONTOROL;
 	_isgdata1 |= ISINK1_CURRENT&0x31;
-#endif
+
 
 
 /*    _isinken0 = 1;  // Enable ISINK0
@@ -80,11 +89,32 @@ _isgen=1;
     _isinkcfg0 = ISINK0_CURRENT_4MA;  // Set ISINK0 current to 4mA
     _isinkcfg1 = ISINK1_CURRENT_6MA;  // Set ISINK1 current to 6mA*/
 }
-#if USE_OF_OPAMP0
+
 // Calibrate OPAMP0 for input offset voltage
 void CalibrateOPA0()
 {
-    unsigned char VAnOS1, VAnOS2, OffsetValue;
+unsigned char R_TMP0,R_TMP1;
+	R_TMP0 = 0x00;
+	R_TMP1 = 0x00;
+	_sda0vos=0b11111111;
+	GCC_DELAY(2000);
+	while(_sda0o)
+	{
+		_sda0vos--;
+		GCC_DELAY(2000);
+	}
+	R_TMP0=_sda0vos & 0b00111111;
+	_sda0vos=0b11000000;
+	GCC_DELAY(2000);
+	while(!_sda0o)
+	{
+		_sda0vos++;
+		GCC_DELAY(2000);
+	}
+	R_TMP1=_sda0vos & 0b00111111;
+	_sda0vos=(R_TMP0+R_TMP1)/2;	
+	
+    /*unsigned char VAnOS1, VAnOS2, OffsetValue;
     unsigned char i = 0;
 
     // Set OPAMP0 to offset calibration mode
@@ -130,14 +160,36 @@ void CalibrateOPA0()
 
     // Restore the original coupling mode after calibration
     _sds3 = Close;   // Return to AC coupling or as configured
-    _sds4 = Open;
+    _sds4 = Open;*/
 }
-#endif
+
 // Calibrate OPAMP1 for input offset voltage
-#if USE_OF_OPAMP1
+
 void CalibrateOPA1()
 {
-    unsigned char VAnOS1, VAnOS2, OffsetValue;
+unsigned char R_TMP0,R_TMP1;
+	R_TMP0 = 0x00;
+	R_TMP1 = 0x00;
+	_sda1vos = 0b11111111;
+	GCC_DELAY(2000);
+	while(_sda1o)
+	{
+		_sda1vos--;
+		GCC_DELAY(2000);
+	}
+	R_TMP0=_sda1vos & 0b00111111;
+	_sda1vos=0b11000000;
+	GCC_DELAY(2000);
+	while(!_sda1o)
+	{
+		_sda1vos++;
+		GCC_DELAY(2000);
+	}
+	R_TMP1=_sda1vos & 0b00111111;
+	_sda1vos=(R_TMP0+R_TMP1)/2;	
+	
+	
+  /*  unsigned char VAnOS1, VAnOS2, OffsetValue;
     unsigned char i = 0;
 
     // Set OPAMP1 to offset calibration mode
@@ -183,23 +235,19 @@ void CalibrateOPA1()
 
     // Restore the original coupling mode after calibration
     _sds3 = Close;   // Return to AC coupling or as configured
-    _sds4 = Open;
+    _sds4 = Open;*/
+    
+    
 }
-#endif
+
 // Initialize the smoke detection system (AFE, OPAMP, ISINK, ADC)
 void InitSmokeDetection()
 {
-	
-#if USE_OF_OPAMP0
-	CalibrateOPA0();
-#endif
-	
-#if USE_OF_OPAMP1
+	InitOPA();      // Initialize Operational Amplifiers
+	CalibrateOPA0();	
 	CalibrateOPA1();
-#endif
-    InitOPA();      // Initialize Operational Amplifiers
-    InitISINK();    // Initialize ISINK for current generation
-    ADCInit();      // Initialize ADC for smoke sensor reading
+	OPA_ON();
+	//ADCInit();      // Initialize ADC for smoke sensor reading
 }
 
 // Check if the smoke level exceeds the threshold
@@ -225,9 +273,94 @@ void TriggerAlarm()
   //  _alarm_pin = 1;  // Activate alarm (e.g., LED or buzzer)
 }
 
+
+
 // Reset alarm when smoke level is below threshold
 void ResetAlarm()
 {
   //  _alarm_pin = 0;  // Deactivate alarm
 }
 
+
+//===========================================================
+//*@brief		: Open ISINK0
+//*@param[in]	: None
+//*@retval		: None
+//===========================================================
+void ISINK0_ON()
+{
+	_isgdata0 = ISINK0_CURRENT;
+	_isgen=1;
+	_isgs0=1;
+}
+
+
+//===========================================================
+//*@brief		: Open ISINK1
+//*@param[in]	: None
+//*@retval		: None
+//===========================================================
+void  ISINK1_ON()
+{
+	_isgdata1 = ISINK1_CURRENT;
+	_isgen=1;
+	_isgs1=1;
+}
+
+
+//===========================================================
+//*@brief		: Close ISINK0
+//*@param[in]	: None
+//*@retval		: None
+//===========================================================
+void ISINK0_OFF()
+{
+	_isgen=0;
+	_isgs0=0;
+}
+
+
+//===========================================================
+//*@brief		: Close ISINK1
+//*@param[in]	: None
+//*@retval		: None
+//===========================================================
+void ISINK1_OFF()
+{
+	_isgen=0;
+	_isgs1=0;
+}
+
+
+//===========================================================
+//*@brief		: Open OPA
+//*@param[in]	: None
+//*@retval		: None
+//===========================================================
+void OPA_ON(void)
+{
+	_sda0en = 1;
+	_sda1en = 1;
+	_sds0   = 1;
+}
+
+
+//===========================================================
+//*@brief		: Close OPA
+//*@param[in]	: None
+//*@retval		: None
+//===========================================================
+void  OPA_OFF(void)
+{
+	_sda0en = 0;
+	_sda1en = 0;
+	_sds0   = 0;
+}
+
+
+//===========================================================
+//*@brief		: Open ISINK0 Delay
+//*@param[in]	: None
+//*@retval		: None
+//*@note		: R_ISINK0_DELAY*50us
+//===========================================================
