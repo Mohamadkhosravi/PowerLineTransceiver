@@ -23,7 +23,7 @@
 void InitOPA()
 {
 	
-    _isgdata0 = 7;
+    _isgdata0 = ISINK0_CURRENT;
 	_sdpgac0  = R1;
 	_sdpgac1  = (R3<<6)+R2;
 	_sda0c = 0b01000011;
@@ -72,12 +72,10 @@ void InitOPA()
 // Initialize ISINK (Sink current generator)
 void InitISINK()
 {
-_isgen=1;	
-
+    _isgen=1;	
 	_isgs0 = ISINK0_CONTOROL;
 	_isgdata0 = ISINK0_CURRENT&0x31;
 	
-
 	_isgs1 |= ISINK1_CONTOROL;
 	_isgdata1 |= ISINK1_CURRENT&0x31;
 

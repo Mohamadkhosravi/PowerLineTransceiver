@@ -21,7 +21,7 @@ void main()
 	int i=0;
 	while(1)
 	{
-	//	Data= UART_Receive();
+		Data= UART_Receive();
 		//Data=UART_ReceiveNonBlocking();
 	/*	GCC_DELAY(5000);
 		if(Data=='O')
@@ -40,12 +40,15 @@ void main()
 		}*/
 	//	_isgen=1;
 	//	_isgs0=1;
+	   
 	    OPA_ON();
 		ISINK0_ON();
-		GCC_DELAY(100);
-		Data=ReadADC(5);
+	    Data=ReadADC(5);
 		GCC_DELAY(1000);
-	
+		GCC_DELAY(1000);
+		
+	  /*  Data= ReadADC(5)- Data;
+	    if(Data<0)Data=0;*/
 		ISINK0_OFF();
 		OPA_OFF();
 		GCC_DELAY(1000);
