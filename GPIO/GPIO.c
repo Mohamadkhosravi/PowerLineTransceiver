@@ -45,7 +45,10 @@ void S_GPIO_Init()
 	_ifs0=0b00000000;
 	
 	
-	
+	_pac7=0; //1: outout
+	//PAS17~PAS16:00: PA7/STPI/PTPI
+	_pas17=0;_pas16=0;
+
 //=====================================
 	// Set PA6 as UART RX (input)
 	_pac6 =1;//1: Input

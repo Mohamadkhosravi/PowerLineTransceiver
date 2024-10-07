@@ -22,7 +22,6 @@
 // Initialize the Operational Amplifiers and set the Coupling Mode (AC/DC)
 void InitOPA()
 {
-	
     _isgdata0 = ISINK0_CURRENT;
 	_sdpgac0  = R1;
 	_sdpgac1  = (R3<<6)+R2;
@@ -165,7 +164,7 @@ unsigned char R_TMP0,R_TMP1;
 
 void CalibrateOPA1()
 {
-unsigned char R_TMP0,R_TMP1;
+    unsigned char R_TMP0,R_TMP1;
 	R_TMP0 = 0x00;
 	R_TMP1 = 0x00;
 	_sda1vos = 0b11111111;

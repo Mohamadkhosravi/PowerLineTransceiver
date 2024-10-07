@@ -45,8 +45,7 @@ void ADCInit()
  */
 unsigned int ReadADC(unsigned char channel)
 {
-    unsigned int result;
-    
+	unsigned int result;
 	switch(channel)
 	{
 		#if USE_ADC_AN0
