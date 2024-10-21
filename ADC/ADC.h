@@ -55,7 +55,7 @@
 
 #if USE_ADC_AN1
 #define AN1 0x01
-#define READ_ADC_SET_AN1 { _sadc1 = 0b00001000; _sadc0 = 0b00000001; }
+#define READ_ADC_SET_AN1 { _sadc1 = 0b00001111; _sadc0 = 0b00000001; }
 #endif
 
 #if USE_ADC_AN2
@@ -70,7 +70,7 @@
 
 #if USE_ADC_VBGREF
 #define VBGREF 0x04
-#define READ_ADC_SET_VBGREF { _sadc1 = 0b00101011; _sadc0 = 0b00010111; }
+#define READ_ADC_SET_VBGREF { _sadc1 = 0b00101111; _sadc0 = 0b00010111; }
 #endif
 
 #if USE_ADC_OPA0O

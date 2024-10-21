@@ -24,115 +24,117 @@ Input Library File: C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x
      00h     0001h     0003h    0003h      CODE               _CheckSmokeLevel (c:\users\tech\desktop\powerlinetransceiver\output\SMOKEDETECTOR.OBJ)
      00h     0004h     0007h    0004h      CODE               @PLT0CompairISR_code (c:\users\tech\desktop\powerlinetransceiver\output\INTERRUPT.OBJ)
      00h     0008h     0028h    0021h      CODE               @start (c:\users\tech\desktop\powerlinetransceiver\output\MAIN.OBJ)
-     00h     0029h     002ch    0004h      CODE               itofaz (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
-     00h     002dh     0033h    0007h      CODE               _builtin_holtek_dtinf (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
-     00h     0034h     0037h    0004h      CODE               _IntrruptInit (c:\users\tech\desktop\powerlinetransceiver\output\INTERRUPT.OBJ)
+     00h     0029h     0035h    000dh      CODE               itofaz (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
+     00h     0036h     0036h    0001h      CODE               _TriggerAlarm (c:\users\tech\desktop\powerlinetransceiver\output\SMOKEDETECTOR.OBJ)
+     00h     0037h     0037h    0001h      CODE               _ResetAlarm (c:\users\tech\desktop\powerlinetransceiver\output\SMOKEDETECTOR.OBJ)
      00h     0038h     003bh    0004h      CODE               @PLT1CompairISR_code (c:\users\tech\desktop\powerlinetransceiver\output\INTERRUPT.OBJ)
-     00h     003ch     0077h    003ch      CODE               _builtin_holtek_dtdiv (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
-     00h     0078h     00b7h    0040h      CODE               _builtin_holtek_dtmul (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
-     00h     00b8h     00ech    0035h      CODE               _builtin_holtek_ftmul (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
-     00h     00edh     0117h    002bh      CODE               @builtin_holtek_ftol (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
+     00h     003ch     0070h    0035h      CODE               _builtin_holtek_ftmul (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
+     00h     0071h     009bh    002bh      CODE               @builtin_holtek_ftol (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
+     00h     009ch     00dbh    0040h      CODE               _builtin_holtek_dtmul (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
+     00h     00dch     0117h    003ch      CODE               _builtin_holtek_dtdiv (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
      00h     0118h     0155h    003eh      CODE               @builtin_holtek_dtsubadd (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
      00h     0156h     0180h    002bh      CODE               _builtin_holtek_dtol (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
      00h     0181h     01b4h    0034h      CODE               @builtin_holtek_ftsubadd (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
      00h     01b5h     01e6h    0032h      CODE               _builtin_holtek_ftdiv (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
-     00h     01e7h     021ah    0034h      CODE               _builtin_holtek_dtnorm (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
-     00h     021bh     0232h    0018h      CODE               @builtin_holtek_dtdecode (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
-     00h     0233h     0248h    0016h      CODE               @builtin_holtek_ftdecode (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
-     00h     0249h     0277h    002fh      CODE               _builtin_holtek_ftnorm (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
+     00h     01e7h     01fch    0016h      CODE               @builtin_holtek_ftdecode (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
+     00h     01fdh     022bh    002fh      CODE               _builtin_holtek_ftnorm (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
+     00h     022ch     025fh    0034h      CODE               _builtin_holtek_dtnorm (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
+     00h     0260h     0277h    0018h      CODE               @builtin_holtek_dtdecode (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
      00h     0278h     027dh    0006h      CODE               _builtin_holtek_ftinf (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
-     00h     027eh     028bh    000eh      CODE               itodaz (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
-     00h     028ch     0298h    000dh      CODE               @ROMDATA_BASE (c:\users\tech\desktop\powerlinetransceiver\output\STARTUP1_L.OBJ)
-     00h     0299h     03a4h    010ch      CODE               _main (c:\users\tech\desktop\powerlinetransceiver\output\MAIN.OBJ)
-     00h     03a5h     03c3h    001fh      CODE               _S_GPIO_Init (c:\users\tech\desktop\powerlinetransceiver\output\GPIO.OBJ)
-     00h     03c4h     03c9h    0006h      CODE               _S_RCC_Init (c:\users\tech\desktop\powerlinetransceiver\output\RCC.OBJ)
-     00h     03cah     03d5h    000ch      CODE               _S_Timebase_Init (c:\users\tech\desktop\powerlinetransceiver\output\RCC.OBJ)
-     00h     03d6h     03e3h    000eh      CODE               _EnableInterrupt (c:\users\tech\desktop\powerlinetransceiver\output\INTERRUPT.OBJ)
-     00h     03e4h     03f1h    000eh      CODE               _DisableInterrupt (c:\users\tech\desktop\powerlinetransceiver\output\INTERRUPT.OBJ)
-     00h     03f2h     03f6h    0005h      CODE               _PLT1CompairISR (c:\users\tech\desktop\powerlinetransceiver\output\INTERRUPT.OBJ)
-     00h     03f7h     03fbh    0005h      CODE               _PLT0CompairISR (c:\users\tech\desktop\powerlinetransceiver\output\INTERRUPT.OBJ)
-     00h     03fch     0401h    0006h      CODE               _TimerBaseInit (c:\users\tech\desktop\powerlinetransceiver\output\BTM.OBJ)
-     00h     0402h     041eh    001dh      CODE               _PTimerInit (c:\users\tech\desktop\powerlinetransceiver\output\PTM.OBJ)
-     00h     041fh     0431h    0013h      CODE               _PWMSeter (c:\users\tech\desktop\powerlinetransceiver\output\PTM.OBJ)
-     00h     0432h     043eh    000dh      CODE               _readPTimer (c:\users\tech\desktop\powerlinetransceiver\output\PTM.OBJ)
-     00h     043fh     0452h    0014h      CODE               _STimerInit (c:\users\tech\desktop\powerlinetransceiver\output\STM.OBJ)
-     00h     0453h     045fh    000dh      CODE               _readSTimer (c:\users\tech\desktop\powerlinetransceiver\output\STM.OBJ)
-     00h     0460h     04c0h    0061h      CODE               _PLT0InputOffsetCalibration (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
-     00h     04c1h     0520h    0060h      CODE               _PLT1InputOffsetCalibration (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
-     00h     0521h     0581h    0061h      CODE               _PLTAInputOffsetCalibration (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
-     00h     0582h     058eh    000dh      CODE               _PLT1Init (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
-     00h     058fh     059bh    000dh      CODE               _PLTAInit (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
-     00h     059ch     05a0h    0005h      CODE               _PLT0Recive (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
-     00h     05a1h     05a5h    0005h      CODE               _PLT1Recive (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
-     00h     05a6h     0605h    0060h      CODE               _PLT0AmplifierInputOffsetCalibration (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
-     00h     0606h     0612h    000dh      CODE               _PLT0Init (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
-     00h     0613h     0640h    002eh      CODE               _calculate_parity_and_checksum (c:\users\tech\desktop\powerlinetransceiver\output\PLTSERIALPROTOCOL.OBJ)
-     00h     0641h     06dfh    009fh      CODE               _PLT_SerialSend (c:\users\tech\desktop\powerlinetransceiver\output\PLTSERIALPROTOCOL.OBJ)
-     00h     06e0h     06e4h    0005h      CODE               _PLT_SerialInit (c:\users\tech\desktop\powerlinetransceiver\output\PLTSERIALPROTOCOL.OBJ)
-     00h     06e5h     0717h    0033h      CODE               _PLT_HandelSerialTransmit (c:\users\tech\desktop\powerlinetransceiver\output\PLTSERIALPROTOCOL.OBJ)
-     00h     0718h     0797h    0080h      CODE               _UART_Init (c:\users\tech\desktop\powerlinetransceiver\output\UART.OBJ)
-     00h     0798h     079dh    0006h      CODE               _UART_Transmit (c:\users\tech\desktop\powerlinetransceiver\output\UART.OBJ)
-     00h     079eh     07a9h    000ch      CODE               _UART_Receive (c:\users\tech\desktop\powerlinetransceiver\output\UART.OBJ)
-     00h     07aah     07b2h    0009h      CODE               _UART_ReceiveNonBlocking (c:\users\tech\desktop\powerlinetransceiver\output\UART.OBJ)
-     00h     07b3h     07b8h    0006h      CODE               _UART_EnableInterrupts (c:\users\tech\desktop\powerlinetransceiver\output\UART.OBJ)
-     00h     07b9h     07cah    0012h      CODE               _UART_DisableInterrupts (c:\users\tech\desktop\powerlinetransceiver\output\UART.OBJ)
-     00h     07cbh     07d1h    0007h      CODE               _ADCInit (c:\users\tech\desktop\powerlinetransceiver\output\ADC.OBJ)
-     00h     07d2h     0842h    0071h      CODE               _ReadADC (c:\users\tech\desktop\powerlinetransceiver\output\ADC.OBJ)
-     00h     0843h     084fh    000dh      CODE               _InitOPA (c:\users\tech\desktop\powerlinetransceiver\output\SMOKEDETECTOR.OBJ)
-     00h     0850h     085dh    000eh      CODE               _InitISINK (c:\users\tech\desktop\powerlinetransceiver\output\SMOKEDETECTOR.OBJ)
-     00h     085eh     087ch    001fh      CODE               _CalibrateOPA0 (c:\users\tech\desktop\powerlinetransceiver\output\SMOKEDETECTOR.OBJ)
-     00h     087dh     089bh    001fh      CODE               _CalibrateOPA1 (c:\users\tech\desktop\powerlinetransceiver\output\SMOKEDETECTOR.OBJ)
-     00h     089ch     089ch    0001h      CODE               _TriggerAlarm (c:\users\tech\desktop\powerlinetransceiver\output\SMOKEDETECTOR.OBJ)
-     00h     089dh     089dh    0001h      CODE               _ResetAlarm (c:\users\tech\desktop\powerlinetransceiver\output\SMOKEDETECTOR.OBJ)
-     00h     089eh     08a2h    0005h      CODE               _ISINK0_ON (c:\users\tech\desktop\powerlinetransceiver\output\SMOKEDETECTOR.OBJ)
-     00h     08a3h     08a7h    0005h      CODE               _ISINK1_ON (c:\users\tech\desktop\powerlinetransceiver\output\SMOKEDETECTOR.OBJ)
-     00h     08a8h     08aah    0003h      CODE               _ISINK0_OFF (c:\users\tech\desktop\powerlinetransceiver\output\SMOKEDETECTOR.OBJ)
-     00h     08abh     08adh    0003h      CODE               _ISINK1_OFF (c:\users\tech\desktop\powerlinetransceiver\output\SMOKEDETECTOR.OBJ)
-     00h     08aeh     08b1h    0004h      CODE               _OPA_ON (c:\users\tech\desktop\powerlinetransceiver\output\SMOKEDETECTOR.OBJ)
-     00h     08b2h     08b6h    0005h      CODE               _InitSmokeDetection (c:\users\tech\desktop\powerlinetransceiver\output\SMOKEDETECTOR.OBJ)
-     00h     08b7h     08bah    0004h      CODE               _OPA_OFF (c:\users\tech\desktop\powerlinetransceiver\output\SMOKEDETECTOR.OBJ)
-     00h     08bbh     0932h    0078h      CODE               _temperature (c:\users\tech\desktop\powerlinetransceiver\output\NTC.OBJ)
-     00h     0933h     093ch    000ah      CODE               __DELAYX (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
-     00h     093dh     094ah    000eh      CODE               _builtin_holtek_delay_isr00 (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
-     00h     094bh     0981h    0037h      CODE               _builtin_holtek_divmodhi4_isr00 (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
-     00h     0982h     0c7dh    02fch      CODE               _log (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\v3_lmrsc.lib)
-     00h     0c7eh     0d3eh    00c1h      CODE               _frexp (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\v3_lmrsc.lib)
-     00h     0d3fh     0d41h    0003h      CODE               _CROM2PROM (CROM2PROM)
-     00h     0080h     0080h    0001h      DATA     80        @data_ra (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
-     00h     0081h     0081h    0001h      DATA     132       @data_rb (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
-     00h     0082h     0082h    0001h      DATA     117       @data_rc (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
-     00h     0083h     0083h    0001h      DATA     127       @data_rd (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
-     00h     0084h     0084h    0001h      DATA     125       @data_re (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
-     00h     0085h     0085h    0001h      DATA     95        @data_rf (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
-     00h     0086h     0086h    0001h      DATA     92        @data_rg (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
-     00h     0087h     0087h    0001h      DATA     17        @data_rh (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
-     00h     0088h     008dh    0006h      DATA     86        ftdata1 (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
-     00h     008eh     0090h    0003h      DATA     56.667    dtdata (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
-     00h     0091h     0097h    0007h      DATA     36.143    ftdata2 (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
+     00h     027eh     0284h    0007h      CODE               _builtin_holtek_dtinf (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
+     00h     0285h     0292h    000eh      CODE               itodaz (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
+     00h     0293h     029fh    000dh      CODE               @ROMDATA_BASE (c:\users\tech\desktop\powerlinetransceiver\output\STARTUP1_L.OBJ)
+     00h     02a0h     0361h    00c2h      CODE               _main (c:\users\tech\desktop\powerlinetransceiver\output\MAIN.OBJ)
+     00h     0362h     0382h    0021h      CODE               _S_GPIO_Init (c:\users\tech\desktop\powerlinetransceiver\output\GPIO.OBJ)
+     00h     0383h     0388h    0006h      CODE               _S_RCC_Init (c:\users\tech\desktop\powerlinetransceiver\output\RCC.OBJ)
+     00h     0389h     0394h    000ch      CODE               _S_Timebase_Init (c:\users\tech\desktop\powerlinetransceiver\output\RCC.OBJ)
+     00h     0395h     0398h    0004h      CODE               _IntrruptInit (c:\users\tech\desktop\powerlinetransceiver\output\INTERRUPT.OBJ)
+     00h     0399h     03a6h    000eh      CODE               _EnableInterrupt (c:\users\tech\desktop\powerlinetransceiver\output\INTERRUPT.OBJ)
+     00h     03a7h     03b4h    000eh      CODE               _DisableInterrupt (c:\users\tech\desktop\powerlinetransceiver\output\INTERRUPT.OBJ)
+     00h     03b5h     03b9h    0005h      CODE               _PLT1CompairISR (c:\users\tech\desktop\powerlinetransceiver\output\INTERRUPT.OBJ)
+     00h     03bah     03beh    0005h      CODE               _PLT0CompairISR (c:\users\tech\desktop\powerlinetransceiver\output\INTERRUPT.OBJ)
+     00h     03bfh     03c4h    0006h      CODE               _TimerBaseInit (c:\users\tech\desktop\powerlinetransceiver\output\BTM.OBJ)
+     00h     03c5h     03e1h    001dh      CODE               _PTimerInit (c:\users\tech\desktop\powerlinetransceiver\output\PTM.OBJ)
+     00h     03e2h     03f4h    0013h      CODE               _PWMSeter (c:\users\tech\desktop\powerlinetransceiver\output\PTM.OBJ)
+     00h     03f5h     0401h    000dh      CODE               _readPTimer (c:\users\tech\desktop\powerlinetransceiver\output\PTM.OBJ)
+     00h     0402h     0415h    0014h      CODE               _STimerInit (c:\users\tech\desktop\powerlinetransceiver\output\STM.OBJ)
+     00h     0416h     0422h    000dh      CODE               _readSTimer (c:\users\tech\desktop\powerlinetransceiver\output\STM.OBJ)
+     00h     0423h     0483h    0061h      CODE               _PLT0InputOffsetCalibration (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
+     00h     0484h     04e3h    0060h      CODE               _PLT1InputOffsetCalibration (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
+     00h     04e4h     0544h    0061h      CODE               _PLTAInputOffsetCalibration (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
+     00h     0545h     0551h    000dh      CODE               _PLT1Init (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
+     00h     0552h     055eh    000dh      CODE               _PLTAInit (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
+     00h     055fh     0563h    0005h      CODE               _PLT0Recive (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
+     00h     0564h     0568h    0005h      CODE               _PLT1Recive (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
+     00h     0569h     05c8h    0060h      CODE               _PLT0AmplifierInputOffsetCalibration (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
+     00h     05c9h     05d5h    000dh      CODE               _PLT0Init (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
+     00h     05d6h     0603h    002eh      CODE               _calculate_parity_and_checksum (c:\users\tech\desktop\powerlinetransceiver\output\PLTSERIALPROTOCOL.OBJ)
+     00h     0604h     06a2h    009fh      CODE               _PLT_SerialSend (c:\users\tech\desktop\powerlinetransceiver\output\PLTSERIALPROTOCOL.OBJ)
+     00h     06a3h     06a7h    0005h      CODE               _PLT_SerialInit (c:\users\tech\desktop\powerlinetransceiver\output\PLTSERIALPROTOCOL.OBJ)
+     00h     06a8h     06dah    0033h      CODE               _PLT_HandelSerialTransmit (c:\users\tech\desktop\powerlinetransceiver\output\PLTSERIALPROTOCOL.OBJ)
+     00h     06dbh     075ah    0080h      CODE               _UART_Init (c:\users\tech\desktop\powerlinetransceiver\output\UART.OBJ)
+     00h     075bh     0760h    0006h      CODE               _UART_Transmit (c:\users\tech\desktop\powerlinetransceiver\output\UART.OBJ)
+     00h     0761h     076ch    000ch      CODE               _UART_Receive (c:\users\tech\desktop\powerlinetransceiver\output\UART.OBJ)
+     00h     076dh     0775h    0009h      CODE               _UART_ReceiveNonBlocking (c:\users\tech\desktop\powerlinetransceiver\output\UART.OBJ)
+     00h     0776h     077bh    0006h      CODE               _UART_EnableInterrupts (c:\users\tech\desktop\powerlinetransceiver\output\UART.OBJ)
+     00h     077ch     078dh    0012h      CODE               _UART_DisableInterrupts (c:\users\tech\desktop\powerlinetransceiver\output\UART.OBJ)
+     00h     078eh     0794h    0007h      CODE               _ADCInit (c:\users\tech\desktop\powerlinetransceiver\output\ADC.OBJ)
+     00h     0795h     0805h    0071h      CODE               _ReadADC (c:\users\tech\desktop\powerlinetransceiver\output\ADC.OBJ)
+     00h     0806h     0812h    000dh      CODE               _InitOPA (c:\users\tech\desktop\powerlinetransceiver\output\SMOKEDETECTOR.OBJ)
+     00h     0813h     0820h    000eh      CODE               _InitISINK (c:\users\tech\desktop\powerlinetransceiver\output\SMOKEDETECTOR.OBJ)
+     00h     0821h     083fh    001fh      CODE               _CalibrateOPA0 (c:\users\tech\desktop\powerlinetransceiver\output\SMOKEDETECTOR.OBJ)
+     00h     0840h     085eh    001fh      CODE               _CalibrateOPA1 (c:\users\tech\desktop\powerlinetransceiver\output\SMOKEDETECTOR.OBJ)
+     00h     085fh     0863h    0005h      CODE               _ISINK0_ON (c:\users\tech\desktop\powerlinetransceiver\output\SMOKEDETECTOR.OBJ)
+     00h     0864h     0868h    0005h      CODE               _ISINK1_ON (c:\users\tech\desktop\powerlinetransceiver\output\SMOKEDETECTOR.OBJ)
+     00h     0869h     086bh    0003h      CODE               _ISINK0_OFF (c:\users\tech\desktop\powerlinetransceiver\output\SMOKEDETECTOR.OBJ)
+     00h     086ch     086eh    0003h      CODE               _ISINK1_OFF (c:\users\tech\desktop\powerlinetransceiver\output\SMOKEDETECTOR.OBJ)
+     00h     086fh     0872h    0004h      CODE               _OPA_ON (c:\users\tech\desktop\powerlinetransceiver\output\SMOKEDETECTOR.OBJ)
+     00h     0873h     0877h    0005h      CODE               _InitSmokeDetection (c:\users\tech\desktop\powerlinetransceiver\output\SMOKEDETECTOR.OBJ)
+     00h     0878h     087bh    0004h      CODE               _OPA_OFF (c:\users\tech\desktop\powerlinetransceiver\output\SMOKEDETECTOR.OBJ)
+     00h     087ch     09a3h    0128h      CODE               _custom_log (c:\users\tech\desktop\powerlinetransceiver\output\NTC.OBJ)
+     00h     09a4h     0a9ah    00f7h      CODE               _GetTemperatureFromSteinhart (c:\users\tech\desktop\powerlinetransceiver\output\NTC.OBJ)
+     00h     0a9bh     0b35h    009bh      CODE               _temperature (c:\users\tech\desktop\powerlinetransceiver\output\NTC.OBJ)
+     00h     0b36h     0b3fh    000ah      CODE               __DELAYX (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
+     00h     0b40h     0b4dh    000eh      CODE               _builtin_holtek_delay_isr00 (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
+     00h     0b4eh     0b72h    0025h      CODE               _builtin_holtek_divmodhi4_isr00 (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
+     00h     0b73h     0e6eh    02fch      CODE               _log (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\v3_lmrsc.lib)
+     00h     0e6fh     0f2fh    00c1h      CODE               _frexp (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\v3_lmrsc.lib)
+     00h     0f30h     0f32h    0003h      CODE               _CROM2PROM (CROM2PROM)
+     00h     0080h     0080h    0001h      DATA     86        @data_ra (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
+     00h     0081h     0081h    0001h      DATA     139       @data_rb (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
+     00h     0082h     0082h    0001h      DATA     126       @data_rc (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
+     00h     0083h     0083h    0001h      DATA     150       @data_rd (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
+     00h     0084h     0084h    0001h      DATA     145       @data_re (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
+     00h     0085h     0085h    0001h      DATA     121       @data_rf (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
+     00h     0086h     0086h    0001h      DATA     117       @data_rg (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
+     00h     0087h     0087h    0001h      DATA     20        @data_rh (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
+     00h     0088h     008dh    0006h      DATA     106.17    ftdata1 (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
+     00h     008eh     0094h    0007h      DATA     44.286    ftdata2 (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
+     00h     0095h     0097h    0003h      DATA     69        dtdata (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
      00h     0098h     0098h    0001h      DATA     2         @data_r138 (isr:ra~rh)
      00h     0099h     0099h    0001h      DATA     2         @data_r238 (isr:ra~rh)
      00h     009ah     009ah    0001h      DATA     2         @data_r104 (isr:ra~rh)
      00h     009bh     009bh    0001h      DATA     2         @data_r204 (isr:ra~rh)
-     00h     00c1h     00c2h    0002h      DATA     3         @HCCINIT___value_1962 (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
-     00h     00c3h     00c4h    0002h      DATA     3         @HCCINIT___value_1933 (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
-     00h     00c5h     00c6h    0002h      DATA     3         @HCCINIT___value_1922 (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
-     00h     00c7h     00c8h    0002h      DATA     3         @HCCINIT___value_1911 (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
-     00h     00c9h     00cah    0002h      DATA     3         @HCCINIT_VC0OS1 (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
-     00h     00cbh     00cch    0002h      DATA     2         @HCCINIT_VC0OS2 (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
-     00h     00cdh     00ceh    0002h      DATA     1         @HCCINIT_VC2OS2 (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
-     00h     00cfh     00d0h    0002h      DATA     1         @HCCINIT_VC2OS1 (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
-     00h     00d1h     00d2h    0002h      DATA     1         @HCCINIT_VC1OS2 (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
-     00h     00d3h     00d4h    0002h      DATA     1         @HCCINIT_VC1OS1 (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
-     00h     00d5h     00d5h    0001h      DATA     2         @HCCINIT0_tx_busy (c:\users\tech\desktop\powerlinetransceiver\output\MAIN.OBJ)
-     00h     00d6h     00d7h    0002h      DATA     2         @HCCINIT0_frame (c:\users\tech\desktop\powerlinetransceiver\output\MAIN.OBJ)
-     00h     00d8h     00d9h    0002h      DATA     2         @HCCINIT0_errno (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\v3_lmrsc.lib)
-     00h     00dah     00dbh    0002h      DATA     0         @HCCINIT0_temp (c:\users\tech\desktop\powerlinetransceiver\output\MAIN.OBJ)
+     00h     00d1h     00d2h    0002h      DATA     3         @HCCINIT___value_1962 (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
+     00h     00d3h     00d4h    0002h      DATA     3         @HCCINIT___value_1933 (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
+     00h     00d5h     00d6h    0002h      DATA     3         @HCCINIT___value_1922 (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
+     00h     00d7h     00d8h    0002h      DATA     3         @HCCINIT___value_1911 (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
+     00h     00d9h     00dah    0002h      DATA     3         @HCCINIT_VC0OS1 (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
+     00h     00dbh     00dch    0002h      DATA     2         @HCCINIT_VC0OS2 (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
+     00h     00ddh     00deh    0002h      DATA     1         @HCCINIT_VC2OS2 (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
+     00h     00dfh     00e0h    0002h      DATA     1         @HCCINIT_VC2OS1 (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
+     00h     00e1h     00e2h    0002h      DATA     1         @HCCINIT_VC1OS2 (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
+     00h     00e3h     00e4h    0002h      DATA     1         @HCCINIT_VC1OS1 (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
+     00h     00e5h     00e5h    0001h      DATA     2         @HCCINIT0_tx_busy (c:\users\tech\desktop\powerlinetransceiver\output\MAIN.OBJ)
+     00h     00e6h     00e7h    0002h      DATA     2         @HCCINIT0_frame (c:\users\tech\desktop\powerlinetransceiver\output\MAIN.OBJ)
+     00h     00e8h     00e9h    0002h      DATA     2         @HCCINIT0_errno (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\v3_lmrsc.lib)
+     00h     00eah     00ebh    0002h      DATA     0         @HCCINIT0_temp (c:\users\tech\desktop\powerlinetransceiver\output\MAIN.OBJ)
 
      Local Sections
 
      Bank    Start     End      Length     Class    AvgIns    Name
-     00h     00a6h     00a6h    0000h      LOCAL    0         @dummy (c:\users\tech\desktop\powerlinetransceiver\output\MAIN.OBJ)
-     00h     00a4h     00a5h    0002h      LOCAL    6         _main (c:\users\tech\desktop\powerlinetransceiver\output\MAIN.OBJ)
+     00h     00d1h     00d1h    0000h      LOCAL    0         @dummy (c:\users\tech\desktop\powerlinetransceiver\output\MAIN.OBJ)
+     00h     00cdh     00d0h    0004h      LOCAL    3         _main (c:\users\tech\desktop\powerlinetransceiver\output\MAIN.OBJ)
      00h     009ch     009ch    0000h      LOCAL    0         _S_RCC_Init (c:\users\tech\desktop\powerlinetransceiver\output\RCC.OBJ)
      00h     009ch     009ch    0000h      LOCAL    0         _ADCInit (c:\users\tech\desktop\powerlinetransceiver\output\ADC.OBJ)
      00h     009ch     009ch    0000h      LOCAL    0         _S_GPIO_Init (c:\users\tech\desktop\powerlinetransceiver\output\GPIO.OBJ)
@@ -160,12 +162,19 @@ Input Library File: C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x
      00h     009ch     009ch    0000h      LOCAL    0         _ISINK0_ON (c:\users\tech\desktop\powerlinetransceiver\output\SMOKEDETECTOR.OBJ)
      00h     009ch     009ch    0001h      LOCAL    1         _ReadADC (c:\users\tech\desktop\powerlinetransceiver\output\ADC.OBJ)
      00h     009ch     009ch    0000h      LOCAL    0         __DELAYX (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
-     00h     009ch     009ch    0000h      LOCAL    0         _builtin_holtek_ftmul (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
+     00h     00c4h     00cch    0009h      LOCAL    2.3333    _temperature (c:\users\tech\desktop\powerlinetransceiver\output\NTC.OBJ)
+     00h     009ch     009ch    0000h      LOCAL    0         _builtin_holtek_ftsubadd (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
      00h     009ch     009ch    0000h      LOCAL    0         _builtin_holtek_ftdecode (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
+     00h     009ch     009ch    0000h      LOCAL    0         _builtin_holtek_ftdiv (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
+     00h     009ch     009ch    0000h      LOCAL    0         _builtin_holtek_ftmul (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
+     00h     00b9h     00c3h    000bh      LOCAL    3.4545    _GetTemperatureFromSteinhart (c:\users\tech\desktop\powerlinetransceiver\output\NTC.OBJ)
+     00h     00abh     00b8h    000eh      LOCAL    13.286    _log (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\v3_lmrsc.lib)
+     00h     009ch     00aah    000fh      LOCAL    3.3333    _frexp (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\v3_lmrsc.lib)
+     00h     009ch     009ch    0000h      LOCAL    0         _builtin_holtek_itod (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
      00h     009ch     009ch    0000h      LOCAL    0         _builtin_holtek_ftol (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
      00h     009ch     009ch    0000h      LOCAL    0         _ISINK0_OFF (c:\users\tech\desktop\powerlinetransceiver\output\SMOKEDETECTOR.OBJ)
      00h     009ch     009ch    0000h      LOCAL    0         _OPA_OFF (c:\users\tech\desktop\powerlinetransceiver\output\SMOKEDETECTOR.OBJ)
-     00h     009ch     00a3h    0008h      LOCAL    10.375    _builtin_holtek_divmodhi4_isr00 (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
+     00h     009ch     00a3h    0008h      LOCAL    9.5       _builtin_holtek_divmodhi4_isr00 (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
      00h     009ch     009ch    0001h      LOCAL    2         _UART_Transmit (c:\users\tech\desktop\powerlinetransceiver\output\UART.OBJ)
      00h     009ch     009ch    0000h      LOCAL    0         @dummy56 (c:\users\tech\desktop\powerlinetransceiver\output\INTERRUPT.OBJ)
      00h     009ch     009ch    0000h      LOCAL    0         _PLT1CompairISR (c:\users\tech\desktop\powerlinetransceiver\output\INTERRUPT.OBJ)
@@ -178,13 +187,8 @@ Input Library File: C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x
      00h     009dh     009dh    0000h      LOCAL    0         _PLT_HandelSerialTransmit (c:\users\tech\desktop\powerlinetransceiver\output\PLTSERIALPROTOCOL.OBJ)
      00h     009ch     009ch    0001h      LOCAL    1         _DisableInterrupt (c:\users\tech\desktop\powerlinetransceiver\output\INTERRUPT.OBJ)
      00h     009dh     009dh    0000h      LOCAL    0         _CheckSmokeLevel (c:\users\tech\desktop\powerlinetransceiver\output\SMOKEDETECTOR.OBJ)
-     00h     00b9h     00c0h    0008h      LOCAL    1.75      _temperature (c:\users\tech\desktop\powerlinetransceiver\output\NTC.OBJ)
-     00h     009ch     009ch    0000h      LOCAL    0         _builtin_holtek_uitof (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
-     00h     009ch     009ch    0000h      LOCAL    0         _builtin_holtek_ftsubadd (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
-     00h     009ch     009ch    0000h      LOCAL    0         _builtin_holtek_ftdiv (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
-     00h     00abh     00b8h    000eh      LOCAL    13.286    _log (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\v3_lmrsc.lib)
-     00h     009ch     00aah    000fh      LOCAL    3.3333    _frexp (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\v3_lmrsc.lib)
-     00h     009ch     009ch    0000h      LOCAL    0         _builtin_holtek_itod (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
+     00h     009ch     00ach    0011h      LOCAL    3.6471    _custom_log (c:\users\tech\desktop\powerlinetransceiver\output\NTC.OBJ)
+     00h     009ch     009ch    0000h      LOCAL    0         _builtin_holtek_itof (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
 
      Indepentent Local Sections
 
@@ -208,130 +212,134 @@ Input Library File: C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x
      00h     009ch     009ch    0000h      ILOCAL   0         _ResetAlarm (c:\users\tech\desktop\powerlinetransceiver\output\SMOKEDETECTOR.OBJ)
      00h     009ch     009ch    0000h      ILOCAL   0         _ISINK1_ON (c:\users\tech\desktop\powerlinetransceiver\output\SMOKEDETECTOR.OBJ)
      00h     009ch     009ch    0000h      ILOCAL   0         _ISINK1_OFF (c:\users\tech\desktop\powerlinetransceiver\output\SMOKEDETECTOR.OBJ)
-     00h     009ch     009ch    0000h      ILOCAL   0         _builtin_holtek_dtnorm (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
      00h     009ch     009ch    0000h      ILOCAL   0         _builtin_holtek_ftnorm (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
-     00h     009ch     009ch    0000h      ILOCAL   0         _builtin_holtek_dtinf (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
+     00h     009ch     009ch    0000h      ILOCAL   0         _builtin_holtek_dtnorm (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
+     00h     009ch     009ch    0000h      ILOCAL   0         _builtin_holtek_uitof (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
      00h     009ch     009ch    0000h      ILOCAL   0         _builtin_holtek_ftinf (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
+     00h     009ch     009ch    0000h      ILOCAL   0         _builtin_holtek_dtinf (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
 
      Public Symbols Information
      Address            Public by Name
-     07cbh              _ADCInit
-     085eh              _CalibrateOPA0
-     087dh              _CalibrateOPA1
+     078eh              _ADCInit
+     0821h              _CalibrateOPA0
+     0840h              _CalibrateOPA1
      0001h              _CheckSmokeLevel
-     0d40h              _Crom2Prom
-     0d3fh              _Crom2PromNext
-     03e4h              _DisableInterrupt
-     03d6h              _EnableInterrupt
-     08a8h              _ISINK0_OFF
-     089eh              _ISINK0_ON
-     08abh              _ISINK1_OFF
-     08a3h              _ISINK1_ON
-     0850h              _InitISINK
-     0843h              _InitOPA
-     08b2h              _InitSmokeDetection
-     0034h              _IntrruptInit
-     08b7h              _OPA_OFF
-     08aeh              _OPA_ON
-     05a6h              _PLT0AmplifierInputOffsetCalibration
-     03f7h              _PLT0CompairISR
-     0606h              _PLT0Init
-     0460h              _PLT0InputOffsetCalibration
-     059ch              _PLT0Recive
-     03f2h              _PLT1CompairISR
-     0582h              _PLT1Init
-     04c1h              _PLT1InputOffsetCalibration
-     05a1h              _PLT1Recive
-     058fh              _PLTAInit
-     0521h              _PLTAInputOffsetCalibration
-     06e5h              _PLT_HandelSerialTransmit
-     06e0h              _PLT_SerialInit
-     0641h              _PLT_SerialSend
+     0f31h              _Crom2Prom
+     0f30h              _Crom2PromNext
+     03a7h              _DisableInterrupt
+     0399h              _EnableInterrupt
+     09a4h              _GetTemperatureFromSteinhart
+     00b9h              _GetTemperatureFromSteinhart_2
+     0869h              _ISINK0_OFF
+     085fh              _ISINK0_ON
+     086ch              _ISINK1_OFF
+     0864h              _ISINK1_ON
+     0813h              _InitISINK
+     0806h              _InitOPA
+     0873h              _InitSmokeDetection
+     0395h              _IntrruptInit
+     0878h              _OPA_OFF
+     086fh              _OPA_ON
+     0569h              _PLT0AmplifierInputOffsetCalibration
+     03bah              _PLT0CompairISR
+     05c9h              _PLT0Init
+     0423h              _PLT0InputOffsetCalibration
+     055fh              _PLT0Recive
+     03b5h              _PLT1CompairISR
+     0545h              _PLT1Init
+     0484h              _PLT1InputOffsetCalibration
+     0564h              _PLT1Recive
+     0552h              _PLTAInit
+     04e4h              _PLTAInputOffsetCalibration
+     06a8h              _PLT_HandelSerialTransmit
+     06a3h              _PLT_SerialInit
+     0604h              _PLT_SerialSend
      00a3h              _PLT_SerialSend_2
-     0402h              _PTimerInit
-     041fh              _PWMSeter
-     07d2h              _ReadADC
-     089dh              _ResetAlarm
-     043fh              _STimerInit
-     03a5h              _S_GPIO_Init
-     03c4h              _S_RCC_Init
-     03cah              _S_Timebase_Init
-     03fch              _TimerBaseInit
-     089ch              _TriggerAlarm
-     07b9h              _UART_DisableInterrupts
-     07b3h              _UART_EnableInterrupts
-     0718h              _UART_Init
-     079eh              _UART_Receive
-     07aah              _UART_ReceiveNonBlocking
-     0798h              _UART_Transmit
-     00c9h              _VC0OS1
-     00cbh              _VC0OS2
-     00d3h              _VC1OS1
-     00d1h              _VC1OS2
-     00cfh              _VC2OS1
-     00cdh              _VC2OS2
-     0939h              __DELAYX0
-     0938h              __DELAYX1
-     0937h              __DELAYX2
-     0936h              __DELAYX3
-     0935h              __DELAYX4
-     0934h              __DELAYX5
-     0933h              __DELAYX6
-     0942h              __DELAYY0_isr00
-     0941h              __DELAYY1_isr00
-     0940h              __DELAYY2_isr00
-     093fh              __DELAYY3_isr00
-     093eh              __DELAYY4_isr00
-     093dh              __DELAYY5_isr00
-     094bh              _builtin_holtek_divmodhi4_isr00
+     03c5h              _PTimerInit
+     03e2h              _PWMSeter
+     0795h              _ReadADC
+     0037h              _ResetAlarm
+     0402h              _STimerInit
+     0362h              _S_GPIO_Init
+     0383h              _S_RCC_Init
+     0389h              _S_Timebase_Init
+     03bfh              _TimerBaseInit
+     0036h              _TriggerAlarm
+     077ch              _UART_DisableInterrupts
+     0776h              _UART_EnableInterrupts
+     06dbh              _UART_Init
+     0761h              _UART_Receive
+     076dh              _UART_ReceiveNonBlocking
+     075bh              _UART_Transmit
+     00d9h              _VC0OS1
+     00dbh              _VC0OS2
+     00e3h              _VC1OS1
+     00e1h              _VC1OS2
+     00dfh              _VC2OS1
+     00ddh              _VC2OS2
+     0b3ch              __DELAYX0
+     0b3bh              __DELAYX1
+     0b3ah              __DELAYX2
+     0b39h              __DELAYX3
+     0b38h              __DELAYX4
+     0b37h              __DELAYX5
+     0b36h              __DELAYX6
+     0b45h              __DELAYY0_isr00
+     0b44h              __DELAYY1_isr00
+     0b43h              __DELAYY2_isr00
+     0b42h              __DELAYY3_isr00
+     0b41h              __DELAYY4_isr00
+     0b40h              __DELAYY5_isr00
      011ah              _builtin_holtek_dtadd
-     0226h              _builtin_holtek_dtdecode1
-     021bh              _builtin_holtek_dtdecode2
-     003ch              _builtin_holtek_dtdiv
-     002dh              _builtin_holtek_dtinf
-     0078h              _builtin_holtek_dtmul
-     01e7h              _builtin_holtek_dtnorm
+     026bh              _builtin_holtek_dtdecode1
+     0260h              _builtin_holtek_dtdecode2
+     00dch              _builtin_holtek_dtdiv
+     027eh              _builtin_holtek_dtinf
+     009ch              _builtin_holtek_dtmul
+     022ch              _builtin_holtek_dtnorm
      0156h              _builtin_holtek_dtol
      0118h              _builtin_holtek_dtsub
-     022eh              _builtin_holtek_dtzero
-     0231h              _builtin_holtek_dtzero1
+     0273h              _builtin_holtek_dtzero
+     0276h              _builtin_holtek_dtzero1
      008bh              _builtin_holtek_exp1
-     0094h              _builtin_holtek_exp2
+     0091h              _builtin_holtek_exp2
      008dh              _builtin_holtek_floatflag
      0183h              _builtin_holtek_ftadd
-     023dh              _builtin_holtek_ftdecode1
-     0233h              _builtin_holtek_ftdecode2
+     01f1h              _builtin_holtek_ftdecode1
+     01e7h              _builtin_holtek_ftdecode2
      01b5h              _builtin_holtek_ftdiv
      0278h              _builtin_holtek_ftinf
-     00b8h              _builtin_holtek_ftmul
-     0249h              _builtin_holtek_ftnorm
-     00edh              _builtin_holtek_ftol
+     003ch              _builtin_holtek_ftmul
+     01fdh              _builtin_holtek_ftnorm
+     0071h              _builtin_holtek_ftol
      0181h              _builtin_holtek_ftsub
-     0245h              _builtin_holtek_ftzero
-     0247h              _builtin_holtek_ftzero1
-     027eh              _builtin_holtek_itod
+     01f9h              _builtin_holtek_ftzero
+     01fbh              _builtin_holtek_ftzero1
+     0285h              _builtin_holtek_itod
+     0029h              _builtin_holtek_itof
      0088h              _builtin_holtek_mant1
-     008eh              _builtin_holtek_mant12p
-     0091h              _builtin_holtek_mant2
-     0095h              _builtin_holtek_prod
+     0095h              _builtin_holtek_mant12p
+     008eh              _builtin_holtek_mant2
+     0092h              _builtin_holtek_prod
      008ch              _builtin_holtek_signs
-     095dh              _builtin_holtek_udivmodhi4_isr00
-     0287h              _builtin_holtek_uitod
-     0029h              _builtin_holtek_uitof
-     0613h              _calculate_parity_and_checksum
+     0b4eh              _builtin_holtek_udivmodhi4_isr00
+     028eh              _builtin_holtek_uitod
+     0032h              _builtin_holtek_uitof
+     05d6h              _calculate_parity_and_checksum
      009dh              _calculate_parity_and_checksum_2
-     00d8h              _errno
-     00d6h              _frame
-     0c7eh              _frexp
-     0982h              _log
+     087ch              _custom_log
+     00e8h              _errno
+     00e6h              _frame
+     0e6fh              _frexp
+     0b73h              _log
      00b7h              _log_2
-     0299h              _main
-     0432h              _readPTimer
-     0453h              _readSTimer
-     00dah              _temp
-     08bbh              _temperature
-     00b9h              _temperature_2
-     00d5h              _tx_busy
+     02a0h              _main
+     03f5h              _readPTimer
+     0416h              _readSTimer
+     00eah              _temp
+     0a9bh              _temperature
+     00c4h              _temperature_2
+     00e5h              _tx_busy
      009ah              r104
      0098h              r138
      009bh              r204
@@ -344,15 +352,16 @@ Input Library File: C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x
      0085h              rf
      0086h              rg
      0087h              rh
-     028bh              startup_value_1
+     0292h              startup_value_1
 
      Address            Public by Value
      0001h              _CheckSmokeLevel
-     0029h              _builtin_holtek_uitof
-     002dh              _builtin_holtek_dtinf
-     0034h              _IntrruptInit
-     003ch              _builtin_holtek_dtdiv
-     0078h              _builtin_holtek_dtmul
+     0029h              _builtin_holtek_itof
+     0032h              _builtin_holtek_uitof
+     0036h              _TriggerAlarm
+     0037h              _ResetAlarm
+     003ch              _builtin_holtek_ftmul
+     0071h              _builtin_holtek_ftol
      0080h              ra
      0081h              rb
      0082h              rc
@@ -365,138 +374,140 @@ Input Library File: C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x
      008bh              _builtin_holtek_exp1
      008ch              _builtin_holtek_signs
      008dh              _builtin_holtek_floatflag
-     008eh              _builtin_holtek_mant12p
-     0091h              _builtin_holtek_mant2
-     0094h              _builtin_holtek_exp2
-     0095h              _builtin_holtek_prod
+     008eh              _builtin_holtek_mant2
+     0091h              _builtin_holtek_exp2
+     0092h              _builtin_holtek_prod
+     0095h              _builtin_holtek_mant12p
      0098h              r138
      0099h              r238
      009ah              r104
      009bh              r204
+     009ch              _builtin_holtek_dtmul
      009dh              _calculate_parity_and_checksum_2
      00a3h              _PLT_SerialSend_2
      00b7h              _log_2
-     00b8h              _builtin_holtek_ftmul
-     00b9h              _temperature_2
-     00c9h              _VC0OS1
-     00cbh              _VC0OS2
-     00cdh              _VC2OS2
-     00cfh              _VC2OS1
-     00d1h              _VC1OS2
-     00d3h              _VC1OS1
-     00d5h              _tx_busy
-     00d6h              _frame
-     00d8h              _errno
-     00dah              _temp
-     00edh              _builtin_holtek_ftol
+     00b9h              _GetTemperatureFromSteinhart_2
+     00c4h              _temperature_2
+     00d9h              _VC0OS1
+     00dbh              _VC0OS2
+     00dch              _builtin_holtek_dtdiv
+     00ddh              _VC2OS2
+     00dfh              _VC2OS1
+     00e1h              _VC1OS2
+     00e3h              _VC1OS1
+     00e5h              _tx_busy
+     00e6h              _frame
+     00e8h              _errno
+     00eah              _temp
      0118h              _builtin_holtek_dtsub
      011ah              _builtin_holtek_dtadd
      0156h              _builtin_holtek_dtol
      0181h              _builtin_holtek_ftsub
      0183h              _builtin_holtek_ftadd
      01b5h              _builtin_holtek_ftdiv
-     01e7h              _builtin_holtek_dtnorm
-     021bh              _builtin_holtek_dtdecode2
-     0226h              _builtin_holtek_dtdecode1
-     022eh              _builtin_holtek_dtzero
-     0231h              _builtin_holtek_dtzero1
-     0233h              _builtin_holtek_ftdecode2
-     023dh              _builtin_holtek_ftdecode1
-     0245h              _builtin_holtek_ftzero
-     0247h              _builtin_holtek_ftzero1
-     0249h              _builtin_holtek_ftnorm
+     01e7h              _builtin_holtek_ftdecode2
+     01f1h              _builtin_holtek_ftdecode1
+     01f9h              _builtin_holtek_ftzero
+     01fbh              _builtin_holtek_ftzero1
+     01fdh              _builtin_holtek_ftnorm
+     022ch              _builtin_holtek_dtnorm
+     0260h              _builtin_holtek_dtdecode2
+     026bh              _builtin_holtek_dtdecode1
+     0273h              _builtin_holtek_dtzero
+     0276h              _builtin_holtek_dtzero1
      0278h              _builtin_holtek_ftinf
-     027eh              _builtin_holtek_itod
-     0287h              _builtin_holtek_uitod
-     028bh              startup_value_1
-     0299h              _main
-     03a5h              _S_GPIO_Init
-     03c4h              _S_RCC_Init
-     03cah              _S_Timebase_Init
-     03d6h              _EnableInterrupt
-     03e4h              _DisableInterrupt
-     03f2h              _PLT1CompairISR
-     03f7h              _PLT0CompairISR
-     03fch              _TimerBaseInit
-     0402h              _PTimerInit
-     041fh              _PWMSeter
-     0432h              _readPTimer
-     043fh              _STimerInit
-     0453h              _readSTimer
-     0460h              _PLT0InputOffsetCalibration
-     04c1h              _PLT1InputOffsetCalibration
-     0521h              _PLTAInputOffsetCalibration
-     0582h              _PLT1Init
-     058fh              _PLTAInit
-     059ch              _PLT0Recive
-     05a1h              _PLT1Recive
-     05a6h              _PLT0AmplifierInputOffsetCalibration
-     0606h              _PLT0Init
-     0613h              _calculate_parity_and_checksum
-     0641h              _PLT_SerialSend
-     06e0h              _PLT_SerialInit
-     06e5h              _PLT_HandelSerialTransmit
-     0718h              _UART_Init
-     0798h              _UART_Transmit
-     079eh              _UART_Receive
-     07aah              _UART_ReceiveNonBlocking
-     07b3h              _UART_EnableInterrupts
-     07b9h              _UART_DisableInterrupts
-     07cbh              _ADCInit
-     07d2h              _ReadADC
-     0843h              _InitOPA
-     0850h              _InitISINK
-     085eh              _CalibrateOPA0
-     087dh              _CalibrateOPA1
-     089ch              _TriggerAlarm
-     089dh              _ResetAlarm
-     089eh              _ISINK0_ON
-     08a3h              _ISINK1_ON
-     08a8h              _ISINK0_OFF
-     08abh              _ISINK1_OFF
-     08aeh              _OPA_ON
-     08b2h              _InitSmokeDetection
-     08b7h              _OPA_OFF
-     08bbh              _temperature
-     0933h              __DELAYX6
-     0934h              __DELAYX5
-     0935h              __DELAYX4
-     0936h              __DELAYX3
-     0937h              __DELAYX2
-     0938h              __DELAYX1
-     0939h              __DELAYX0
-     093dh              __DELAYY5_isr00
-     093eh              __DELAYY4_isr00
-     093fh              __DELAYY3_isr00
-     0940h              __DELAYY2_isr00
-     0941h              __DELAYY1_isr00
-     0942h              __DELAYY0_isr00
-     094bh              _builtin_holtek_divmodhi4_isr00
-     095dh              _builtin_holtek_udivmodhi4_isr00
-     0982h              _log
-     0c7eh              _frexp
-     0d3fh              _Crom2PromNext
-     0d40h              _Crom2Prom
+     027eh              _builtin_holtek_dtinf
+     0285h              _builtin_holtek_itod
+     028eh              _builtin_holtek_uitod
+     0292h              startup_value_1
+     02a0h              _main
+     0362h              _S_GPIO_Init
+     0383h              _S_RCC_Init
+     0389h              _S_Timebase_Init
+     0395h              _IntrruptInit
+     0399h              _EnableInterrupt
+     03a7h              _DisableInterrupt
+     03b5h              _PLT1CompairISR
+     03bah              _PLT0CompairISR
+     03bfh              _TimerBaseInit
+     03c5h              _PTimerInit
+     03e2h              _PWMSeter
+     03f5h              _readPTimer
+     0402h              _STimerInit
+     0416h              _readSTimer
+     0423h              _PLT0InputOffsetCalibration
+     0484h              _PLT1InputOffsetCalibration
+     04e4h              _PLTAInputOffsetCalibration
+     0545h              _PLT1Init
+     0552h              _PLTAInit
+     055fh              _PLT0Recive
+     0564h              _PLT1Recive
+     0569h              _PLT0AmplifierInputOffsetCalibration
+     05c9h              _PLT0Init
+     05d6h              _calculate_parity_and_checksum
+     0604h              _PLT_SerialSend
+     06a3h              _PLT_SerialInit
+     06a8h              _PLT_HandelSerialTransmit
+     06dbh              _UART_Init
+     075bh              _UART_Transmit
+     0761h              _UART_Receive
+     076dh              _UART_ReceiveNonBlocking
+     0776h              _UART_EnableInterrupts
+     077ch              _UART_DisableInterrupts
+     078eh              _ADCInit
+     0795h              _ReadADC
+     0806h              _InitOPA
+     0813h              _InitISINK
+     0821h              _CalibrateOPA0
+     0840h              _CalibrateOPA1
+     085fh              _ISINK0_ON
+     0864h              _ISINK1_ON
+     0869h              _ISINK0_OFF
+     086ch              _ISINK1_OFF
+     086fh              _OPA_ON
+     0873h              _InitSmokeDetection
+     0878h              _OPA_OFF
+     087ch              _custom_log
+     09a4h              _GetTemperatureFromSteinhart
+     0a9bh              _temperature
+     0b36h              __DELAYX6
+     0b37h              __DELAYX5
+     0b38h              __DELAYX4
+     0b39h              __DELAYX3
+     0b3ah              __DELAYX2
+     0b3bh              __DELAYX1
+     0b3ch              __DELAYX0
+     0b40h              __DELAYY5_isr00
+     0b41h              __DELAYY4_isr00
+     0b42h              __DELAYY3_isr00
+     0b43h              __DELAYY2_isr00
+     0b44h              __DELAYY1_isr00
+     0b45h              __DELAYY0_isr00
+     0b4eh              _builtin_holtek_udivmodhi4_isr00
+     0b73h              _log
+     0e6fh              _frexp
+     0f30h              _Crom2PromNext
+     0f31h              _Crom2Prom
 
 
 ROM Usage Statistics
      Size      Used     Percentage
-     1000h     0d42h    82%
+     1000h     0f33h    94%
 
 RAM Usage Statistics
     Bank      Size      Used     Percentage
-     00h       0080h     005ch    71%
+     00h       0080h     006ch    84%
      01h       0080h     0000h    0%
-     Total     0100h     005ch    35%
+     Total     0100h     006ch    42%
 
 Use Stack Count
-_main: 3
+_main: 6
 _PLT1CompairISR: 0
 _PLT0CompairISR: 0
 _PLT_SerialSend: 2
 _PLT_HandelSerialTransmit: 1
 _CheckSmokeLevel: 2
-_temperature: 4
+_custom_log: 2
 
 Call Tree
     @dummy
@@ -533,11 +544,43 @@ Call Tree
             _ISINK0_ON (1)
             _ReadADC (1)
                 __DELAYX (2)
-            _builtin_holtek_uitod (1)
-            _builtin_holtek_dtdiv (1)
-                _builtin_holtek_dtdecode (2)
-            _builtin_holtek_dtmul (1)
-                _builtin_holtek_dtdecode (2)
+            _temperature (1)
+                _builtin_holtek_uitod (2)
+                _builtin_holtek_dtdiv (2)
+                    _builtin_holtek_dtdecode (3)
+                _builtin_holtek_dtmul (2)
+                    _builtin_holtek_dtdecode (3)
+                _builtin_holtek_ftsubadd (2)
+                    _builtin_holtek_ftdecode (3)
+                _builtin_holtek_ftdiv (2)
+                    _builtin_holtek_ftdecode (3)
+                _builtin_holtek_ftmul (2)
+                    _builtin_holtek_ftdecode (3)
+                _GetTemperatureFromSteinhart (2)
+                    _log (3)
+                        _builtin_holtek_dtsubadd (4)
+                            _builtin_holtek_dtdecode (5)
+                        _frexp (4)
+                            _builtin_holtek_dtsubadd (5)
+                                _builtin_holtek_dtdecode (6)
+                            _builtin_holtek_dtmul (5)
+                                _builtin_holtek_dtdecode (6)
+                            _builtin_holtek_itod (5)
+                        _builtin_holtek_dtsubadd (4)
+                            _builtin_holtek_dtdecode (5)
+                        _builtin_holtek_dtdiv (4)
+                            _builtin_holtek_dtdecode (5)
+                        _builtin_holtek_dtmul (4)
+                            _builtin_holtek_dtdecode (5)
+                        _builtin_holtek_itod (4)
+                    _builtin_holtek_dtmul (3)
+                        _builtin_holtek_dtdecode (4)
+                    _builtin_holtek_dtsubadd (3)
+                        _builtin_holtek_dtdecode (4)
+                    _builtin_holtek_dtdiv (3)
+                        _builtin_holtek_dtdecode (4)
+                    _builtin_holtek_dtsubadd (3)
+                        _builtin_holtek_dtdecode (4)
             _builtin_holtek_ftmul (1)
                 _builtin_holtek_ftdecode (2)
             _builtin_holtek_ftol (1)
@@ -564,30 +607,22 @@ Call Tree
     _CheckSmokeLevel
         _ReadADC (0)
             __DELAYX (1)
-    _temperature
-        _builtin_holtek_uitof (0)
+    _custom_log
+        _builtin_holtek_dtsubadd (0)
+            _builtin_holtek_dtdecode (1)
+        _builtin_holtek_dtsubadd (0)
+            _builtin_holtek_dtdecode (1)
+        _builtin_holtek_dtdiv (0)
+            _builtin_holtek_dtdecode (1)
         _builtin_holtek_ftmul (0)
             _builtin_holtek_ftdecode (1)
         _builtin_holtek_ftsubadd (0)
             _builtin_holtek_ftdecode (1)
+        _builtin_holtek_ftsubadd (0)
+            _builtin_holtek_ftdecode (1)
+        _builtin_holtek_itof (0)
         _builtin_holtek_ftdiv (0)
             _builtin_holtek_ftdecode (1)
-        _log (0)
-            _builtin_holtek_dtsubadd (1)
-                _builtin_holtek_dtdecode (2)
-            _frexp (1)
-                _builtin_holtek_dtsubadd (2)
-                    _builtin_holtek_dtdecode (3)
-                _builtin_holtek_dtmul (2)
-                    _builtin_holtek_dtdecode (3)
-                _builtin_holtek_itod (2)
-            _builtin_holtek_dtsubadd (1)
-                _builtin_holtek_dtdecode (2)
-            _builtin_holtek_dtdiv (1)
-                _builtin_holtek_dtdecode (2)
-            _builtin_holtek_dtmul (1)
-                _builtin_holtek_dtdecode (2)
-            _builtin_holtek_itod (1)
 
 HLINK: Program entry point at section '@code' (address 0) of file 'c:\users\tech\desktop\powerlinetransceiver\output\MAIN.OBJ'
 

@@ -21,20 +21,48 @@
 
 #include "BA45F5240.h"
 
-// Uncomment the following line if you want to use the standard math library for logarithm calculations
- #define _USE_MATH_H
 
-#ifdef _USE_MATH_H
-    #include <math.h>
-    #define LOG_FUNCTION log
+//#define USE_LOOKUP_TABLE
+
+#define NTC_PIN_CONNECT_TO_GND
+
+#ifdef USE_LOOKUP_TABLE
+	float GetTemperatureFromLookup(unsigned long resistance);
 #else
-    double custom_log(double x); /**< Function prototype for custom logarithm function */
-    #define LOG_FUNCTION custom_log
+	// Uncomment the following line if you want to use the standard math library for logarithm calculations
+	#define USE_MATH_H
+	
+	#ifdef USE_MATH_H
+		#include <math.h>
+		#define LOG_FUNCTION log
+	#else
+		double custom_log(double x); /**< Function prototype for custom logarithm function */
+		#define LOG_FUNCTION custom_log
+	#endif
+
+	/*  @brief Steinhart-Hart coefficients for temperature calculation.
+	/*  3 point from your ntc in different temperatures , you can use from
+	https://www.thinksrs.com/downloads/programs/therm%20calc/ntccalibrator/ntccalculator.html
+	T1=-30^C   R1=154882kR
+	T2=25^C    R2=10000KR
+	T3=80^C    R3=1228KR 
+	*/
+	//#define A  0.001277368    /**< Steinhart-Hart coefficient A */
+//	#define B  0.000208223    /**< Steinhart-Hart coefficient B */
+//	#define C  0.0000002032989 /**< Steinhart-Hart coefficient C */
+    	#define A 0.001277368779
+    	#define B 0.0002082232310
+    	#define C 0.0000002032989311
+    	float GetTemperatureFromSteinhart(float resistance);
+		
 #endif
 
-#define ADC_12bit  4095
-#define ADC_10bit  1023
-#define ADC_8bit   255
+#define ADC_12bit  4094.0
+#define ADC_10bit  1023.0
+#define ADC_8bit   255.0
+
+#define NTC_POWER_ON  _pa7=1
+
 
 // Select ADC resolution
 #define ADCNumerOfbits  ADC_12bit
@@ -54,8 +82,9 @@
      * @param ResPullDown The pull-down resistor value.
      * @return The calculated resistance of the NTC.
      */
-    #define CALCULATE_RNTC(VNTC, VCC, ResPullDown) (((VNTC) / ((VCC) - (VNTC))) * (ResPullDown))
-    
+  
+    #define CALCULATE_RNTC(VNTC, VCC, ResPullDown) (((VNTC) / (VCC - VNTC))*ResPullDown)
+   
 #endif
 
 #ifdef NTC_IS_PULLUP
@@ -70,6 +99,7 @@
      * @param ResPullUp The pull-up resistor value.
      * @return The calculated resistance of the NTC.
      */
+      
     #define CALCULATE_RNTC(VNTC, VCC, ResPullUp) (((VCC) - (VNTC)) * (ResPullUp) / (VNTC))
 
 #endif
@@ -82,25 +112,9 @@
  * @param VCC The supply voltage.
  * @return The calculated voltage across the NTC.
  */
-#define CALCULATE_VNTC(ADC_NTC, ADCNumerOfbits, VCC) ((VCC) * (ADC_NTC) / ((1 << (ADCNumerOfbits)) - 1))
+#define CALCULATE_VNTC(ADC_NTC, ADCNumerOfbits, VCC)((ADC_NTC/ADCNumerOfbits)*VCC)
+ 
 
-/**
- * @brief Steinhart-Hart coefficients for temperature calculation.
- */	
-/*
-/*  3 point from your ntc in different temperatures , you can use from
-  https://www.thinksrs.com/downloads/programs/therm%20calc/ntccalibrator/ntccalculator.html
-  T1=-30^C   R1=154882kR
-  T2=25^C    R2=10000KR
-  T3=80^C    R3=1228KR 
-
-*/
-
-
-
-#define A  0.001277368    /**< Steinhart-Hart coefficient A */
-#define B  0.000208223    /**< Steinhart-Hart coefficient B */
-#define C  0.0000002032989 /**< Steinhart-Hart coefficient C */
 
 /**
  * @brief Calculate the temperature in Celsius from an ADC value and VDD voltage.
@@ -112,6 +126,10 @@
  * @param VDD The supply voltage.
  * @return The calculated temperature in Celsius.
  */
+
+
 float temperature(unsigned int ADCValue, float VDD);
+
+
 
 #endif /* NTC_H */

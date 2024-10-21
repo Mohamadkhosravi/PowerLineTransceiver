@@ -2,15 +2,16 @@
 #include <Interrupt.h>
 #include "BA45F5240.h"	
 #include "ADC.h"
+#include "NTC.h"
 #include "SmokeDetector.h"
 unsigned short *frame;
 volatile char tx_busy;
 unsigned int temp;
-#define VCC(ADC_BR)( 1.20*(4095.000/ ADC_BR))
+#define VCC(ADC_BR)( 1.20*(4095.000/ADC_BR))
 void main()
 {
-   int Data=0;	
-    float  vcc=0;	
+    unsigned int Data=0;	
+    float  vcc=0.0;	
     S_RCC_Init();
 	ADCInit();
 	S_GPIO_Init();	
@@ -48,13 +49,11 @@ void main()
 		ISINK0_ON();
 		
 	    //Data=ReadADC(5);
-	  
-	    _pa7=1;
-	    vcc=VCC(ReadADC(4));
-	    Data =vcc*100;
-	 /*   Data=ReadADC(1);
-	   Data=temperature(Data, 5);*/
-	   if(Data<=0)Data=0;
+	 /* _vbgren=1;*/
+		NTC_POWER_ON;
+		vcc=temperature(ReadADC(1), 3.0f);
+		Data=vcc*100;
+		if(Data<=0)Data=0;
 		GCC_DELAY(1000);
 		GCC_DELAY(1000);
 		ISINK0_OFF();
