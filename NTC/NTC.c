@@ -129,10 +129,6 @@ float temperature(unsigned int ADCValue, float VDD) {
 	#if TEMPERATURE_CALCULATION_METHOD ==  USE_LOOKUP_TABLE
         return GetTemperatureFromLookup(RNTC);
     #elif TEMPERATURE_CALCULATION_METHOD == USE_STENINHART
-    /*	#if CALCULATE_STENINHART_LOGARITM_LIBRARY == USE_MATH_H
-     		RNTC=RNTC*1000;
-     	#endif*/
-/*        RNTC=RNTC*1000;*/
         return GetTemperatureFromSteinhart(RNTC);
     #endif 
    
