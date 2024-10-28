@@ -30,7 +30,7 @@
 void S_GPIO_Init()
 {
 //	_pa = 0b00000000;
-	_pac= 0b00010001;
+	_pac= 0b0001001;
 	_papu=0b00000001;
 	_pawu=0b00000001;
 	_pas0=0b00000000;
@@ -42,14 +42,23 @@ void S_GPIO_Init()
 	_pbs0=0b01000000;
 	_pbs1=0b00000000;
 	_ifs0=0b00000000;
+	
+//=================================		
+ _pac2=0;//0: outout (Configh for NTC_POWER_ON/OFF)
+//PAS05~PAS04:00: PA2
+_pas05=1;_pas04=1;	
+_ifs00=1;_ifs01=0;//(Configh for PA6 RX UART )
 //=================================	
 //	_pac4=1;//1: outout
 ////10:AS11~PAS10: PA4 Pin10: AN0
 //_pas11=1;_pas10=0;
-//=================================	
-	_pac7=0; //1: outout
+//=================================
+//	_pac7=0; //0: outout
 	//PAS17~PAS16:00: PA7/STPI/PTPI
-	_pas17=0;_pas16=0;
+	//_pas17=0;_pas16=0;
+	//(Configh for Read NTC ADC)
+	//PAS17~PAS16:10: AN1
+	_pas17=1;_pas16=0;
 
 //=====================================
 	// Set PA6 as UART RX (input)
@@ -66,16 +75,25 @@ void S_GPIO_Init()
 	_pbs07=1;_pbs06=0;//PAS07~PAS06:10: SDI/SDA/RX
 
  //=================================== 
- // Set PA3 as UART TX (output)
-   /* _pbs02 = 0;
-    _pbs03 = 1;
-   
-*/
+ // Set PA4 as LED
+    _pac4 = 0;//0: outout
+   //PAS11~PAS10:00 PA4/PTCK
+   //_pas11=0;_Pas10=0;
+   _pas10=0;_pas11=0;
+
 //=======================================
-
-
+//UART TX PAS07~PAS06: PA3 Pin 01: SDO/TX
+// UART TX for debuge
 //PAS17~PAS16: (PA7) 10: AN1
-_pas17=1;_pas16=0;
+_pas07=0;_pas06=1;
+
+
+
+ //=================================== 
+    _pac1 = 0;//0: outout
+//PAS03~PAS02: PA1 00: PA1/INT1
+
+_pas03=0;_pas02=0;
 }	
 	
 

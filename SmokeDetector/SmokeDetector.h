@@ -23,6 +23,16 @@
 #include <ADC.h>
 
 
+typedef enum {
+    Normal = 0,
+    Detect = 1
+} State;
+
+typedef struct {
+    unsigned int state : 2;
+} SmokeState;
+
+
 #define Disable 0
 #define Enable  1
 
@@ -38,7 +48,7 @@
 
 typedef unsigned char uint8_t;
 // --------- General Smoke Detection Settings ---------
-#define SMOKE_THRESHOLD 500  // Threshold for detecting smoke (can be adjusted based on requirements)
+#define SMOKE_THRESHOLD 4000  // Threshold for detecting smoke (can be adjusted based on requirements)
 
 // --------- AFE Register Settings ---------
 /**
@@ -155,7 +165,7 @@ typedef struct {
 void InitSmokeDetection();  // Initialize the smoke detection system
 void CalibrateOPA0();       // Calibrate offset voltage for OPAMP0
 void CalibrateOPA1();       // Calibrate offset voltage for OPAMP1
-int CheckSmokeLevel();      // Check if the smoke level exceeds the threshold
+SmokeState CheckSmokeLevel(unsigned int *smokeLevel);     // Check if the smoke level exceeds the threshold
 void TriggerAlarm();        // Trigger alarm when smoke is detected
 void ResetAlarm();          // Reset alarm when smoke is not detected
 void InitOPA();             // Initialize Operational Amplifiers (OPAs)

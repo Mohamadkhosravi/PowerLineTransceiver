@@ -28,8 +28,8 @@
 #define ADCNumerOfBits  ADC_12bit // Define the number of bits used for ADC
 
 // NTC power control macros
-#define NTC_POWER_ON   _pa7 = 1  /**< Turns NTC ON by setting PA7 to HIGH */
-#define NTC_POWER_OFF  _pa7 = 0  /**< Turns NTC OFF by setting PA7 to LOW */
+#define NTC_POWER_ON   _pa2 = 1  /**< Turns NTC ON by setting PA7 to HIGH */
+#define NTC_POWER_OFF  _pa2 = 0  /**< Turns NTC OFF by setting PA7 to LOW */
 
 // Temperature calculation method selection
 #define USE_STENINHART    0

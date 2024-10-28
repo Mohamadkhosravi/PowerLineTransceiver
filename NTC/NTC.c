@@ -120,6 +120,7 @@
  */
 float temperature(unsigned int ADCValue, float VDD) {
 	//if((ADCValue<=0)||(ADCValue>4098))ADCValue=0;
+	
 	// Calculate the voltage across the NTC using the provided macros/functions.
 	float VNTC = CALCULATE_VNTC(ADCValue, ADCNumerOfBits, VDD);
 	
