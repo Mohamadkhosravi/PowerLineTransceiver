@@ -61,10 +61,10 @@ _ifs00=1;_ifs01=0;//(Configh for PA6 RX UART )
 	_pas17=1;_pas16=0;
 
 //=====================================
-	// Set PA6 as UART RX (input)
+// Set PA6 as UART RX (input)
 	_pac6 =1;//1: Input
 	_pas15 = 1;_pas14 = 0;//PAS15~PAS14:10: SDI/SDA/RX
-	_papu6=  1;  
+	_papu6=  1;   
 //================================
 	//(PLT TX)output
 	_pbc1=0;// Set PB1 as UART TX (output 0 ) 
@@ -72,7 +72,7 @@ _ifs00=1;_ifs01=0;//(Configh for PA6 RX UART )
 //================================ 
 	//PB3 RX (PLTRX)
 	_pbc3=1;// Set PB3 as UART RX (input 1 )
-	_pbs07=1;_pbs06=0;//PAS07~PAS06:10: SDI/SDA/RX
+	_pbs07=0;_pbs06=1;//01: PLRX
 
  //=================================== 
  // Set PA4 as LED
