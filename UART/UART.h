@@ -77,6 +77,8 @@
 
 #define CHECK_RECEIVER_ERROR DISABLE /**< Enable or disable receiver error checking. */
 
+
+#define UART_RESIVE_TIMEOUT 10
 //============================================
 // UART error codes
 //============================================
@@ -133,5 +135,10 @@ void UART_EnableInterrupts(void);
  * This function disables all UART interrupts, including receiver and transmitter interrupts.
  */
 void UART_DisableInterrupts(void);
+
+
+
+
+void UART_StringTransmit(char *data,char size);
 
 #endif // UART_H

@@ -51,6 +51,18 @@ void UART_Transmit(char data) {
     _utxr_rxr = data; // Put data into buffer, sends the data
 }
 
+void UART_StringTransmit(char *data,char size) {
+    // Wait for empty transmit buffer
+    char i=0;
+    if(data[0]=!0){
+	    for (i=0;i<=size;i++){
+		    while (!(_utxif)); // Wait until UTXIF is set
+		    _utxr_rxr = data[i]; // Put data into buffer, sends the data
+		}
+	}
+}
+
+
 /** @brief Receives a single character via UART.
  * @return The received character, or an error code in case of an error.
  *
@@ -60,8 +72,11 @@ void UART_Transmit(char data) {
 char UART_Receive(void) {
     _acc = 0; // Clear accumulator
     // Wait for data to be received
-    while (!((_urxif) && (_utidle))); // Wait until URXIF and UTIDLE are set
-
+    static unsigned int TimeOutCounter=0;
+    TimeOutCounter++;
+    GCC_CLRWDT();
+    while (!((_urxif) && (_utidle))&&(TimeOutCounter<=UART_RESIVE_TIMEOUT)); // Wait until URXIF and UTIDLE are set
+	TimeOutCounter=0;
     _acc = _utxr_rxr; // Get received data from buffer
     _urxif = 0; // Clear the receive flag (URXIF)
 
