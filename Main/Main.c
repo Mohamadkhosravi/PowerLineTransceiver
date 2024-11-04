@@ -8,7 +8,7 @@ unsigned short *frame;
 volatile char tx_busy;
 unsigned int temp;
 #define VCC(ADC_BR)( 1.20*(4095.000/ADC_BR))
-#define BUFFER_SIZE 5 // Length of the expected string plus 1 for null termination
+#define BUFFER_SIZE 'g' // Length of the expected string plus 1 for null termination
 char buffer[BUFFER_SIZE];
 int buffer_index = 0;
 
@@ -32,16 +32,24 @@ void main()
 	unsigned int Counter;
 	unsigned char Stat=0;
 	int i=0;
-	#define ADDRESS 'A'
+	#define ADDRESS 5
+	#define PUBLIC_ADDRESS 'Z'
 	#define PRESSED_PUSHBUTTON  _pa0==0
 	#define PERRESS  10
 	unsigned char  pushButtonState=0;
 	unsigned int PushButtonCounter=0;
-   
+   unsigned char AddresssValid=0;
 
    unsigned char *Buffr;
 	while(1)
 	{
+	/*	while(1){
+			_scc = 0b00000000;
+			_hircc=0b00000000;
+			_halt();
+			GCC_CLRWDT();
+			
+		}*/
 
 	  SmokeState Sm;
 	 
@@ -49,15 +57,15 @@ void main()
 		{
 			pushButtonState = 1;  // Set push button state to pressed
 			PushButtonCounter++;
-		} 
+		} 	
 		else 
 		{
 			if ((pushButtonState == 1) &&( PushButtonCounter > PERRESS)) 
 			{
 				PushButtonCounter=0;
 				pushButtonState=0;
-				Stat=!Stat;
-				_pa4=Stat;
+			/*	Stat=!Stat;*/
+				_pa4=~_pa4;
 				UART_Transmit('A');
 				UART_Transmit('D');
 				UART_Transmit('R');
@@ -79,79 +87,68 @@ void main()
 			}
 		
 		}
+		GCC_CLRWDT();
+	Data=UART_ReceiveNonBlocking();
+        	GCC_CLRWDT();
+		if(Data!=0){
 		
-	      
-	      
-	      
-	      
-	      
-	      
-
-	 
-	 	
-	 
-	Buffr=UART_ReceiveString() ;
-	 
-//
-  //	Data= UART_Receive();
-  
-/*	Data=UART_ReceiveNonBlocking();
-	
-	/*    Data[1]=UART_ReceiveNonBlocking();*/
-//	UART_Transmit(Data);
-//	Data=UART_ReceiveNonBlocking();	
-//	UART_Transmit(Data);
-//	Data=UART_ReceiveNonBlocking();	
-//	UART_Transmit(Data);
-//	Data=UART_ReceiveNonBlocking();	
-//	UART_Transmit(Data);
-/*	Data=UART_ReceiveNonBlocking();	
-	if(Data != 0){
-		UART_Transmit(Data);
-	}*/	
-        //Data= UART_ReceiveString() ;
-     UART_StringTransmit(Buffr,10);
-        
-      /*  if(Data!=0){*/
-	/*	UART_Transmit(Data[0]);  // Transmit the first character
-		UART_Transmit(Data[1]);  // Transmit the second character
-		UART_Transmit(Data[2]);  // Transmit the first character
-		UART_Transmit(Data[3]);  // Transmit the second character*/
-      /*  }*/
-	/*	GCC_DELAY(10000);*/
-        
-		/* if(Data!=0){
-		 
-			if (Data== ADDRESS ) {
-			 	
-	            if(Data=='0'){
-	            	Stat=0;
-	            }
-				if(Data=='1'){
-	            	Stat=1;
-            	}
-				UART_Transmit('A');
-				UART_Transmit('D');
-		    	UART_Transmit('R');
-				UART_Transmit('R');
-				UART_Transmit('E');
-				UART_Transmit('S');
-				UART_Transmit('S');
-				UART_Transmit('=');
-				UART_Transmit(ADDRESS);
-				UART_Transmit(' ');
-				UART_Transmit('S');
-				UART_Transmit('T');
-		    	UART_Transmit('A');
-				UART_Transmit('T');
-				UART_Transmit('E');
-				UART_Transmit('=');
-				UART_Transmit(Stat+0x30);		
-				UART_Transmit(10);
-		 	}
-		 
-		}*/
-			_pa4=Stat;
+		if ((Data== ADDRESS) || (Data== PUBLIC_ADDRESS)) 
+		{
+		 AddresssValid=1;
+		}
+		
+		if((AddresssValid)&&(Data=='O')){
+		    UART_Transmit('A');
+			UART_Transmit('D');
+			UART_Transmit('R');
+			UART_Transmit('R');
+			UART_Transmit('E');
+			UART_Transmit('S');
+			UART_Transmit('S');
+			UART_Transmit('=');
+			UART_Transmit(ADDRESS);
+			UART_Transmit(' ');
+			UART_Transmit('S');
+			UART_Transmit('T');
+			UART_Transmit('A');
+			UART_Transmit('T');
+			UART_Transmit('E');
+			UART_Transmit('=');
+			UART_Transmit('1');		
+			UART_Transmit(10);
+			AddresssValid=0;
+				_pa4=1;
+			
+		}
+		if((AddresssValid)&&(Data=='C')){
+			
+			UART_Transmit('A');
+			UART_Transmit('D');
+			UART_Transmit('R');
+			UART_Transmit('R');
+			UART_Transmit('E');
+			UART_Transmit('S');
+			UART_Transmit('S');
+			UART_Transmit('=');
+			UART_Transmit(ADDRESS);
+			UART_Transmit(' ');
+			UART_Transmit('S');
+			UART_Transmit('T');
+			UART_Transmit('A');
+			UART_Transmit('T');
+			UART_Transmit('E');
+			UART_Transmit('=');
+			UART_Transmit('0');		
+			UART_Transmit(10);
+			AddresssValid=0;
+			_pa4=0;
+			
+			}
+		
+	    }
+		
+	}
+		/*	_pa4=Stat;*/
 		/* if(Stat==0)
 		{
 	    	_pa4=1;
@@ -218,8 +215,7 @@ void main()
 		Counter++;*/
 		GCC_CLRWDT();
 
-		
-	}	
+	
 	
 }
 
