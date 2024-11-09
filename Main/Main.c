@@ -41,6 +41,7 @@ void main()
 
 	while(1)
 	{
+	 /*UART_Transmit('A');	*/
 		SmokeState Sm;
 		if (PRESSED_PUSHBUTTON) 
 		{

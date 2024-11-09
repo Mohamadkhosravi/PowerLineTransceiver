@@ -168,7 +168,7 @@ void PLTAInit(void){
 	Offset=  PLTAInputOffsetCalibration();
 	PLTA_Voltage_Calibration_Mode_Selection	= Normal_Operation;		
 	PLT_DAC2_Control=Enable;
-	PLT_DAC2_VALUE=18;
+	PLT_DAC2_VALUE=30;
 	PLTS2_Switch_Selection=Connect_to_PLTDAC2O;
 	PLTS1_Switch_Selection=Connect_to_PLIS;
 	PLTS0_Switch_Selection=Connect_to_OPAMP_output;

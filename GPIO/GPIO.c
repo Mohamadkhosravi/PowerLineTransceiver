@@ -68,7 +68,8 @@ _ifs00=1;_ifs01=0;//(Configh for PA6 RX UART )
 //================================
 	//(PLT TX)output
 	_pbc1=0;// Set PB1 as UART TX (output 0 ) 
-	_pbs03=1;_pbs02=0;//PAS03~PAS02:10: SDO/TX
+	_pbs03=0; _pbs02=1;//PAS03~PAS02:10: SDO/TX
+	
 //================================ 
 	//PB3 RX (PLTRX)
 	_pbc3=1;// Set PB3 as UART RX (input 1 )
@@ -86,7 +87,7 @@ _ifs00=1;_ifs01=0;//(Configh for PA6 RX UART )
 // UART TX for debuge
 //PAS17~PAS16: (PA7) 10: AN1
 _pas07=0;_pas06=1;
-
+/*_papu3=0;*/
 
 
  //=================================== 
