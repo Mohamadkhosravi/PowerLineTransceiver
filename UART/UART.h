@@ -24,6 +24,10 @@
 #define TRANSMITTER      ENABLE
 #define RECEIVER         ENABLE
 
+
+
+#define UART_OFF _uren=0;
+#define UART_ON  _uren=1;
 //============================================
 // Assuming a clock frequency 
 //============================================

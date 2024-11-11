@@ -41,7 +41,31 @@ void main()
 
 	while(1)
 	{
-	 /*UART_Transmit('A');	*/
+	/*PLT_DAC2_VALUE=0;*/
+
+	/*	while(1)
+		{
+			PLT_DAC2_VALUE=30;
+			Counter++;
+			UART_Transmit(255);	
+			if(Counter>=50){
+			Counter=0;
+			break;}
+		}*/
+    
+	UART_Transmit('A');	
+/*	PLT_DAC2_VALUE=0; */
+	GCC_DELAY(200000);
+	GCC_CLRWDT();
+	GCC_DELAY(200000);
+	GCC_CLRWDT();
+	GCC_DELAY(200000);
+
+	/*		GCC_CLRWDT();
+		GCC_DELAY(10);
+		PLT_DAC2_VALUE=30;	
+		GCC_CLRWDT();
+		GCC_DELAY(10);*/
 		SmokeState Sm;
 		if (PRESSED_PUSHBUTTON) 
 		{

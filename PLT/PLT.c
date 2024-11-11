@@ -174,7 +174,7 @@ void PLTAInit(void){
 	PLTS0_Switch_Selection=Connect_to_OPAMP_output;
 	S6_S7_ON_S8_OFF
 	PLT_Comparator_A_Control=Enable;
-	PLT_OPA_Gain_Bandwidth_Control=_2MHz;
+	PLT_OPA_Gain_Bandwidth_Control=_600kHz;
 
 };
 
