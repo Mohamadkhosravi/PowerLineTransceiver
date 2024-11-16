@@ -8,7 +8,7 @@ unsigned short *frame;
 volatile char tx_busy;
 unsigned int temp;
 #define VCC(ADC_BR)( 1.20*(4095.000/ADC_BR))
-#define BUFFER_SIZE 'g' // Length of the expected string plus 1 for null termination
+#define BUFFER_SIZE 12 // Length of the expected string plus 1 for null termination
 char buffer[BUFFER_SIZE];
 int buffer_index = 0;
 char* UART_ReceiveString(void);
@@ -16,7 +16,7 @@ char* UART_ReceiveString(void);
 unsigned int Counter;
 unsigned char Stat=0;
 int i=0;
-#define ADDRESS 'b'
+#define ADDRESS 'g'
 #define PUBLIC_ADDRESS 'Z'
 #define PRESSED_PUSHBUTTON  _pa0==0
 #define PERRESS  10
@@ -38,34 +38,9 @@ void main()
 	PLT1Init();
 	PLTAInit();
 	InitSmokeDetection();
-
+	_pa4=0;
 	while(1)
 	{
-	/*PLT_DAC2_VALUE=0;*/
-
-	/*	while(1)
-		{
-			PLT_DAC2_VALUE=30;
-			Counter++;
-			UART_Transmit(255);	
-			if(Counter>=50){
-			Counter=0;
-			break;}
-		}*/
-    
-	UART_Transmit('A');	
-/*	PLT_DAC2_VALUE=0; */
-	GCC_DELAY(200000);
-	GCC_CLRWDT();
-	GCC_DELAY(200000);
-	GCC_CLRWDT();
-	GCC_DELAY(200000);
-
-	/*		GCC_CLRWDT();
-		GCC_DELAY(10);
-		PLT_DAC2_VALUE=30;	
-		GCC_CLRWDT();
-		GCC_DELAY(10);*/
 		SmokeState Sm;
 		if (PRESSED_PUSHBUTTON) 
 		{
@@ -80,6 +55,7 @@ void main()
 				pushButtonState=0;
 				Stat=!Stat;
 				_pa4=~_pa4;
+				GCC_DELAY(10000);
 				UART_Transmit('A');
 				UART_Transmit('D');
 				UART_Transmit('R');
@@ -114,7 +90,8 @@ void main()
 			 
 			}	
 			if((AddresssValid)&&(Data=='O')){
-				
+				_pa4=1;
+				GCC_DELAY(10000);
 			    UART_Transmit('A');
 				UART_Transmit('D');
 				UART_Transmit('R');
@@ -134,10 +111,11 @@ void main()
 				UART_Transmit('1');		
 				UART_Transmit(10);
 				AddresssValid=0;
-				_pa4=1;
+			
 			}
 			if((AddresssValid)&&(Data=='C')){
-			
+				_pa4=0;
+				GCC_DELAY(10000);
 				UART_Transmit('A');
 				UART_Transmit('D');
 				UART_Transmit('R');
@@ -157,7 +135,7 @@ void main()
 				UART_Transmit('0');		
 				UART_Transmit(10);
 				AddresssValid=0;
-				_pa4=0;
+			
 			
 			}
 			
