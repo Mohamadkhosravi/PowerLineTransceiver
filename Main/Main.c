@@ -36,7 +36,7 @@ void main()
 	UART_Init(9600);
 	PLT0Init();
 	PLT1Init();
-//	PLTAInit();
+
 //	InitSmokeDetection();
 	_pa4=0;
 	while(1)
@@ -90,8 +90,9 @@ void main()
 			 
 			}	
 			if((AddresssValid)&&(Data=='O')){
-				_pa4=1;
-			/*	GCC_DELAY(10000);
+				/*_pa4=1;*/
+				GCC_DELAY(10000);
+				PLTAInit();
 			    UART_Transmit('A');
 				UART_Transmit('D');
 				UART_Transmit('R');
@@ -110,12 +111,13 @@ void main()
 				UART_Transmit('=');
 				UART_Transmit('1');		
 				UART_Transmit(10);
-				AddresssValid=0;*/
+				AddresssValid=0;
 			
 			}
 			if((AddresssValid)&&(Data=='C')){
-				_pa4=0;
-			/*	GCC_DELAY(10000);
+			/*	_pa4=0;*/
+				GCC_DELAY(10000);
+				PLTAInit();
 				UART_Transmit('A');
 				UART_Transmit('D');
 				UART_Transmit('R');
@@ -135,13 +137,14 @@ void main()
 				UART_Transmit('0');		
 				UART_Transmit(10);
 				AddresssValid=0;
-			*/
+			
 			
 			}
 			
 		}
-		
+		PLTAOFF();
 	}
+	
 	GCC_CLRWDT();		
 }
 

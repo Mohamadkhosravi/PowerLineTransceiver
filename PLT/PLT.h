@@ -165,4 +165,5 @@ char PLT1Recive(void);
 void PLT0Init(void);
 void PLT1Init(void);
 void PLTAInit(void);
+void PLTAOFF(void);
 #endif

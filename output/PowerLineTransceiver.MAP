@@ -41,63 +41,64 @@ Input Library File: C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x
      00h     0258h     025eh    0007h      CODE               _builtin_holtek_dtinf (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
      00h     025fh     0264h    0006h      CODE               _builtin_holtek_ftinf (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
      00h     0265h     0272h    000eh      CODE               itodaz (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
-     00h     0273h     02aah    0038h      CODE               _main (c:\users\tech\desktop\powerlinetransceiver\output\MAIN.OBJ)
-     00h     02abh     02c7h    001dh      CODE               _UART_ReceiveString (c:\users\tech\desktop\powerlinetransceiver\output\MAIN.OBJ)
-     00h     02c8h     02f5h    002eh      CODE               _S_GPIO_Init (c:\users\tech\desktop\powerlinetransceiver\output\GPIO.OBJ)
-     00h     02f6h     02fbh    0006h      CODE               _S_RCC_Init (c:\users\tech\desktop\powerlinetransceiver\output\RCC.OBJ)
-     00h     02fch     0307h    000ch      CODE               _S_Timebase_Init (c:\users\tech\desktop\powerlinetransceiver\output\RCC.OBJ)
-     00h     0308h     030bh    0004h      CODE               _IntrruptInit (c:\users\tech\desktop\powerlinetransceiver\output\INTERRUPT.OBJ)
-     00h     030ch     0319h    000eh      CODE               _EnableInterrupt (c:\users\tech\desktop\powerlinetransceiver\output\INTERRUPT.OBJ)
-     00h     031ah     0327h    000eh      CODE               _DisableInterrupt (c:\users\tech\desktop\powerlinetransceiver\output\INTERRUPT.OBJ)
-     00h     0328h     032ch    0005h      CODE               _PLT1CompairISR (c:\users\tech\desktop\powerlinetransceiver\output\INTERRUPT.OBJ)
-     00h     032dh     0331h    0005h      CODE               _PLT0CompairISR (c:\users\tech\desktop\powerlinetransceiver\output\INTERRUPT.OBJ)
-     00h     0332h     0337h    0006h      CODE               _TimerBaseInit (c:\users\tech\desktop\powerlinetransceiver\output\BTM.OBJ)
-     00h     0338h     0354h    001dh      CODE               _PTimerInit (c:\users\tech\desktop\powerlinetransceiver\output\PTM.OBJ)
-     00h     0355h     0367h    0013h      CODE               _PWMSeter (c:\users\tech\desktop\powerlinetransceiver\output\PTM.OBJ)
-     00h     0368h     0374h    000dh      CODE               _readPTimer (c:\users\tech\desktop\powerlinetransceiver\output\PTM.OBJ)
-     00h     0375h     0388h    0014h      CODE               _STimerInit (c:\users\tech\desktop\powerlinetransceiver\output\STM.OBJ)
-     00h     0389h     0395h    000dh      CODE               _readSTimer (c:\users\tech\desktop\powerlinetransceiver\output\STM.OBJ)
-     00h     0396h     03f6h    0061h      CODE               _PLT0InputOffsetCalibration (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
-     00h     03f7h     0456h    0060h      CODE               _PLT1InputOffsetCalibration (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
-     00h     0457h     04b7h    0061h      CODE               _PLTAInputOffsetCalibration (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
-     00h     04b8h     04c4h    000dh      CODE               _PLT1Init (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
-     00h     04c5h     04d1h    000dh      CODE               _PLTAInit (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
-     00h     04d2h     04d6h    0005h      CODE               _PLT0Recive (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
-     00h     04d7h     04dbh    0005h      CODE               _PLT1Recive (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
-     00h     04dch     053bh    0060h      CODE               _PLT0AmplifierInputOffsetCalibration (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
-     00h     053ch     0548h    000dh      CODE               _PLT0Init (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
-     00h     0549h     0576h    002eh      CODE               _calculate_parity_and_checksum (c:\users\tech\desktop\powerlinetransceiver\output\PLTSERIALPROTOCOL.OBJ)
-     00h     0577h     0615h    009fh      CODE               _PLT_SerialSend (c:\users\tech\desktop\powerlinetransceiver\output\PLTSERIALPROTOCOL.OBJ)
-     00h     0616h     061ah    0005h      CODE               _PLT_SerialInit (c:\users\tech\desktop\powerlinetransceiver\output\PLTSERIALPROTOCOL.OBJ)
-     00h     061bh     064dh    0033h      CODE               _PLT_HandelSerialTransmit (c:\users\tech\desktop\powerlinetransceiver\output\PLTSERIALPROTOCOL.OBJ)
-     00h     064eh     06cdh    0080h      CODE               _UART_Init (c:\users\tech\desktop\powerlinetransceiver\output\UART.OBJ)
-     00h     06ceh     06d3h    0006h      CODE               _UART_Transmit (c:\users\tech\desktop\powerlinetransceiver\output\UART.OBJ)
-     00h     06d4h     06f0h    001dh      CODE               _UART_StringTransmit (c:\users\tech\desktop\powerlinetransceiver\output\UART.OBJ)
-     00h     06f1h     070bh    001bh      CODE               _UART_Receive (c:\users\tech\desktop\powerlinetransceiver\output\UART.OBJ)
-     00h     070ch     0714h    0009h      CODE               _UART_ReceiveNonBlocking (c:\users\tech\desktop\powerlinetransceiver\output\UART.OBJ)
-     00h     0715h     071ah    0006h      CODE               _UART_EnableInterrupts (c:\users\tech\desktop\powerlinetransceiver\output\UART.OBJ)
-     00h     071bh     072ch    0012h      CODE               _UART_DisableInterrupts (c:\users\tech\desktop\powerlinetransceiver\output\UART.OBJ)
-     00h     072dh     0733h    0007h      CODE               _ADCInit (c:\users\tech\desktop\powerlinetransceiver\output\ADC.OBJ)
-     00h     0734h     07a4h    0071h      CODE               _ReadADC (c:\users\tech\desktop\powerlinetransceiver\output\ADC.OBJ)
-     00h     07a5h     07b1h    000dh      CODE               _InitOPA (c:\users\tech\desktop\powerlinetransceiver\output\SMOKEDETECTOR.OBJ)
-     00h     07b2h     07bfh    000eh      CODE               _InitISINK (c:\users\tech\desktop\powerlinetransceiver\output\SMOKEDETECTOR.OBJ)
-     00h     07c0h     07deh    001fh      CODE               _CalibrateOPA0 (c:\users\tech\desktop\powerlinetransceiver\output\SMOKEDETECTOR.OBJ)
-     00h     07dfh     07fdh    001fh      CODE               _CalibrateOPA1 (c:\users\tech\desktop\powerlinetransceiver\output\SMOKEDETECTOR.OBJ)
-     00h     07feh     0802h    0005h      CODE               _ISINK0_ON (c:\users\tech\desktop\powerlinetransceiver\output\SMOKEDETECTOR.OBJ)
-     00h     0803h     0807h    0005h      CODE               _ISINK1_ON (c:\users\tech\desktop\powerlinetransceiver\output\SMOKEDETECTOR.OBJ)
-     00h     0808h     080ah    0003h      CODE               _ISINK0_OFF (c:\users\tech\desktop\powerlinetransceiver\output\SMOKEDETECTOR.OBJ)
-     00h     080bh     080dh    0003h      CODE               _ISINK1_OFF (c:\users\tech\desktop\powerlinetransceiver\output\SMOKEDETECTOR.OBJ)
-     00h     080eh     0811h    0004h      CODE               _OPA_ON (c:\users\tech\desktop\powerlinetransceiver\output\SMOKEDETECTOR.OBJ)
-     00h     0812h     0816h    0005h      CODE               _InitSmokeDetection (c:\users\tech\desktop\powerlinetransceiver\output\SMOKEDETECTOR.OBJ)
-     00h     0817h     081ah    0004h      CODE               _OPA_OFF (c:\users\tech\desktop\powerlinetransceiver\output\SMOKEDETECTOR.OBJ)
-     00h     081bh     084eh    0034h      CODE               _CheckSmokeLevel (c:\users\tech\desktop\powerlinetransceiver\output\SMOKEDETECTOR.OBJ)
-     00h     084fh     095eh    0110h      CODE               _GetTemperatureFromSteinhart (c:\users\tech\desktop\powerlinetransceiver\output\NTC.OBJ)
-     00h     095fh     09e6h    0088h      CODE               _temperature (c:\users\tech\desktop\powerlinetransceiver\output\NTC.OBJ)
-     00h     09e7h     09f0h    000ah      CODE               __DELAYX (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
-     00h     09f1h     09feh    000eh      CODE               _builtin_holtek_delay_isr00 (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
-     00h     09ffh     0cfah    02fch      CODE               _log (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\v3_lmrsc.lib)
-     00h     0cfbh     0dbbh    00c1h      CODE               _frexp (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\v3_lmrsc.lib)
-     00h     0dbch     0dbeh    0003h      CODE               _CROM2PROM (CROM2PROM)
+     00h     0273h     02ffh    008dh      CODE               _main (c:\users\tech\desktop\powerlinetransceiver\output\MAIN.OBJ)
+     00h     0300h     031ch    001dh      CODE               _UART_ReceiveString (c:\users\tech\desktop\powerlinetransceiver\output\MAIN.OBJ)
+     00h     031dh     034ah    002eh      CODE               _S_GPIO_Init (c:\users\tech\desktop\powerlinetransceiver\output\GPIO.OBJ)
+     00h     034bh     0350h    0006h      CODE               _S_RCC_Init (c:\users\tech\desktop\powerlinetransceiver\output\RCC.OBJ)
+     00h     0351h     035ch    000ch      CODE               _S_Timebase_Init (c:\users\tech\desktop\powerlinetransceiver\output\RCC.OBJ)
+     00h     035dh     0360h    0004h      CODE               _IntrruptInit (c:\users\tech\desktop\powerlinetransceiver\output\INTERRUPT.OBJ)
+     00h     0361h     036eh    000eh      CODE               _EnableInterrupt (c:\users\tech\desktop\powerlinetransceiver\output\INTERRUPT.OBJ)
+     00h     036fh     037ch    000eh      CODE               _DisableInterrupt (c:\users\tech\desktop\powerlinetransceiver\output\INTERRUPT.OBJ)
+     00h     037dh     0381h    0005h      CODE               _PLT1CompairISR (c:\users\tech\desktop\powerlinetransceiver\output\INTERRUPT.OBJ)
+     00h     0382h     0386h    0005h      CODE               _PLT0CompairISR (c:\users\tech\desktop\powerlinetransceiver\output\INTERRUPT.OBJ)
+     00h     0387h     038ch    0006h      CODE               _TimerBaseInit (c:\users\tech\desktop\powerlinetransceiver\output\BTM.OBJ)
+     00h     038dh     03a9h    001dh      CODE               _PTimerInit (c:\users\tech\desktop\powerlinetransceiver\output\PTM.OBJ)
+     00h     03aah     03bch    0013h      CODE               _PWMSeter (c:\users\tech\desktop\powerlinetransceiver\output\PTM.OBJ)
+     00h     03bdh     03c9h    000dh      CODE               _readPTimer (c:\users\tech\desktop\powerlinetransceiver\output\PTM.OBJ)
+     00h     03cah     03ddh    0014h      CODE               _STimerInit (c:\users\tech\desktop\powerlinetransceiver\output\STM.OBJ)
+     00h     03deh     03eah    000dh      CODE               _readSTimer (c:\users\tech\desktop\powerlinetransceiver\output\STM.OBJ)
+     00h     03ebh     044bh    0061h      CODE               _PLT0InputOffsetCalibration (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
+     00h     044ch     04abh    0060h      CODE               _PLT1InputOffsetCalibration (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
+     00h     04ach     050ch    0061h      CODE               _PLTAInputOffsetCalibration (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
+     00h     050dh     0519h    000dh      CODE               _PLT1Init (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
+     00h     051ah     0526h    000dh      CODE               _PLTAInit (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
+     00h     0527h     052ah    0004h      CODE               _PLTAOFF (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
+     00h     052bh     052fh    0005h      CODE               _PLT0Recive (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
+     00h     0530h     0534h    0005h      CODE               _PLT1Recive (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
+     00h     0535h     0594h    0060h      CODE               _PLT0AmplifierInputOffsetCalibration (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
+     00h     0595h     05a1h    000dh      CODE               _PLT0Init (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
+     00h     05a2h     05cfh    002eh      CODE               _calculate_parity_and_checksum (c:\users\tech\desktop\powerlinetransceiver\output\PLTSERIALPROTOCOL.OBJ)
+     00h     05d0h     066eh    009fh      CODE               _PLT_SerialSend (c:\users\tech\desktop\powerlinetransceiver\output\PLTSERIALPROTOCOL.OBJ)
+     00h     066fh     0673h    0005h      CODE               _PLT_SerialInit (c:\users\tech\desktop\powerlinetransceiver\output\PLTSERIALPROTOCOL.OBJ)
+     00h     0674h     06a6h    0033h      CODE               _PLT_HandelSerialTransmit (c:\users\tech\desktop\powerlinetransceiver\output\PLTSERIALPROTOCOL.OBJ)
+     00h     06a7h     0726h    0080h      CODE               _UART_Init (c:\users\tech\desktop\powerlinetransceiver\output\UART.OBJ)
+     00h     0727h     072ch    0006h      CODE               _UART_Transmit (c:\users\tech\desktop\powerlinetransceiver\output\UART.OBJ)
+     00h     072dh     0749h    001dh      CODE               _UART_StringTransmit (c:\users\tech\desktop\powerlinetransceiver\output\UART.OBJ)
+     00h     074ah     0764h    001bh      CODE               _UART_Receive (c:\users\tech\desktop\powerlinetransceiver\output\UART.OBJ)
+     00h     0765h     076dh    0009h      CODE               _UART_ReceiveNonBlocking (c:\users\tech\desktop\powerlinetransceiver\output\UART.OBJ)
+     00h     076eh     0773h    0006h      CODE               _UART_EnableInterrupts (c:\users\tech\desktop\powerlinetransceiver\output\UART.OBJ)
+     00h     0774h     0785h    0012h      CODE               _UART_DisableInterrupts (c:\users\tech\desktop\powerlinetransceiver\output\UART.OBJ)
+     00h     0786h     078ch    0007h      CODE               _ADCInit (c:\users\tech\desktop\powerlinetransceiver\output\ADC.OBJ)
+     00h     078dh     07fdh    0071h      CODE               _ReadADC (c:\users\tech\desktop\powerlinetransceiver\output\ADC.OBJ)
+     00h     07feh     080ah    000dh      CODE               _InitOPA (c:\users\tech\desktop\powerlinetransceiver\output\SMOKEDETECTOR.OBJ)
+     00h     080bh     0818h    000eh      CODE               _InitISINK (c:\users\tech\desktop\powerlinetransceiver\output\SMOKEDETECTOR.OBJ)
+     00h     0819h     0837h    001fh      CODE               _CalibrateOPA0 (c:\users\tech\desktop\powerlinetransceiver\output\SMOKEDETECTOR.OBJ)
+     00h     0838h     0856h    001fh      CODE               _CalibrateOPA1 (c:\users\tech\desktop\powerlinetransceiver\output\SMOKEDETECTOR.OBJ)
+     00h     0857h     085bh    0005h      CODE               _ISINK0_ON (c:\users\tech\desktop\powerlinetransceiver\output\SMOKEDETECTOR.OBJ)
+     00h     085ch     0860h    0005h      CODE               _ISINK1_ON (c:\users\tech\desktop\powerlinetransceiver\output\SMOKEDETECTOR.OBJ)
+     00h     0861h     0863h    0003h      CODE               _ISINK0_OFF (c:\users\tech\desktop\powerlinetransceiver\output\SMOKEDETECTOR.OBJ)
+     00h     0864h     0866h    0003h      CODE               _ISINK1_OFF (c:\users\tech\desktop\powerlinetransceiver\output\SMOKEDETECTOR.OBJ)
+     00h     0867h     086ah    0004h      CODE               _OPA_ON (c:\users\tech\desktop\powerlinetransceiver\output\SMOKEDETECTOR.OBJ)
+     00h     086bh     086fh    0005h      CODE               _InitSmokeDetection (c:\users\tech\desktop\powerlinetransceiver\output\SMOKEDETECTOR.OBJ)
+     00h     0870h     0873h    0004h      CODE               _OPA_OFF (c:\users\tech\desktop\powerlinetransceiver\output\SMOKEDETECTOR.OBJ)
+     00h     0874h     08a7h    0034h      CODE               _CheckSmokeLevel (c:\users\tech\desktop\powerlinetransceiver\output\SMOKEDETECTOR.OBJ)
+     00h     08a8h     09b7h    0110h      CODE               _GetTemperatureFromSteinhart (c:\users\tech\desktop\powerlinetransceiver\output\NTC.OBJ)
+     00h     09b8h     0a3fh    0088h      CODE               _temperature (c:\users\tech\desktop\powerlinetransceiver\output\NTC.OBJ)
+     00h     0a40h     0a4dh    000eh      CODE               _builtin_holtek_delay_isr00 (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
+     00h     0a4eh     0a57h    000ah      CODE               __DELAYX (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
+     00h     0a58h     0d53h    02fch      CODE               _log (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\v3_lmrsc.lib)
+     00h     0d54h     0e14h    00c1h      CODE               _frexp (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\v3_lmrsc.lib)
+     00h     0e15h     0e17h    0003h      CODE               _CROM2PROM (CROM2PROM)
      00h     0080h     0080h    0001h      DATA     94        @data_ra (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
      00h     0081h     0081h    0001h      DATA     122       @data_rb (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
      00h     0082h     0082h    0001h      DATA     109       @data_rc (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
@@ -113,21 +114,21 @@ Input Library File: C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x
      00h     0099h     0099h    0001h      DATA     2         @data_r238 (isr:ra~rh)
      00h     009ah     009ah    0001h      DATA     2         @data_r104 (isr:ra~rh)
      00h     009bh     009bh    0001h      DATA     2         @data_r204 (isr:ra~rh)
-     00h     00cdh     00ceh    0002h      DATA     3         @HCCINIT___value_1962 (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
-     00h     00cfh     00d0h    0002h      DATA     3         @HCCINIT___value_1933 (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
-     00h     00d1h     00d2h    0002h      DATA     3         @HCCINIT___value_1922 (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
-     00h     00d3h     00d4h    0002h      DATA     3         @HCCINIT___value_1911 (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
-     00h     00d5h     00d6h    0002h      DATA     3         @HCCINIT_VC0OS1 (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
-     00h     00d7h     00d7h    0001h      DATA     2         @HCCINIT___DataValid_2081 (c:\users\tech\desktop\powerlinetransceiver\output\MAIN.OBJ)
-     00h     00d8h     00d8h    0001h      DATA     2         @HCCINIT___index_2080 (c:\users\tech\desktop\powerlinetransceiver\output\MAIN.OBJ)
-     00h     00d9h     00d9h    0001h      DATA     2         @HCCINIT_AddresssValid (c:\users\tech\desktop\powerlinetransceiver\output\MAIN.OBJ)
+     00h     00cdh     00cdh    0001h      DATA     5         @HCCINIT_AddresssValid (c:\users\tech\desktop\powerlinetransceiver\output\MAIN.OBJ)
+     00h     00ceh     00cfh    0002h      DATA     3         @HCCINIT___value_1967 (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
+     00h     00d0h     00d1h    0002h      DATA     3         @HCCINIT___value_1935 (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
+     00h     00d2h     00d3h    0002h      DATA     3         @HCCINIT___value_1924 (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
+     00h     00d4h     00d5h    0002h      DATA     3         @HCCINIT___value_1913 (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
+     00h     00d6h     00d7h    0002h      DATA     3         @HCCINIT_VC0OS1 (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
+     00h     00d8h     00d8h    0001h      DATA     2         @HCCINIT___DataValid_2083 (c:\users\tech\desktop\powerlinetransceiver\output\MAIN.OBJ)
+     00h     00d9h     00d9h    0001h      DATA     2         @HCCINIT___index_2082 (c:\users\tech\desktop\powerlinetransceiver\output\MAIN.OBJ)
      00h     00dah     00dbh    0002h      DATA     2         @HCCINIT_VC0OS2 (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
      00h     00dch     00ddh    0002h      DATA     2         @HCCINIT___TimeOutCounter_1890 (c:\users\tech\desktop\powerlinetransceiver\output\UART.OBJ)
      00h     00deh     00dfh    0002h      DATA     1         @HCCINIT_VC2OS2 (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
      00h     00e0h     00e1h    0002h      DATA     1         @HCCINIT_VC2OS1 (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
      00h     00e2h     00e3h    0002h      DATA     1         @HCCINIT_VC1OS2 (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
      00h     00e4h     00e5h    0002h      DATA     1         @HCCINIT_VC1OS1 (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
-     00h     00e6h     00efh    000ah      DATA     0.1       @HCCINIT___resiveBuffer_2079 (c:\users\tech\desktop\powerlinetransceiver\output\MAIN.OBJ)
+     00h     00e6h     00efh    000ah      DATA     0.1       @HCCINIT___resiveBuffer_2081 (c:\users\tech\desktop\powerlinetransceiver\output\MAIN.OBJ)
      00h     00f0h     00f1h    0002h      DATA     0         @HCCINIT_PushButtonCounter (c:\users\tech\desktop\powerlinetransceiver\output\MAIN.OBJ)
      00h     00f2h     00f2h    0001h      DATA     0         @HCCINIT_pushButtonState (c:\users\tech\desktop\powerlinetransceiver\output\MAIN.OBJ)
      00h     00f3h     00f4h    0002h      DATA     0         @HCCINIT_i (c:\users\tech\desktop\powerlinetransceiver\output\MAIN.OBJ)
@@ -162,13 +163,15 @@ Input Library File: C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x
      00h     009ch     009ch    0000h      LOCAL    0         _PLT1InputOffsetCalibration (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
      00h     009ch     009ch    0000h      LOCAL    0         _UART_ReceiveNonBlocking (c:\users\tech\desktop\powerlinetransceiver\output\UART.OBJ)
      00h     009ch     009ch    0001h      LOCAL    2         _UART_Transmit (c:\users\tech\desktop\powerlinetransceiver\output\UART.OBJ)
+     00h     009ch     009ch    0001h      LOCAL    9         _builtin_holtek_delay_isr00 (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
+     00h     009ch     009ch    0000h      LOCAL    0         _PLTAInit (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
+     00h     009ch     009ch    0000h      LOCAL    0         _PLTAInputOffsetCalibration (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
+     00h     009ch     009ch    0000h      LOCAL    0         _PLTAOFF (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
      00h     009ch     009dh    0002h      LOCAL    2.5       _UART_ReceiveString (c:\users\tech\desktop\powerlinetransceiver\output\MAIN.OBJ)
      00h     009ch     009ch    0000h      LOCAL    0         @dummy56 (c:\users\tech\desktop\powerlinetransceiver\output\INTERRUPT.OBJ)
      00h     009ch     009ch    0000h      LOCAL    0         _PLT1CompairISR (c:\users\tech\desktop\powerlinetransceiver\output\INTERRUPT.OBJ)
      00h     009ch     009ch    0000h      LOCAL    0         @dummy4 (c:\users\tech\desktop\powerlinetransceiver\output\INTERRUPT.OBJ)
      00h     009ch     009ch    0000h      LOCAL    0         _PLT0CompairISR (c:\users\tech\desktop\powerlinetransceiver\output\INTERRUPT.OBJ)
-     00h     009ch     009ch    0000h      LOCAL    0         _PLTAInit (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
-     00h     009ch     009ch    0000h      LOCAL    0         _PLTAInputOffsetCalibration (c:\users\tech\desktop\powerlinetransceiver\output\PLT.OBJ)
      00h     00a3h     00b6h    0014h      LOCAL    1.35      _PLT_SerialSend (c:\users\tech\desktop\powerlinetransceiver\output\PLTSERIALPROTOCOL.OBJ)
      00h     009ch     009ch    0000h      LOCAL    0         _Crom2Prom (CROM2PROM)
      00h     009ch     00a2h    0007h      LOCAL    2         _calculate_parity_and_checksum (c:\users\tech\desktop\powerlinetransceiver\output\PLTSERIALPROTOCOL.OBJ)
@@ -179,7 +182,6 @@ Input Library File: C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x
      00h     009dh     009dh    0000h      LOCAL    0         _InitSmokeDetection (c:\users\tech\desktop\powerlinetransceiver\output\SMOKEDETECTOR.OBJ)
      00h     009ch     009ch    0000h      LOCAL    0         _InitOPA (c:\users\tech\desktop\powerlinetransceiver\output\SMOKEDETECTOR.OBJ)
      00h     009dh     009dh    0000h      LOCAL    0         _CalibrateOPA0 (c:\users\tech\desktop\powerlinetransceiver\output\SMOKEDETECTOR.OBJ)
-     00h     009ch     009ch    0001h      LOCAL    7         _builtin_holtek_delay_isr00 (C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x\LIB\LIBHOLTEKGCC.LIB)
      00h     009dh     009dh    0000h      LOCAL    0         _CalibrateOPA1 (c:\users\tech\desktop\powerlinetransceiver\output\SMOKEDETECTOR.OBJ)
      00h     009ch     009ch    0000h      LOCAL    0         _OPA_ON (c:\users\tech\desktop\powerlinetransceiver\output\SMOKEDETECTOR.OBJ)
      00h     009dh     009eh    0002h      LOCAL    2         _CheckSmokeLevel (c:\users\tech\desktop\powerlinetransceiver\output\SMOKEDETECTOR.OBJ)
@@ -227,82 +229,83 @@ Input Library File: C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x
 
      Public Symbols Information
      Address            Public by Name
-     072dh              _ADCInit
-     00d9h              _AddresssValid
-     07c0h              _CalibrateOPA0
-     07dfh              _CalibrateOPA1
-     081bh              _CheckSmokeLevel
+     0786h              _ADCInit
+     00cdh              _AddresssValid
+     0819h              _CalibrateOPA0
+     0838h              _CalibrateOPA1
+     0874h              _CheckSmokeLevel
      00fdh              _Counter
-     0dbdh              _Crom2Prom
-     0dbch              _Crom2PromNext
-     031ah              _DisableInterrupt
-     030ch              _EnableInterrupt
-     084fh              _GetTemperatureFromSteinhart
+     0e16h              _Crom2Prom
+     0e15h              _Crom2PromNext
+     036fh              _DisableInterrupt
+     0361h              _EnableInterrupt
+     08a8h              _GetTemperatureFromSteinhart
      00b9h              _GetTemperatureFromSteinhart_2
-     0808h              _ISINK0_OFF
-     07feh              _ISINK0_ON
-     080bh              _ISINK1_OFF
-     0803h              _ISINK1_ON
-     07b2h              _InitISINK
-     07a5h              _InitOPA
-     0812h              _InitSmokeDetection
-     0308h              _IntrruptInit
-     0817h              _OPA_OFF
-     080eh              _OPA_ON
-     04dch              _PLT0AmplifierInputOffsetCalibration
-     032dh              _PLT0CompairISR
-     053ch              _PLT0Init
-     0396h              _PLT0InputOffsetCalibration
-     04d2h              _PLT0Recive
-     0328h              _PLT1CompairISR
-     04b8h              _PLT1Init
-     03f7h              _PLT1InputOffsetCalibration
-     04d7h              _PLT1Recive
-     04c5h              _PLTAInit
-     0457h              _PLTAInputOffsetCalibration
-     061bh              _PLT_HandelSerialTransmit
-     0616h              _PLT_SerialInit
-     0577h              _PLT_SerialSend
+     0861h              _ISINK0_OFF
+     0857h              _ISINK0_ON
+     0864h              _ISINK1_OFF
+     085ch              _ISINK1_ON
+     080bh              _InitISINK
+     07feh              _InitOPA
+     086bh              _InitSmokeDetection
+     035dh              _IntrruptInit
+     0870h              _OPA_OFF
+     0867h              _OPA_ON
+     0535h              _PLT0AmplifierInputOffsetCalibration
+     0382h              _PLT0CompairISR
+     0595h              _PLT0Init
+     03ebh              _PLT0InputOffsetCalibration
+     052bh              _PLT0Recive
+     037dh              _PLT1CompairISR
+     050dh              _PLT1Init
+     044ch              _PLT1InputOffsetCalibration
+     0530h              _PLT1Recive
+     051ah              _PLTAInit
+     04ach              _PLTAInputOffsetCalibration
+     0527h              _PLTAOFF
+     0674h              _PLT_HandelSerialTransmit
+     066fh              _PLT_SerialInit
+     05d0h              _PLT_SerialSend
      00a3h              _PLT_SerialSend_2
-     0338h              _PTimerInit
-     0355h              _PWMSeter
+     038dh              _PTimerInit
+     03aah              _PWMSeter
      00f0h              _PushButtonCounter
-     0734h              _ReadADC
+     078dh              _ReadADC
      0001h              _ResetAlarm
-     0375h              _STimerInit
-     02c8h              _S_GPIO_Init
-     02f6h              _S_RCC_Init
-     02fch              _S_Timebase_Init
+     03cah              _STimerInit
+     031dh              _S_GPIO_Init
+     034bh              _S_RCC_Init
+     0351h              _S_Timebase_Init
      00f5h              _Stat
-     0332h              _TimerBaseInit
+     0387h              _TimerBaseInit
      0037h              _TriggerAlarm
-     071bh              _UART_DisableInterrupts
-     0715h              _UART_EnableInterrupts
-     064eh              _UART_Init
-     06f1h              _UART_Receive
-     070ch              _UART_ReceiveNonBlocking
-     02abh              _UART_ReceiveString
-     06d4h              _UART_StringTransmit
-     06ceh              _UART_Transmit
-     00d5h              _VC0OS1
+     0774h              _UART_DisableInterrupts
+     076eh              _UART_EnableInterrupts
+     06a7h              _UART_Init
+     074ah              _UART_Receive
+     0765h              _UART_ReceiveNonBlocking
+     0300h              _UART_ReceiveString
+     072dh              _UART_StringTransmit
+     0727h              _UART_Transmit
+     00d6h              _VC0OS1
      00dah              _VC0OS2
      00e4h              _VC1OS1
      00e2h              _VC1OS2
      00e0h              _VC2OS1
      00deh              _VC2OS2
-     09edh              __DELAYX0
-     09ech              __DELAYX1
-     09ebh              __DELAYX2
-     09eah              __DELAYX3
-     09e9h              __DELAYX4
-     09e8h              __DELAYX5
-     09e7h              __DELAYX6
-     09f6h              __DELAYY0_isr00
-     09f5h              __DELAYY1_isr00
-     09f4h              __DELAYY2_isr00
-     09f3h              __DELAYY3_isr00
-     09f2h              __DELAYY4_isr00
-     09f1h              __DELAYY5_isr00
+     0a54h              __DELAYX0
+     0a53h              __DELAYX1
+     0a52h              __DELAYX2
+     0a51h              __DELAYX3
+     0a50h              __DELAYX4
+     0a4fh              __DELAYX5
+     0a4eh              __DELAYX6
+     0a45h              __DELAYY0_isr00
+     0a44h              __DELAYY1_isr00
+     0a43h              __DELAYY2_isr00
+     0a42h              __DELAYY3_isr00
+     0a41h              __DELAYY4_isr00
+     0a40h              __DELAYY5_isr00
      0180h              _buffer
      00f6h              _buffer_index
      00dbh              _builtin_holtek_dtadd
@@ -336,20 +339,20 @@ Input Library File: C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x
      0095h              _builtin_holtek_prod
      008ch              _builtin_holtek_signs
      026eh              _builtin_holtek_uitod
-     0549h              _calculate_parity_and_checksum
+     05a2h              _calculate_parity_and_checksum
      00a0h              _calculate_parity_and_checksum_2
      00fbh              _errno
      00f9h              _frame
-     0cfbh              _frexp
+     0d54h              _frexp
      00f3h              _i
-     09ffh              _log
+     0a58h              _log
      00b7h              _log_2
      0273h              _main
      00f2h              _pushButtonState
-     0368h              _readPTimer
-     0389h              _readSTimer
+     03bdh              _readPTimer
+     03deh              _readSTimer
      018ch              _temp
-     095fh              _temperature
+     09b8h              _temperature
      00c4h              _temperature_2
      00f8h              _tx_busy
      009ah              r104
@@ -401,8 +404,8 @@ Input Library File: C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x
      00b7h              _log_2
      00b9h              _GetTemperatureFromSteinhart_2
      00c4h              _temperature_2
-     00d5h              _VC0OS1
-     00d9h              _AddresssValid
+     00cdh              _AddresssValid
+     00d6h              _VC0OS1
      00d9h              _builtin_holtek_dtsub
      00dah              _VC0OS2
      00dbh              _builtin_holtek_dtadd
@@ -437,79 +440,80 @@ Input Library File: C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x
      0265h              _builtin_holtek_itod
      026eh              _builtin_holtek_uitod
      0273h              _main
-     02abh              _UART_ReceiveString
-     02c8h              _S_GPIO_Init
-     02f6h              _S_RCC_Init
-     02fch              _S_Timebase_Init
-     0308h              _IntrruptInit
-     030ch              _EnableInterrupt
-     031ah              _DisableInterrupt
-     0328h              _PLT1CompairISR
-     032dh              _PLT0CompairISR
-     0332h              _TimerBaseInit
-     0338h              _PTimerInit
-     0355h              _PWMSeter
-     0368h              _readPTimer
-     0375h              _STimerInit
-     0389h              _readSTimer
-     0396h              _PLT0InputOffsetCalibration
-     03f7h              _PLT1InputOffsetCalibration
-     0457h              _PLTAInputOffsetCalibration
-     04b8h              _PLT1Init
-     04c5h              _PLTAInit
-     04d2h              _PLT0Recive
-     04d7h              _PLT1Recive
-     04dch              _PLT0AmplifierInputOffsetCalibration
-     053ch              _PLT0Init
-     0549h              _calculate_parity_and_checksum
-     0577h              _PLT_SerialSend
-     0616h              _PLT_SerialInit
-     061bh              _PLT_HandelSerialTransmit
-     064eh              _UART_Init
-     06ceh              _UART_Transmit
-     06d4h              _UART_StringTransmit
-     06f1h              _UART_Receive
-     070ch              _UART_ReceiveNonBlocking
-     0715h              _UART_EnableInterrupts
-     071bh              _UART_DisableInterrupts
-     072dh              _ADCInit
-     0734h              _ReadADC
-     07a5h              _InitOPA
-     07b2h              _InitISINK
-     07c0h              _CalibrateOPA0
-     07dfh              _CalibrateOPA1
-     07feh              _ISINK0_ON
-     0803h              _ISINK1_ON
-     0808h              _ISINK0_OFF
-     080bh              _ISINK1_OFF
-     080eh              _OPA_ON
-     0812h              _InitSmokeDetection
-     0817h              _OPA_OFF
-     081bh              _CheckSmokeLevel
-     084fh              _GetTemperatureFromSteinhart
-     095fh              _temperature
-     09e7h              __DELAYX6
-     09e8h              __DELAYX5
-     09e9h              __DELAYX4
-     09eah              __DELAYX3
-     09ebh              __DELAYX2
-     09ech              __DELAYX1
-     09edh              __DELAYX0
-     09f1h              __DELAYY5_isr00
-     09f2h              __DELAYY4_isr00
-     09f3h              __DELAYY3_isr00
-     09f4h              __DELAYY2_isr00
-     09f5h              __DELAYY1_isr00
-     09f6h              __DELAYY0_isr00
-     09ffh              _log
-     0cfbh              _frexp
-     0dbch              _Crom2PromNext
-     0dbdh              _Crom2Prom
+     0300h              _UART_ReceiveString
+     031dh              _S_GPIO_Init
+     034bh              _S_RCC_Init
+     0351h              _S_Timebase_Init
+     035dh              _IntrruptInit
+     0361h              _EnableInterrupt
+     036fh              _DisableInterrupt
+     037dh              _PLT1CompairISR
+     0382h              _PLT0CompairISR
+     0387h              _TimerBaseInit
+     038dh              _PTimerInit
+     03aah              _PWMSeter
+     03bdh              _readPTimer
+     03cah              _STimerInit
+     03deh              _readSTimer
+     03ebh              _PLT0InputOffsetCalibration
+     044ch              _PLT1InputOffsetCalibration
+     04ach              _PLTAInputOffsetCalibration
+     050dh              _PLT1Init
+     051ah              _PLTAInit
+     0527h              _PLTAOFF
+     052bh              _PLT0Recive
+     0530h              _PLT1Recive
+     0535h              _PLT0AmplifierInputOffsetCalibration
+     0595h              _PLT0Init
+     05a2h              _calculate_parity_and_checksum
+     05d0h              _PLT_SerialSend
+     066fh              _PLT_SerialInit
+     0674h              _PLT_HandelSerialTransmit
+     06a7h              _UART_Init
+     0727h              _UART_Transmit
+     072dh              _UART_StringTransmit
+     074ah              _UART_Receive
+     0765h              _UART_ReceiveNonBlocking
+     076eh              _UART_EnableInterrupts
+     0774h              _UART_DisableInterrupts
+     0786h              _ADCInit
+     078dh              _ReadADC
+     07feh              _InitOPA
+     080bh              _InitISINK
+     0819h              _CalibrateOPA0
+     0838h              _CalibrateOPA1
+     0857h              _ISINK0_ON
+     085ch              _ISINK1_ON
+     0861h              _ISINK0_OFF
+     0864h              _ISINK1_OFF
+     0867h              _OPA_ON
+     086bh              _InitSmokeDetection
+     0870h              _OPA_OFF
+     0874h              _CheckSmokeLevel
+     08a8h              _GetTemperatureFromSteinhart
+     09b8h              _temperature
+     0a40h              __DELAYY5_isr00
+     0a41h              __DELAYY4_isr00
+     0a42h              __DELAYY3_isr00
+     0a43h              __DELAYY2_isr00
+     0a44h              __DELAYY1_isr00
+     0a45h              __DELAYY0_isr00
+     0a4eh              __DELAYX6
+     0a4fh              __DELAYX5
+     0a50h              __DELAYX4
+     0a51h              __DELAYX3
+     0a52h              __DELAYX2
+     0a53h              __DELAYX1
+     0a54h              __DELAYX0
+     0a58h              _log
+     0d54h              _frexp
+     0e15h              _Crom2PromNext
+     0e16h              _Crom2Prom
 
 
 ROM Usage Statistics
      Size      Used     Percentage
-     1000h     0dbdh    85%
+     1000h     0e16h    88%
 
 RAM Usage Statistics
     Bank      Size      Used     Percentage
@@ -522,7 +526,6 @@ _main: 3
 _UART_ReceiveString: 1
 _PLT1CompairISR: 0
 _PLT0CompairISR: 0
-_PLTAInit: 1
 _PLT_SerialSend: 2
 _PLT_HandelSerialTransmit: 1
 _UART_StringTransmit: 1
@@ -553,14 +556,16 @@ Call Tree
                 _PLT1InputOffsetCalibration (2)
             _UART_ReceiveNonBlocking (1)
             _UART_Transmit (1)
+            _builtin_holtek_delay_isr00 (1)
+            _PLTAInit (1)
+                _PLTAInputOffsetCalibration (2)
+            _PLTAOFF (1)
     _UART_ReceiveString
         _UART_ReceiveNonBlocking (0)
     @dummy56
         _PLT1CompairISR (0)
     @dummy4
         _PLT0CompairISR (0)
-    _PLTAInit
-        _PLTAInputOffsetCalibration (0)
     _PLT_SerialSend
         _Crom2Prom (0)
         _calculate_parity_and_checksum (0)

@@ -177,7 +177,12 @@ void PLTAInit(void){
 	PLT_OPA_Gain_Bandwidth_Control=_2MHz;
 
 };
-
+PLTAOFF(void)
+{
+	PLT_DAC2_Control=Disable;	
+	PLT_DAC2_VALUE=0;
+	PLT_Comparator_A_Control=Disable;	
+};
 char PLT0Recive(void){
 
 	return PLT_OP0_Output_Status;
