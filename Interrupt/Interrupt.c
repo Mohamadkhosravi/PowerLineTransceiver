@@ -370,7 +370,7 @@ void __attribute__((interrupt(PTM_COMPAIR_A_ISR_ADDRESS))) PTMCompairAISR(void)
 #if STM_COMPAIR_P_ISR
 void __attribute__((interrupt(STM_COMPAIR_P_ISR_ADDRESS))) STMCompairPISR(void)
 {	
-		   
+	 _pa4=~_pa4;	   
     // Here goes the code for STM Comparator P ISR 
     
 }
@@ -385,8 +385,7 @@ void __attribute__((interrupt(STM_COMPAIR_P_ISR_ADDRESS))) STMCompairPISR(void)
 
 void __attribute__((interrupt(STM_COMPAIR_A_ISR_ADDRESS))) STMCompairAISR(void)
 { 
-    //PLT_HandelSerialTransmit();  
-    // Here goes the code for STM Comparator A ISR
+    // Here goes the code for STM Comparator A ISR   
 }
 #endif
 

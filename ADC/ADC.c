@@ -113,3 +113,11 @@ unsigned int ReadADC(unsigned char channel)
     else {result =((_sadol>>4))|((_sadoh<<4));}
     return result; // Return the digital value
 }
+
+void  ADC_Inactive()
+{
+	ADC_OFF;	
+	_sacks0=0;
+	_sacks1=0;
+	_sacks2=0;
+}

@@ -231,3 +231,11 @@ void  OPA_OFF(void)
 //*@retval		: None
 //*@note		: R_ISINK0_DELAY*50us
 //===========================================================
+void SmokeDitectionOFF(){
+	
+	
+	 ISINK0_OFF();
+	 ISINK1_OFF();
+	 OPA_OFF();
+	
+}

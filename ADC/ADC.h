@@ -92,5 +92,5 @@
 // Function prototypes
 void ADCInit();
 unsigned int ReadADC(unsigned char channel);
-
+void  ADC_Inactive();
 #endif // ADC_H_

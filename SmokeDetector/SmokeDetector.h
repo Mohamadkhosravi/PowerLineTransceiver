@@ -184,7 +184,7 @@ void ISINK1_OFF();
 void OPA_ON(void);
 void OPA_OFF(void);
 
-
+void SmokeDitectionOFF();
 
 #endif // SMOKE_DETECTOR_H_
 

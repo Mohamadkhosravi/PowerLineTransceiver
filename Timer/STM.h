@@ -94,16 +94,16 @@
 #define STM_COMPARE_MATCH_P 0
 #define STM_COMPARE_MATCH_A 1
 //=========================================================================
-#define STM_SELECT_CLEAR_COMPARE_MATCH  STM_COMPARE_MATCH_A  
+#define STM_SELECT_CLEAR_COMPARE_MATCH  STM_COMPARE_MATCH_P  
 //=========================================================================
 
 // STM CCRA Low Byte Mask
 //=========================================================================
-#define STM_CCRA_LOW_BYTE_MASK 0x01// Mask for STM CCRA low byte Max=0xFF Min=1
+#define STM_CCRA_LOW_BYTE_MASK 0xFF// Mask for STM CCRA low byte Max=0xFF Min=1
 //=========================================================================
 // STM CCRA High Byte Mask
 //=========================================================================
-#define STM_CCRA_HIGH_BYTE_MASK 0x0 // Mask for STM CCRA high byte Max=0x03
+#define STM_CCRA_HIGH_BYTE_MASK 0x03 // Mask for STM CCRA high byte Max=0x03
 //=========================================================================
 
 
