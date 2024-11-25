@@ -31,10 +31,7 @@ unsigned char AddresssValid=0;
 struct 
 {
  unsigned int TemperatureValue;
- unsigned int SmokeValue;
- 
- 	
-	
+ unsigned int SmokeValue;	
 }situation;
 
 
@@ -43,14 +40,11 @@ void main()
     unsigned int Data=0;		
     float  vcc=0.0;	
     S_RCC_Init();
-//	ADCInit();
 	S_GPIO_Init();	
 	IntrruptInit();
 	UART_Init(9600);
 	PLT0Init();
 	PLT1Init();
-   /* STimerInit();*/
-//	InitSmokeDetection();
 	_pa4=0;
 	while(1)
 	{
@@ -58,7 +52,8 @@ void main()
 		if (PRESSED_PUSHBUTTON) 
 		{
 		/*	pushButtonState = 1;  // Set push button state to pressed
-			PushButtonCounter++;*/
+			PushButtonCounter++;
+		*/
 		} 	
 		else {
 			
@@ -173,7 +168,7 @@ void main()
 			
 			ADCInit();
 			NTC_POWER_ON;
-			situation.TemperatureValue=(temperature(ReadADC(1), 3.0f)*100);
+			situation.TemperatureValue=(temperature(ReadADC(1), 3.0f));
 			NTC_POWER_OFF;
 			InitSmokeDetection();
 			CheckSmokeLevel(&situation.SmokeValue);
