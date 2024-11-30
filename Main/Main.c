@@ -20,14 +20,14 @@ unsigned int CounterStatusCheck=0;
 
 unsigned char Stat=0;
 int i=0;
-#define ADDRESS 'g'
+#define ADDRESS 'i'
 #define PUBLIC_ADDRESS 'Z'
 #define PRESSED_PUSHBUTTON  _pa0==0
 #define PERRESS  10
 unsigned char  pushButtonState=0;
 unsigned int PushButtonCounter=0;
 unsigned char AddresssValid=0;
-
+void info(void);
 struct 
 {
  unsigned int TemperatureValue;
@@ -58,30 +58,10 @@ void main()
 		else {
 			
 			if ((pushButtonState == 1) &&( PushButtonCounter > PERRESS)) {
-				
-			/*	PushButtonCounter=0;
-				pushButtonState=0;
-				Stat=!Stat;
-				_pa4=~_pa4;
 				GCC_DELAY(10000);
-				UART_Transmit('A');
-				UART_Transmit('D');
-				UART_Transmit('R');
-				UART_Transmit('R');
-				UART_Transmit('E');
-				UART_Transmit('S');
-				UART_Transmit('S');
-				UART_Transmit('=');
-				UART_Transmit(ADDRESS);
-				UART_Transmit(' ');
-				UART_Transmit('S');
-				UART_Transmit('T');
-				UART_Transmit('A');
-				UART_Transmit('T');
-				UART_Transmit('E');
-				UART_Transmit('=');
-				UART_Transmit(Stat+0x30);		
-				UART_Transmit(10);	*/
+				PLTAInit();	
+			
+
 			}
 		
 		}
@@ -98,60 +78,27 @@ void main()
 			 
 			}	
 			if((AddresssValid)&&(Data=='O')){
-				/*_pa4=1;*/
-				GCC_DELAY(10000);
-				PLTAInit();
-			  /*  UART_Transmit('A');
-				UART_Transmit('D');
-				UART_Transmit(ADDRESS);*/
-		
-			/*	UART_Transmit('S');	*/
-			/*	UART_Transmit('m');	*/
-				/*UART_Transmit('=');*/
-				UART_Transmit((situation.SmokeValue/1000)%10+0x30);
-				UART_Transmit((situation.SmokeValue/100)%10+0x30);
-				UART_Transmit((situation.SmokeValue/10)%10+0x30);
-				UART_Transmit((situation.SmokeValue)%10+0x30);
-			/*	UART_Transmit(10);*/
-			    UART_Transmit('T');	
-				UART_Transmit('=');
-				UART_Transmit((situation.TemperatureValue/1000)%10+0x30);
-				UART_Transmit((situation.TemperatureValue/100)%10+0x30);
-				UART_Transmit((situation.TemperatureValue/10)%10+0x30);
-				UART_Transmit((situation.TemperatureValue)%10+0x30);	
-				UART_Transmit(10);
-				AddresssValid=0;
 			
+				GCC_DELAY(10000);
+				PLTAInit();	
+				UART_Transmit('O');
+				info();
+				AddresssValid=0;
+		
 			}
 			if((AddresssValid)&&(Data=='C')){
-			/*	_pa4=0;*/
+				
 				GCC_DELAY(10000);
-				PLTAInit();
-			/*	UART_Transmit('A');
-				UART_Transmit('D');
-				UART_Transmit(ADDRESS);*/
-			/*	UART_Transmit(' ');
-				UART_Transmit('S');
-				UART_Transmit('T');
-				UART_Transmit('=');
-				UART_Transmit('1');	
-				UART_Transmit('S');	
-				UART_Transmit('m');	
-				UART_Transmit('=');
-				UART_Transmit((situation.SmokeValue/1000)%10+0x30);
-				UART_Transmit((situation.SmokeValue/100)%10+0x30);
-				UART_Transmit((situation.SmokeValue/10)%10+0x30);
-				UART_Transmit((situation.SmokeValue)%10+0x30);
-				UART_Transmit('T');	
-				UART_Transmit('=');
-				UART_Transmit((situation.TemperatureValue/1000)%10+0x30);
-				UART_Transmit((situation.TemperatureValue/100)%10+0x30);
-				UART_Transmit((situation.TemperatureValue/10)%10+0x30);
-				UART_Transmit((situation.TemperatureValue)%10+0x30);	
-				UART_Transmit(10);*/
+				PLTAInit();	
+				UART_Transmit('C');
+				info();
 				AddresssValid=0;
 			
 			}
+			if((AddresssValid)&&(Data=='L')){
+				_pa4=~_pa4;
+				AddresssValid=0;
+			}	
 			
 		}
 		PLTAOFF();
@@ -208,5 +155,21 @@ char* UART_ReceiveString(void)
 		return resiveBuffer;
 	}
 
+	
+}
+void info(void){
+	
+		UART_Transmit((situation.SmokeValue/1000)%10+0x30);
+		UART_Transmit((situation.SmokeValue/100)%10+0x30);
+		UART_Transmit((situation.SmokeValue/10)%10+0x30);
+		UART_Transmit((situation.SmokeValue)%10+0x30);
+		UART_Transmit('T');	
+		UART_Transmit('=');
+		UART_Transmit((situation.TemperatureValue/1000)%10+0x30);
+		UART_Transmit((situation.TemperatureValue/100)%10+0x30);
+		UART_Transmit((situation.TemperatureValue/10)%10+0x30);
+		UART_Transmit((situation.TemperatureValue)%10+0x30);	
+		UART_Transmit(10);
+		AddresssValid=0;
 	
 }
