@@ -20,7 +20,7 @@ unsigned int CounterStatusCheck=0;
 
 unsigned char Stat=0;
 int i=0;
-#define ADDRESS 'i'
+#define ADDRESS 'g'
 #define PUBLIC_ADDRESS 'Z'
 #define PRESSED_PUSHBUTTON  _pa0==0
 #define PERRESS  10
@@ -37,7 +37,8 @@ struct
 
 void main()
 {
-    unsigned int Data=0;		
+    unsigned int Data=0;
+    char LEDState=0;		
     float  vcc=0.0;	
     S_RCC_Init();
 	S_GPIO_Init();	
@@ -96,11 +97,15 @@ void main()
 			
 			}
 			if((AddresssValid)&&(Data=='L')){
-				_pa4=~_pa4;
+			    LEDState=1;
 				AddresssValid=0;
 			}	
-			
+			if((AddresssValid)&&(Data=='H')){
+			    LEDState=0;
+				AddresssValid=0;
+			}	
 		}
+	    _pa4=LEDState;
 		PLTAOFF();
 		Counter++;
 		if(Counter>13000)
@@ -119,6 +124,7 @@ void main()
 			NTC_POWER_OFF;
 			InitSmokeDetection();
 			CheckSmokeLevel(&situation.SmokeValue);
+			if(situation.SmokeValue==0)	UART_Transmit('F');
 			SmokeDitectionOFF();
 			ADC_Inactive();	
 			CounterStatusCheck=0;	
