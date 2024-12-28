@@ -1,67 +1,51 @@
-#include<Main.h>
-#include <Interrupt.h>
-#include "BA45F5240.h"	
-#include "ADC.h"
-#include "NTC.h"
-#include "SmokeDetector.h"
-unsigned short *frame;
-volatile char tx_busy;
-unsigned int temp;
-#define VCC(ADC_BR)( 1.20*(4095.000/ADC_BR))
-#define BUFFER_SIZE 12 // Length of the expected string plus 1 for null termination
-char buffer[BUFFER_SIZE];
-int buffer_index = 0;
-char* UART_ReceiveString(void);
-
-unsigned long Counter=0;
-unsigned int CounterLED=0;
-unsigned int CounterStatusCheck=0;
-
-
-unsigned char Stat=0;
-int i=0;
-#define ADDRESS 'g'
-#define PUBLIC_ADDRESS 'Z'
-#define PRESSED_PUSHBUTTON  _pa0==0
-#define PERRESS  10
-unsigned char  pushButtonState=0;
-unsigned int PushButtonCounter=0;
-unsigned char AddresssValid=0;
-void info(void);
+/*#include<Main.h>*/
+#include <main.h>
 struct 
 {
  unsigned int TemperatureValue;
- unsigned int SmokeValue;	
+ unsigned int  SmokeValue;	
 }situation;
 
 
+uint32_t    SecTick=0;
+uint8_t     SecondsCounterLED=0;
+uint8_t     SecondsCounterCheckStatus=0;
+uint16_t    i=0;
+uint8_t     pushButtonState=0;
+uint8_t     AddresssValid=0;
+uint32_t    PushButtonCounter=0;
+uint8_t     LEDState=0;	
+
+	
+unsigned short *frame;
+volatile char tx_busy;
+
 void main()
 {
-    unsigned int Data=0;
-    char LEDState=0;		
-    float  vcc=0.0;	
+    char Data=0;
+
     S_RCC_Init();
 	S_GPIO_Init();	
-	IntrruptInit();
+	InterruptInit();
 	UART_Init(9600);
 	PLT0Init();
 	PLT1Init();
-	_pa4=0;
+	LED=0;
 	while(1)
 	{
 		SmokeState Sm;
-		if (PRESSED_PUSHBUTTON) 
-		{
+		if (PRESSED_PUSHBUTTON) {
+			
 		/*	pushButtonState = 1;  // Set push button state to pressed
 			PushButtonCounter++;
 		*/
 		} 	
 		else {
 			
-			if ((pushButtonState == 1) &&( PushButtonCounter > PERRESS)) {
+			if ((pushButtonState == 1) && ( PushButtonCounter > PERRESS)) {
+				
 				GCC_DELAY(10000);
 				PLTAInit();	
-			
 
 			}
 		
@@ -105,18 +89,17 @@ void main()
 				AddresssValid=0;
 			}	
 		}
-	    _pa4=LEDState;
+	    LED=LEDState;
 		PLTAOFF();
-		Counter++;
-		if(Counter>13000)
-		{
-		
-			CounterLED++;
-			CounterStatusCheck++;
-			Counter=0;
+		SecTick++;
+		if(SecTick > ONE_SECOND ){
+			
+			SecondsCounterLED++;
+			SecondsCounterCheckStatus++;
+			SecTick=0;
 		}
-		if(CounterStatusCheck>=2)
-		{
+		
+		if(SecondsCounterCheckStatus >= CHEK_STATUS_PERIOD){
 			
 			ADCInit();
 			NTC_POWER_ON;
@@ -125,18 +108,18 @@ void main()
 			InitSmokeDetection();
 			CheckSmokeLevel(&situation.SmokeValue);
 			if(situation.SmokeValue==0)	UART_Transmit('F');
-			SmokeDitectionOFF();
+			SmokeDetectionOFF();
 			ADC_Inactive();	
-			CounterStatusCheck=0;	
+			SecondsCounterCheckStatus=0;	
 		 
 			
 		}
-		if(CounterLED>=12)
-		{
-			_pa4=1;
-			GCC_DELAY(1000);
-			_pa4=0;	
-			CounterLED=0;
+		if( SecondsCounterLED >= LED_BLINKING_PERIOD){
+			
+			LED=1;
+			GCC_DELAY(LED_BLINKING_ON_TIME);
+			LED=0;	
+			SecondsCounterLED=0;
 		}
 	}
 	
@@ -145,24 +128,6 @@ void main()
 }
 
 
-
-char* UART_ReceiveString(void) 
-{
-	static unsigned char resiveBuffer[10]={0};
-	static char index=0;
-	static char DataValid=0;
-	resiveBuffer[index]=UART_ReceiveNonBlocking();
-	if(resiveBuffer[0]!= 0){
-		index++;
-		DataValid=1;
-	}
-	else if(DataValid &&(resiveBuffer[0]== 0))
-	{
-		return resiveBuffer;
-	}
-
-	
-}
 void info(void){
 	
 		UART_Transmit((situation.SmokeValue/1000)%10+0x30);

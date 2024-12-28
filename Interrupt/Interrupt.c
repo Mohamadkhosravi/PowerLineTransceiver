@@ -1,6 +1,6 @@
 #include <Interrupt.h>
 #include <UART.h>
-void IntrruptInit(void)
+void InterruptInit(void)
 {
 	GLOBAL_INTERRUPT = Enable;
 	#if EXTERNAL_PIN0_ISR      

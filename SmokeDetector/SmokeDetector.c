@@ -226,12 +226,11 @@ void  OPA_OFF(void)
 
 
 //===========================================================
-//*@brief		: Open ISINK0 Delay
+//*@brief		: Smoke Detection OFF
 //*@param[in]	: None
 //*@retval		: None
-//*@note		: R_ISINK0_DELAY*50us
 //===========================================================
-void SmokeDitectionOFF(){
+void SmokeDetectionOFF(){
 	
 	
 	 ISINK0_OFF();

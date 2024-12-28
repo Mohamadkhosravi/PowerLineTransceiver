@@ -68,13 +68,13 @@ typedef unsigned char uint8_t;
 
 #ifdef USE_OF_OPAMP0
 
-#define R1  20//R1= SDA0PGA[5:0] × 100kO
+#define R1  20//R1= SDA0PGA[5:0] ï¿½ 100kO
 
 #endif
 
 #ifdef USE_OF_OPAMP1
 
-#define  R2    25//R2= SDA1PGA[5:0] × 100kO
+#define  R2    25//R2= SDA1PGA[5:0] ï¿½ 100kO
 #define _10KR  0// 10kO
 #define _20KR  1// 20kO
 #define _30KR  2// 30kO
@@ -132,8 +132,8 @@ typedef unsigned char uint8_t;
  
 #define ISINK0_CONTOROL Enable
 #define ISINK1_CONTOROL Disable
-#define ISINK0_CURRENT	7  // Set ISINK0 current Current value (mA) = 50 + 10 × (ISGDATA0[4:0])
-#define ISINK1_CURRENT	1  // Set ISINK1 current Current value (mA) = 50 + 10 × (ISGDATA0[4:0])
+#define ISINK0_CURRENT	7  // Set ISINK0 current Current value (mA) = 50 + 10 ï¿½ (ISGDATA0[4:0])
+#define ISINK1_CURRENT	1  // Set ISINK1 current Current value (mA) = 50 + 10 ï¿½ (ISGDATA0[4:0])
 
 
 
@@ -184,7 +184,7 @@ void ISINK1_OFF();
 void OPA_ON(void);
 void OPA_OFF(void);
 
-void SmokeDitectionOFF();
+void SmokeDetectionOFF();
 
 #endif // SMOKE_DETECTOR_H_
 

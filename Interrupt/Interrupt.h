@@ -48,7 +48,7 @@ void DisableInterrupt(char interruptAddress);
 #define BASE_TIMER1_ISR_ADDRESS    0x34 // Priority 12
 #define PLT_COMPAIR1_ISR_ADDRESS   0x38 // Priority 13 (Low)
 
-void IntrruptInit(void);
+void InterruptInit(void);
 void __attribute__((interrupt(EXTERNAL_PIN0_ISR_ADDRESS))) ExternalPin0ISR(void);
 void __attribute__((interrupt(EXTERNAL_PIN1_ISR_ADDRESS))) ExternalPin1ISR(void);
 void __attribute__((interrupt(USIM_ISR_ADDRESS))) UniversalSerialInterfaceISR(void);
